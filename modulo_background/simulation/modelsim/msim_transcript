@@ -12,51 +12,61 @@
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:16:47 on Oct 04,2023
+# Start time: 18:07:16 on Oct 04,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v 
 # -- Compiling module VGA_Interface
 # 
 # Top level modules:
 # 	VGA_Interface
-# End time: 16:16:47 on Oct 04,2023, Elapsed time: 0:00:00
+# End time: 18:07:16 on Oct 04,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:16:47 on Oct 04,2023
+# Start time: 18:07:16 on Oct 04,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v 
 # -- Compiling module VGA_Interface_tb
 # 
 # Top level modules:
 # 	VGA_Interface_tb
-# End time: 16:16:47 on Oct 04,2023, Elapsed time: 0:00:00
+# End time: 18:07:16 on Oct 04,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 16:16:47 on Oct 04,2023
+# Start time: 18:07:16 on Oct 04,2023
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v 
 # -- Compiling module VGA_Interface_tb
 # 
 # Top level modules:
 # 	VGA_Interface_tb
-# End time: 16:16:47 on Oct 04,2023, Elapsed time: 0:00:00
+# End time: 18:07:16 on Oct 04,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  VGA_Interface_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" VGA_Interface_tb 
-# Start time: 16:16:47 on Oct 04,2023
+# Start time: 18:07:16 on Oct 04,2023
 # Loading work.VGA_Interface_tb
 # Loading work.VGA_Interface
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Prodenge  Hostname: DESKTOP-7O278AP  ProcessID: 19732
+#           Attempting to use alternate WLF file "./wlftfthxr9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfthxr9
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 1000 ns
-# ** Note: $finish    : C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v(61)
-#    Time: 520 ps  Iteration: 0  Instance: /VGA_Interface_tb
+# Erro: Posição fora dos limites da tela! h_pos_test= 801, v_pos_test= 526
+# ** Note: $finish    : C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v(82)
+#    Time: 820 ps  Iteration: 0  Instance: /VGA_Interface_tb
 # 1
-# Break in Module VGA_Interface_tb at C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v line 61
-# End time: 16:17:23 on Oct 04,2023, Elapsed time: 0:00:36
-# Errors: 0, Warnings: 0
+# Break in Module VGA_Interface_tb at C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v line 82
+run
+run
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/simulation/modelsim/wave.do
+# End time: 18:10:47 on Oct 04,2023, Elapsed time: 0:03:31
+# Errors: 0, Warnings: 2
