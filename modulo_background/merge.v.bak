@@ -1,0 +1,35 @@
+module merge (
+  input wire [7:0] background_image [639:0][479:0], // Matriz de pixels do plano de fundo
+  input wire [7:0] sprite_image [4][639:0][479:0],   // Matriz de pixels dos 5 sprites
+  input wire [9:0] sprite_x [4],                     // Coordenada X dos 5 sprites
+  input wire [9:0] sprite_y [4],                     // Coordenada Y dos 5 sprites
+  output wire [7:0] combined_image [639:0][479:0]    // Matriz de pixels combinada
+);
+
+  reg [7:0] pixel_R, pixel_G, pixel_B; // Cores do pixel combinado
+
+  always @(*) begin
+    // Inicialize as cores do pixel com as cores do plano de fundo
+    pixel_R = background_image[sprite_x[0]][sprite_y[0]][7:0];
+    pixel_G = background_image[sprite_x[0]][sprite_y[0]][15:8];
+    pixel_B = background_image[sprite_x[0]][sprite_y[0]][23:16];
+
+    // Verifique se pelo menos um dos sprites está na área visível
+    if (sprite_x[0] >= 0 && sprite_x[0] < 640 && sprite_y[0] >= 0 && sprite_y[0] < 480) begin
+      // Combinar as cores do sprite com as cores do plano de fundo
+      for (int i = 0; i < 5; i = i + 1) begin
+        if (sprite_x[i] >= 0 && sprite_x[i] < 640 && sprite_y[i] >= 0 && sprite_y[i] < 480) begin
+          pixel_R = (sprite_image[i][sprite_x[i]][sprite_y[i]][7:0] == 0) ? pixel_R : sprite_image[i][sprite_x[i]][sprite_y[i]][7:0];
+          pixel_G = (sprite_image[i][sprite_x[i]][sprite_y[i]][15:8] == 0) ? pixel_G : sprite_image[i][sprite_x[i]][sprite_y[i]][15:8];
+          pixel_B = (sprite_image[i][sprite_x[i]][sprite_y[i]][23:16] == 0) ? pixel_B : sprite_image[i][sprite_x[i]][sprite_y[i]][23:16];
+        end
+      end
+    end
+  end
+
+  // Saída combinada
+  assign combined_image[sprite_x[0]][sprite_y[0]][7:0] = pixel_R;
+  assign combined_image[sprite_x[0]][sprite_y[0]][15:8] = pixel_G;
+  assign combined_image[sprite_x[0]][sprite_y[0]][23:16] = pixel_B;
+
+endmodule
