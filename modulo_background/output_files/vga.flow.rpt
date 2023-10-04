@@ -1,6 +1,6 @@
 Flow report for vga
-Tue Oct 03 23:21:37 2023
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Wed Oct 04 16:12:41 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -21,9 +21,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -33,18 +33,17 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Oct 03 23:21:37 2023       ;
-; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Flow Status                        ; Successful - Wed Oct 04 16:12:41 2023       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
-; Top-level Entity Name              ; vga                                         ;
+; Top-level Entity Name              ; VGA_Interface_tb                            ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
@@ -65,26 +64,39 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/03/2023 23:21:25 ;
+; Start date & time ; 10/04/2023 16:12:33 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga                 ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2544052520464.169638608520636          ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++--------------------------------------+----------------------------------------+---------------+------------------+------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name      ; Section Id       ;
++--------------------------------------+----------------------------------------+---------------+------------------+------------------+
+; COMPILER_SIGNATURE_ID                ; 14071518969070.169644675308964         ; --            ; --               ; --               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --               ; VGA_Interface_tb ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; VGA_Interface_tb                       ; --            ; --               ; eda_simulation   ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --               ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --               ; --               ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --               ; eda_simulation   ;
+; EDA_TEST_BENCH_FILE                  ; VGA_Interface_tb.v                     ; --            ; --               ; VGA_Interface_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; VGA_Interface_tb                       ; --            ; --               ; VGA_Interface_tb ;
+; EDA_TEST_BENCH_NAME                  ; VGA_Interface_tb                       ; --            ; --               ; eda_simulation   ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ns                                 ; --            ; --               ; VGA_Interface_tb ;
+; EDA_TIME_SCALE                       ; 1 ns                                   ; --            ; --               ; eda_simulation   ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --               ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --               ; --               ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --               ; --               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; VGA_Interface_tb ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; VGA_Interface_tb ; Top              ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; VGA_Interface_tb ; Top              ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --               ; --               ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --               ; --               ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --               ; --               ;
+; TOP_LEVEL_ENTITY                     ; VGA_Interface_tb                       ; vga           ; --               ; --               ;
++--------------------------------------+----------------------------------------+---------------+------------------+------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -92,8 +104,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:13     ; 1.0                     ; 4697 MB             ; 00:00:31                           ;
-; Total                  ; 00:00:13     ; --                      ; --                  ; 00:00:31                           ;
+; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4707 MB             ; 00:00:06                           ;
+; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:06                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,14 +114,14 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+------------------+------------+------------+----------------+
 ; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; DESKTOP-CEDMR45  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Elaboration ; DESKTOP-7O278AP  ; Windows 10 ; 10.0       ; x86_64         ;
 +------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off modulo_background_merge -c vga --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga --analysis_and_elaboration
 
 
 

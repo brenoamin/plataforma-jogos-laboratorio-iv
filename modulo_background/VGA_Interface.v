@@ -1,188 +1,144 @@
 module VGA_Interface(
- 
-	clk,
-	rst,
-	R_in,
-	G_in,
-	B_in,
- 
-	oAddress,
-	R,G,B,
-	BLANK,
-	VGA_SYNC,
-	VGA_CLK,
-	HS,VS,
-	v_pos,
-	h_pos
-); 
- 
-	input [7:0] R_in, G_in, B_in;
-	input clk, rst;
- 
-	output reg [7:0] R, G, B;
-	output reg HS, VS;
-	output reg BLANK;
-	output VGA_SYNC, VGA_CLK;
- 
-	output reg [9:0] h_pos, v_pos;
-	output reg [19:0]	oAddress;
- 
-	parameter H_FRONT = 16;	//16
-	parameter H_SYNC = 96;	//96
-	parameter H_BACK = 48;	//48
-	parameter H_DISPLAY = 640;
-	parameter H_BLANK = H_SYNC+H_BACK;
-	parameter H_TOTAL = H_FRONT+H_SYNC+H_BACK+H_DISPLAY;
- 
-	parameter V_FRONT = 10;	//12
-	parameter V_SYNC = 2;	//2
-	parameter V_BACK = 33;	//31
-	parameter V_DISPLAY	= 480;
-	parameter V_BLANK = V_SYNC+V_BACK;
-	parameter V_TOTAL = V_FRONT+V_SYNC+V_BACK+V_DISPLAY;
- 
- 
-	always @(posedge clk)
-	begin
-		if (rst == 1'b1)
-		begin
-			h_pos <= 10'b0000000000;
-			v_pos <= 10'b0000000000;
-		end
- 
-		else
-		begin
-			if (h_pos<H_TOTAL-1)//800 pulsos
-			begin
-				h_pos <= h_pos + 1'b1;
-			end		
- 
-			else
-			begin
-				h_pos <= 1'b0;
- 
-				if (v_pos<V_TOTAL-1)//525 pulsos
-				begin
-					v_pos <= v_pos + 1'b1;
-				end
- 
-				else
-				begin
-					v_pos <= 1'b0;
-				end
-			end
-		end
-	end
- 
-	// Sincronismo Horizontal
-	always @(posedge clk)
-	begin
-		if (rst == 1'b1)
-		begin
-			HS <= 1'b1;
-		end
-		else
-		begin
-			if ( (h_pos > H_BACK+H_DISPLAY+H_FRONT-1) && (h_pos < H_TOTAL) )
-			begin
-				HS <= 1'b0;
-			end
-			else
-			begin
-				HS <= 1'b1;
-			end
-		end
-	end
- 
-	// Sincronismo Vertical
-	always @(posedge clk)
-	begin
-		if (rst == 1'b1)
-		begin
-			VS <= 1'b1;
-		end
-		else
-		begin
-			if ( (v_pos > V_BACK+V_DISPLAY+V_FRONT-1) && (v_pos < V_TOTAL) )
-			begin
-				VS <= 1'b0;
-			end
-			else
-			begin
-				VS <= 1'b1;
-			end
-		end
-	end
- 
-	// Blank
-	always @(posedge clk)
-	begin
-		if (rst == 1'b1)
-		begin
-			BLANK <= 1'b1;
-		end
-		else
-		begin
-			if ( (h_pos<H_BACK) || (h_pos > H_BACK+H_DISPLAY-1) || (v_pos<V_BACK) || (v_pos > V_BACK+V_DISPLAY-1) )
-			begin
-				BLANK <= 1'b0;
-			end
-			else
-			begin
-				BLANK <= 1'b1;
-			end
-		end
-	end
- 
-	assign VGA_CLK = clk;
-	assign VGA_SYNC = 1'b0;
- 
-	always @(posedge clk )
-	begin
-		R <= R_in;
-		G <= G_in;
-		B <= B_in;
-	end
- 
- 
-	// Bloco para geracao dos enderecos de cada pixel na memoria
-	// Cada pixel está guardado em um endereco diferente, sequencialmente
-	always @(posedge clk )
-	begin
- 
-		// Reset no circuito, endereco vai para zero
-		if (rst == 1'b1)
-		begin
-			oAddress <= 20'h00000;
-		end
- 
-		// Operacao normal, apos reset
-		else
-		begin
-			// Operacao na parte visivel do video
-			if( (h_pos>H_BACK-1) && (h_pos < H_BACK+H_DISPLAY) && (v_pos>V_BACK-1) && (v_pos < V_BACK+V_DISPLAY) )
-			begin
- 
-				// Enquanto nao tiver atingido o ultimo pixel
-				if ( oAddress < ((H_DISPLAY*V_DISPLAY) - 1)  )
-				begin
-					oAddress <= oAddress + 1'b1;
-				end
- 
-				// Retorna para o inicio apos atingir o ultimo pixel
-				else
-				begin
-					oAddress <= 1'b0;
-				end
- 
-			end
- 
-			// Operacao na parte de sincronismo do video
-			else
-			begin
-				oAddress <= oAddress;
-			end
-		end
-	end
- 
+    // Entradas
+    input [7:0] R_in,
+    input [7:0] G_in,
+    input [7:0] B_in,
+    input clk, 
+    input rst,
+
+    // Saídas
+    output reg [7:0] R,
+    output reg [7:0] G,
+    output reg [7:0] B,
+    output reg HS, 
+    output reg VS,
+    output reg BLANK,
+    output VGA_SYNC, 
+    output VGA_CLK,
+    output reg [9:0] h_pos, 
+    output reg [9:0] v_pos,
+    output reg [19:0] oAddress
+);
+
+    // Parâmetros para as especificações VGA
+    parameter HORIZONTAL_FRONT_PORCH = 16;
+    parameter HORIZONTAL_SYNC_PULSE = 96;
+    parameter HORIZONTAL_BACK_PORCH = 48;
+    parameter HORIZONTAL_DISPLAY = 640;
+    parameter HORIZONTAL_BLANK = HORIZONTAL_SYNC_PULSE + HORIZONTAL_BACK_PORCH;
+    parameter HORIZONTAL_TOTAL = HORIZONTAL_FRONT_PORCH + HORIZONTAL_SYNC_PULSE + HORIZONTAL_BACK_PORCH + HORIZONTAL_DISPLAY;
+
+    parameter VERTICAL_FRONT_PORCH = 10;
+    parameter VERTICAL_SYNC_PULSE = 2;
+    parameter VERTICAL_BACK_PORCH = 33;
+    parameter VERTICAL_DISPLAY = 480;
+    parameter VERTICAL_BLANK = VERTICAL_SYNC_PULSE + VERTICAL_BACK_PORCH;
+    parameter VERTICAL_TOTAL = VERTICAL_FRONT_PORCH + VERTICAL_SYNC_PULSE + VERTICAL_BACK_PORCH + VERTICAL_DISPLAY;
+
+    // Lógica de Controle Principal
+    always @(posedge clk)
+    begin
+        if (rst == 1'b1)
+        begin
+            // Reinicializa as posições horizontal e vertical
+            h_pos <= 10'b0000000000;
+            v_pos <= 10'b0000000000;
+        end
+        else
+        begin
+            // Atualiza a posição horizontal, mantendo-a dentro dos limites da tela
+            if (h_pos < HORIZONTAL_TOTAL - 1)
+                h_pos <= h_pos + 1'b1;
+            else
+            begin
+                h_pos <= 1'b0;
+                // Atualiza a posição vertical, mantendo-a dentro dos limites da tela
+                if (v_pos < VERTICAL_TOTAL - 1)
+                    v_pos <= v_pos + 1'b1;
+                else
+                    v_pos <= 1'b0;
+            end
+        end
+    end
+
+    // Sincronismo Horizontal
+    always @(posedge clk)
+    begin
+        if (rst == 1'b1)
+            HS <= 1'b1;
+        else
+        begin
+            // Durante a exibição da imagem, desativa o sinal de sincronismo horizontal
+            if ((h_pos > HORIZONTAL_BACK_PORCH + HORIZONTAL_DISPLAY + HORIZONTAL_FRONT_PORCH - 1) && (h_pos < HORIZONTAL_TOTAL))
+                HS <= 1'b0;
+            else
+                HS <= 1'b1;
+        end
+    end
+
+    // Sincronismo Vertical
+    always @(posedge clk)
+    begin
+        if (rst == 1'b1)
+            VS <= 1'b1;
+        else
+        begin
+            // Durante a exibição da imagem, desativa o sinal de sincronismo vertical
+            if ((v_pos > VERTICAL_BACK_PORCH + VERTICAL_DISPLAY + VERTICAL_FRONT_PORCH - 1) && (v_pos < VERTICAL_TOTAL))
+                VS <= 1'b0;
+            else
+                VS <= 1'b1;
+        end
+    end
+
+    // Blank
+    always @(posedge clk)
+    begin
+        if (rst == 1'b1)
+            BLANK <= 1'b1;
+        else
+        begin
+            // Durante a exibição da imagem, desativa o sinal de blank dentro dos limites
+            if ((h_pos < HORIZONTAL_BACK_PORCH) || (h_pos > HORIZONTAL_BACK_PORCH + HORIZONTAL_DISPLAY - 1) || (v_pos < VERTICAL_BACK_PORCH) || (v_pos > VERTICAL_BACK_PORCH + VERTICAL_DISPLAY - 1))
+                BLANK <= 1'b0;
+            else
+                BLANK <= 1'b1;
+        end
+    end
+
+    // Atribuições
+    assign VGA_CLK = clk;
+    assign VGA_SYNC = 1'b0;
+
+    always @(posedge clk)
+    begin
+        // Atualiza as cores R, G, e B a partir das entradas R_in, G_in, e B_in
+        R <= R_in;
+        G <= G_in;
+        B <= B_in;
+    end
+
+    // Geração de endereços na memória
+    always @(posedge clk)
+    begin
+        // Reset no circuito, endereço vai para zero
+        if (rst == 1'b1)
+            oAddress <= 20'h00000;
+        else
+        begin
+            // Operação na parte visível do vídeo
+            if ((h_pos > HORIZONTAL_BACK_PORCH - 1) && (h_pos < HORIZONTAL_BACK_PORCH + HORIZONTAL_DISPLAY) && (v_pos > VERTICAL_BACK_PORCH - 1) && (v_pos < VERTICAL_BACK_PORCH + VERTICAL_DISPLAY))
+            begin
+                // Enquanto não tiver atingido o último pixel
+                if (oAddress < ((HORIZONTAL_DISPLAY * VERTICAL_DISPLAY) - 1))
+                    oAddress <= oAddress + 1'b1;
+                // Retorna para o início após atingir o último pixel
+                else
+                    oAddress <= 1'b0;
+            end
+            // Operação na parte de sincronismo do vídeo
+            else
+                oAddress <= oAddress;
+        end
+    end
 endmodule
