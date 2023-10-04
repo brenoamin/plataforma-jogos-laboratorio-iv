@@ -1,5 +1,5 @@
 Analysis & Elaboration report for vga
-Tue Oct 03 22:08:40 2023
+Tue Oct 03 23:21:37 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -9,8 +9,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |vga
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
 
 
 
@@ -37,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Tue Oct 03 22:08:40 2023           ;
+; Analysis & Elaboration Status      ; Successful - Tue Oct 03 23:21:37 2023       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
 ; Top-level Entity Name              ; vga                                         ;
@@ -68,6 +69,17 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |vga ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; IMAGE_WIDTH    ; 640   ; Signed Integer                             ;
+; IMAGE_HEIGHT   ; 480   ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -162,20 +174,49 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Oct 03 22:08:26 2023
+    Info: Processing started: Tue Oct 03 23:21:24 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modulo_background_merge -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga.v
-    Info (12023): Found entity 1: vga File: C:/lab_4/modulo_background_merge/vga.v Line: 1
+    Info (12023): Found entity 1: vga File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_tb.v
-    Info (12023): Found entity 1: vga_tb File: C:/lab_4/modulo_background_merge/vga_tb.v Line: 1
-Error (10171): Verilog HDL syntax error at background.v(73) near end of file ;  expecting "end" File: C:/lab_4/modulo_background_merge/background.v Line: 73
-Info (12021): Found 0 design units, including 0 entities, in source file background.v
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4700 megabytes
-    Error: Processing ended: Tue Oct 03 22:08:40 2023
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:36
+    Info (12023): Found entity 1: vga_tb File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga_tb.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga_interface.v
+    Info (12023): Found entity 1: VGA_Interface File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v Line: 1
+Info (12127): Elaborating entity "vga" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at vga.v(23): truncated value with size 32 to match size of target (10) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 23
+Warning (10230): Verilog HDL assignment warning at vga.v(24): truncated value with size 32 to match size of target (10) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 24
+Warning (10230): Verilog HDL assignment warning at vga.v(27): truncated value with size 32 to match size of target (10) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 27
+Warning (10235): Verilog HDL Always Construct warning at vga.v(33): variable "CounterXmaxed" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at vga.v(33): variable "IMAGE_OFFSET_X" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at vga.v(33): variable "CounterX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 33
+Warning (10230): Verilog HDL assignment warning at vga.v(33): truncated value with size 32 to match size of target (10) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at vga.v(34): variable "CounterYmaxed" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at vga.v(34): variable "IMAGE_OFFSET_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at vga.v(34): variable "CounterXmaxed" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at vga.v(34): variable "CounterY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 34
+Warning (10230): Verilog HDL assignment warning at vga.v(34): truncated value with size 32 to match size of target (10) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at vga.v(35): variable "CounterYmaxed" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 35
+Warning (10235): Verilog HDL Always Construct warning at vga.v(35): variable "CounterXmaxed" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 35
+Warning (10235): Verilog HDL Always Construct warning at vga.v(36): variable "CounterX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 36
+Warning (10235): Verilog HDL Always Construct warning at vga.v(37): variable "CounterY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 37
+Warning (10230): Verilog HDL assignment warning at vga.v(35): truncated value with size 32 to match size of target (1) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 35
+Warning (10240): Verilog HDL Always Construct warning at vga.v(31): inferring latch(es) for variable "CounterY", which holds its previous value in one or more paths through the always construct File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[0]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[1]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[2]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[3]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[4]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[5]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[6]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[7]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[8]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info (10041): Inferred latch for "CounterY[9]" at vga.v(31) File: C:/Users/mauri/OneDrive/Documentos/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/vga.v Line: 31
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4697 megabytes
+    Info: Processing ended: Tue Oct 03 23:21:37 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:31
 
 

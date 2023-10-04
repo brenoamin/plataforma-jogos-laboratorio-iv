@@ -27,7 +27,6 @@ module vga (
     clockCounter <= clockCounter + 1; // Contagem dos pulsos de clock
   end
 
-  //remover o image offset
   always @(clockCounter) begin
     // Lógica para atualizar os contadores de posição X e Y
     CounterX <= (CounterXmaxed) ? IMAGE_OFFSET_X : CounterX + 1;
