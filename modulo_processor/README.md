@@ -7,16 +7,22 @@ Processador para Jogos
 
 </h1>
 
-Aqui ficará a documentação do processador
+Arquitetura do processador para uma plataforma de jogos.
 
 ![Diagrama](./assets/schematic.png)
 
-> 🚧 WORKING IN PROGRESS
-
 ## 📝 Como programar o processador?
+
+> 🚧 WORKING IN PROGRESS
 
 ### ⬇️ Instruções do processador
 
+- [Descrição dos estágios e instruções](./docs/estagios_intrucoes.md)
+
 ### ⬆️ Instruções de alto nível
 
+> 🚧 WORKING IN PROGRESS
+
 ## 🧩 Exemplos
+
+> 🚧 WORKING IN PROGRESS
