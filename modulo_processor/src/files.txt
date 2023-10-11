@@ -1,0 +1,2 @@
+./module1/design1.v
+./module2/design2.v
