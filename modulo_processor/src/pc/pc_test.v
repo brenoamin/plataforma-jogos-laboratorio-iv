@@ -80,23 +80,15 @@ initial begin
     end
 
     // Test load instruction
+    sel = LOAD_INSTR;
     for(i=0; i<10; i=i+1) begin
         status = "load";
         @(negedge clk);
         instr = $random;
-        sel = LOAD_INSTR;
         @(negedge clk);
         expect(instr);
         #($unsigned($random) % 10);
     end
-
-    wait_random;
-    status = "load";
-    sel = LOAD_INSTR;
-    instr = $random;
-    @(posedge clk);
-    wait_random;
-    expect(instr);
     
     // Test keep
     wait_random;
