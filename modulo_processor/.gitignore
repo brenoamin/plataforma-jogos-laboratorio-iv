@@ -1,3 +1,7 @@
 # Draw.io
 *.bkp
 *.dtmp
+
+# icarus + gtkwave
+*.out
+*.vcd
