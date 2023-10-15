@@ -113,5 +113,5 @@ end
 endmodule
 
 // iverilog -t null *.v
-// iverilog -o a.out pc_test.v  && vvp a.out
+// iverilog -o a.out -f files.txt  && vvp a.out
 // gtkwave pc_test.vcd &
