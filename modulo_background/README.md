@@ -51,6 +51,8 @@ Além do módulo ImageMerge, o projeto inclui o módulo VGA_Interface, que é re
 
 ---
 
+---
+
 ## 🛣️ Como executar o projeto
 
 ```bash
@@ -66,9 +68,10 @@ Certifique-se de que as entradas e saídas do módulo ImageMerge estejam conecta
 Compile e execute seu projeto para ver a sobreposição de imagens em ação.
 
 ```
+---
 
 ## 🛠 Tecnologias
 
-*Verilog
+* #Verilog
 
 ---
