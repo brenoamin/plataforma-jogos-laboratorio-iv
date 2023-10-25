@@ -22,9 +22,8 @@
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionamento">Funcionamento</a> •
- <a href="#-como-usar">Como Usar</a> • 
- <a href="#-contribuições">Contribuições</a> • 
- <a href="#-licença">Licença</a>
+ <a href="#-como-executar-o-projeto">Como executar</a> • 
+ <a href="#-tecnologias">Tecnologias</a>• 
 </p>
 
 ## 💻 Sobre o projeto
@@ -51,8 +50,6 @@ Além do módulo ImageMerge, o projeto inclui o módulo VGA_Interface, que é re
 
 ---
 
----
-
 ## 🛣️ Como executar o projeto
 
 ```bash
@@ -68,7 +65,7 @@ Certifique-se de que as entradas e saídas do módulo ImageMerge estejam conecta
 Compile e execute seu projeto para ver a sobreposição de imagens em ação.
 
 ```
----
+
 
 ## 🛠 Tecnologias
 
