@@ -10,63 +10,52 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/ImageMerge.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:07:16 on Oct 04,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v 
-# -- Compiling module VGA_Interface
+# Start time: 14:09:42 on Oct 25,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/ImageMerge.v 
+# -- Compiling module ImageMerge
 # 
 # Top level modules:
-# 	VGA_Interface
-# End time: 18:07:16 on Oct 04,2023, Elapsed time: 0:00:00
+# 	ImageMerge
+# End time: 14:09:42 on Oct 25,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/ImageMerge_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:07:16 on Oct 04,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v 
-# -- Compiling module VGA_Interface_tb
+# Start time: 14:09:42 on Oct 25,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/ImageMerge_tb.v 
+# -- Compiling module ImageMerge_tb
 # 
 # Top level modules:
-# 	VGA_Interface_tb
-# End time: 18:07:16 on Oct 04,2023, Elapsed time: 0:00:00
+# 	ImageMerge_tb
+# End time: 14:09:42 on Oct 25,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background {C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:07:16 on Oct 04,2023
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v 
-# -- Compiling module VGA_Interface_tb
-# 
-# Top level modules:
-# 	VGA_Interface_tb
-# End time: 18:07:16 on Oct 04,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  VGA_Interface_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" VGA_Interface_tb 
-# Start time: 18:07:16 on Oct 04,2023
-# Loading work.VGA_Interface_tb
-# Loading work.VGA_Interface
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  ImageMerge_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" ImageMerge_tb 
+# Start time: 14:09:42 on Oct 25,2023
+# Loading work.ImageMerge_tb
+# Loading work.ImageMerge
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Prodenge  Hostname: DESKTOP-7O278AP  ProcessID: 19732
-#           Attempting to use alternate WLF file "./wlftfthxr9".
+#           Attempting to use alternate WLF file "./wlft9herye".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfthxr9
+#           Using alternate file: ./wlft9herye
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 1000 ns
-# Erro: Posição fora dos limites da tela! h_pos_test= 801, v_pos_test= 526
-# ** Note: $finish    : C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v(82)
-#    Time: 820 ps  Iteration: 0  Instance: /VGA_Interface_tb
-# 1
-# Break in Module VGA_Interface_tb at C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v line 82
+# Teste 1 falhou.
+# Teste 2 falhou.
+# Teste 3 falhou.
+# ** Note: $stop    : C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/ImageMerge_tb.v(56)
+#    Time: 3 ps  Iteration: 0  Instance: /ImageMerge_tb
+# Break in Module ImageMerge_tb at C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/ImageMerge_tb.v line 56
 run
 run
-run
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/simulation/modelsim/wave.do
-# End time: 18:10:47 on Oct 04,2023, Elapsed time: 0:03:31
+# End time: 14:12:03 on Oct 25,2023, Elapsed time: 0:02:21
 # Errors: 0, Warnings: 2

@@ -1,0 +1,22 @@
+module ImageMerge(
+  input wire [7:0] sdram_R, // Componente vermelha da SDRAM
+  input wire [7:0] sdram_G, // Componente verde da SDRAM
+  input wire [7:0] sdram_B, // Componente azul da SDRAM
+  input wire [7:0] sprite_R, // Componente vermelha do sprite
+  input wire [7:0] sprite_G, // Componente verde do sprite
+  input wire [7:0] sprite_B, // Componente azul do sprite
+  input wire [7:0] alpha, // Componente de opacidade do sprite (0 = transparente, 255 = opaco)
+  output wire [7:0] merged_R, // Componente vermelha do resultado
+  output wire [7:0] merged_G, // Componente verde do resultado
+  output wire [7:0] merged_B  // Componente azul do resultado
+);
+
+  // Lógica para combinar as cores dos pixels com base no alpha
+  always @* begin
+    // Mescle as cores da SDRAM e do sprite com base no valor de alpha
+    merged_R = (alpha * sprite_R + (255 - alpha) * sdram_R) / 255;
+    merged_G = (alpha * sprite_G + (255 - alpha) * sdram_G) / 255;
+    merged_B = (alpha * sprite_B + (255 - alpha) * sdram_B) / 255;
+  end
+
+endmodule
