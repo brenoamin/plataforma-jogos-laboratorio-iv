@@ -42,14 +42,12 @@ module memory_test;
 
   initial
   begin
-    // Dump variables to VCD file
     $dumpfile("memory.vcd");
     $dumpvars(0, memory_test);
   end
 
   
   initial begin
-    // Read data from instruction.txt for writing to memory
     $readmemb("instructions.txt", data_to_write);
   end
 
