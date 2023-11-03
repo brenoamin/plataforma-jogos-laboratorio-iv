@@ -1,5 +1,5 @@
 //! @title Memória de Programa
-//! @author @brenoamin
+//! @author @brenoamin, @taffarel55
 
 //! A Memória de Programa é um componente que armazena as instruções de um programa
 //! e permite a leitura e escrita de dados com base em endereços de memória.
