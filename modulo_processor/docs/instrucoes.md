@@ -11,4 +11,4 @@ Processador para Jogos
 
 ## Instruções
 
-![Alt text](../assets/image.png)
+![Alt text](../assets/instruction_set.jpg)
