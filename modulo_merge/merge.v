@@ -1,4 +1,4 @@
-module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_out, G_out, B_out, positionBackground, positionSprite, sprite_collision_BG, reset, clk);
+module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_out, G_out, B_out, posX_bg, posY_bg, posX_sp, posY_sp, colision, reset, clk);
 
     input wire clk, reset;
     input wire [7:0] R_bg, G_bg, B_bg, R_sp, G_sp, B_sp
