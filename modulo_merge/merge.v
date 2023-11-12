@@ -1,19 +1,19 @@
-module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_out, G_out, B_out, posX_bg, posY_bg, posX_sp, posY_sp, sprite_collision_BG, reset, clk);
+module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_out, G_out, B_out, posX_bg, posY_bg, posX_sp, posY_sp, collision, reset, clk);
 
     input wire clk, reset;
-    input wire [7:0] R_bg, G_bg, B_bg, R_sp, G_sp, B_sp
+    input wire [7:0] R_bg, G_bg, B_bg, R_sp, G_sp, B_sp;
     input wire [9:0] posX_bg, posY_bg, posX_sp, posY_sp;
     output reg [7:0] R_out, G_out, B_out;
-    output reg [1:0]; 
-    output reg colision;
+    output reg [3:0] collision;
 
     localparam SPRITE_SIZE = 16;
     localparam BG_SIZE_X = 1000;
     localparam BG_SIZE_Y = 1000;
-    localparam  = R_trans = 8'h17
-                  G_trans = 8'h17
-                  B_trans = 8'h17;
+    localparam R_trans = 8'h17,
+               G_trans = 8'h17,
+               B_trans = 8'h17;
 
+					
     always@(posedge clk) 
     begin
         if (reset)
@@ -21,7 +21,7 @@ module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_out, G_out, B_out, posX_bg, 
             R_out <= 8'h00;
             G_out <= 8'h00;
             B_out <= 8'h00;
-            sprite_collision_BG <= 1'b0;
+            collision <= 1'b0;
         end
         else
         begin
@@ -41,23 +41,23 @@ module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_out, G_out, B_out, posX_bg, 
 
         if (posX_sp + SPRITE_SIZE >= BG_SIZE_X)
         begin
-            colision <= 4'b0001; // Colisão à direita
+            collision <= 4'b0001; // Colisão à direita
         end
         else if (posX_sp <= 0)
         begin
-            colision <= 4'b0010; // Colisão à esquerda
+            collision <= 4'b0010; // Colisão à esquerda
         end
         else if (posY_sp + SPRITE_SIZE >= BG_SIZE_Y)
         begin
-            colision <= 4'b0100; // Colisão em baixo
+            collision <= 4'b0100; // Colisão em baixo
         end
         else if (posY_sp <= 0)
         begin
-            colision <= 4'b1000; // Colisão em cima
+            collision <= 4'b1000; // Colisão em cima
         end
         else
         begin
-            colision <= 4'b0000; // Sem colisão
+            collision <= 4'b0000; // Sem colisão
         end
     end
 endmodule
