@@ -261,7 +261,7 @@ module testbench;
 
 
             //Seleciona o registrador A como leitura
-            #;
+            #5;
             readVgaSelector = 1'b0;
             #5;
 
