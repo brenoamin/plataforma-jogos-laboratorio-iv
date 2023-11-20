@@ -1,4 +1,4 @@
-module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_outRegA, G_outRegA, B_outRegA, R_outRegB, G_outRegB, B_outRegB, posX_bg, posY_bg, posX_sp, posY_sp, collision, reset, clk);
+module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_outRegA, G_outRegA, B_outRegA, R_outRegB, G_outRegB, B_outRegB, posX_bg, posY_bg, posX_sp, posY_sp, collision, reset, clk, readVgaSelector);
 
     input wire clk, reset, readVgaSelector;
     input wire [7:0] R_bg, G_bg, B_bg, R_sp, G_sp, B_sp;
@@ -13,67 +13,58 @@ module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_outRegA, G_outRegA, B_outReg
                G_trans = 8'h17,
                B_trans = 8'h17;
 
-	
-
-    // Quando o VGA começar a ler o registrado A, zera o B. Assim como, quando começa a ler o B, zera o A
-    always @(posedge readVgaSelector)
-    begin
-        R_outRegA <= 0;
-        G_outRegA <= 0;
-        B_outRegA <= 0;
-    end
-
-    always @(negedge readVgaSelector)
-    begin
-        R_outRegB <= 0;
-        G_outRegB <= 0;
-        B_outRegB <= 0;
-    end
+	reg [3:0] contador = 4'b0;
+	reg [6:0] base_index = 7'b0;
 
 
     always@(posedge clk) 
     begin
         if (reset)
         begin
-            R_outRegA <= 0;
-            G_outRegA <= 0;
-            B_outRegA <= 0;
-            R_outRegB <= 0;
-            G_outRegB <= 0;
-            B_outRegB <= 0;
-            
+            R_outRegA <= 128'b0;
+            G_outRegA <= 128'b0;
+            B_outRegA <= 128'b0;
+            R_outRegB <= 128'b0;
+            G_outRegB <= 128'b0;
+            B_outRegB <= 128'b0;
+            contador  <= 4'b0;
             collision <= 1'b0;
         end
         else
         begin
 
+            base_index = contador * 8;
+
             if (readVgaSelector) //Se o VGA está lendo o registrador tipo B prepara os pixels do registrador A,
             begin
                 if (R_sp == R_trans && G_sp == G_trans && B_sp == B_trans) //Verifica se a entrada do sprit é a cor transparente naquele pixel, se for preenche com o background
                 begin 
-                    R_outRegA <= {R_outRegA, R_bg};
-                    G_outRegA <= {G_outRegA, G_bg};
-                    B_outRegA <= {B_outRegA, B_bg};
+                    R_outRegA[base_index +: 8] <= R_bg;
+                    G_outRegA[base_index +: 8] <= G_bg;
+                    B_outRegA[base_index +: 8] <= B_bg;
                 end
                 else begin
-                    R_outRegA <= {R_outRegA, R_sp};
-                    G_outRegA <= {G_outRegA, G_sp};
-                    B_outRegA <= {B_outRegA, B_sp};
+                    R_outRegA[base_index +: 8] <= R_sp;
+                    G_outRegA[base_index +: 8] <= G_sp;
+                    B_outRegA[base_index +: 8] <= B_sp;
                 end
             end else
                 if (R_sp == R_trans && G_sp == G_trans && B_sp == B_trans) //Verifica se a entrada do sprit é a cor transparente naquele pixel, se for preenche com o background
                 begin 
-                    R_outRegB <= {R_outRegB, R_bg};
-                    G_outRegB <= {G_outRegB, G_bg};
-                    B_outRegB <= {B_outRegB, B_bg};
+                    R_outRegB[base_index +: 8] <= R_bg;
+                    G_outRegB[base_index +: 8] <= G_bg;
+                    B_outRegB[base_index +: 8] <= B_bg;
                 end
                 else begin
-                    R_outRegB <= {R_outRegB, R_sp};
-                    G_outRegB <= {G_outRegB, G_sp};
-                    B_outRegB <= {B_outRegB, B_sp};
+                    R_outRegB[base_index +: 8] <= R_sp;
+                    G_outRegB[base_index +: 8] <= G_sp;
+                    B_outRegB[base_index +: 8] <= B_sp;
                 end
-         
-        
+				
+				//Incrementa o contador
+            contador <= contador + 1;
+            if (contador == 16)  // Reinicia o contador após o último conjunto de 8 bits (16 * 8 = 128 bits)
+                contador <= 4'b0;
 
             if (posX_sp + SPRITE_SIZE >= BG_SIZE_X)
             begin

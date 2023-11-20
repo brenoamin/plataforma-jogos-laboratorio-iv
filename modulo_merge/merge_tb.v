@@ -44,7 +44,7 @@ module testbench;
     reset = 1'b1;
         #2;
     reset = 1'b0;
-    readVgaSelector = 1'b1
+    readVgaSelector = 1'b1;
 
     end
 
@@ -261,9 +261,9 @@ module testbench;
 
 
             //Seleciona o registrador A como leitura
-            #5;
+            #;
             readVgaSelector = 1'b0;
-            5#;
+            #5;
 
 
             //A cada pulso de clock preenche os registradores B
@@ -474,6 +474,11 @@ module testbench;
             B_sp = 8'h41;
             posX_sp = 10'b1111011110;//990
             posY_sp = 10'b0000000001;
+
+
+            #1;
+            reset = 1'b0;
+
         end
 
 endmodule
