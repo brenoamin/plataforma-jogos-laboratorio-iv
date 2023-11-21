@@ -13,8 +13,8 @@ module fetch #(
   begin : FETCH
     if (rst)
     begin
-      fetched_addr = 0;
-      fetched_instr = 0;
+      fetched_addr <= 0;
+      fetched_instr <= 0;
     end
     else
     begin
