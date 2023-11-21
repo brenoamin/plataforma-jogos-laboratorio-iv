@@ -1,4 +1,5 @@
-`include "memory.v"
+`include "src/memory/memory.v"
+`timescale 1ns/1ps
 
 module memory_test;
 
@@ -46,9 +47,10 @@ module memory_test;
     $dumpvars(0, memory_test);
   end
 
-  
-  initial begin
-    $readmemb("instructions.txt", data_to_write);
+
+  initial
+  begin
+    $readmemb("../src/memory/instructions.txt", data_to_write);
   end
 
   initial
@@ -62,8 +64,8 @@ module memory_test;
     wr = 1;
     rd = 0;
     #10;
-    wr = 0; 
-    #10; 
+    wr = 0;
+    #10;
 
     // Reading 1
     $display("First reading: ");
@@ -79,11 +81,11 @@ module memory_test;
     $display("Second writing: ");
 
     addr = 1;
-    data = 42; 
+    data = 42;
     $display("Writing addr=%b data=%b", addr, data);
     wr = 1;
     rd = 0;
-    #10; 
+    #10;
     wr = 0;
     #10;
 
@@ -106,10 +108,10 @@ module memory_test;
     wr = 1;
     rd = 0;
     #10;
-    wr = 0; 
-    #10; 
+    wr = 0;
+    #10;
 
-     // Reading 3
+    // Reading 3
     $display("Third reading (file instruction.txt content): ");
     addr = 2;
     $display("Reading addr=%b", addr);
@@ -119,7 +121,7 @@ module memory_test;
     expect(data);
 
 
-     // Writing 4
+    // Writing 4
     $display("Fourth writing (file instruction.txt content): ");
 
     addr = 2;
@@ -128,10 +130,10 @@ module memory_test;
     wr = 1;
     rd = 0;
     #10;
-    wr = 0; 
-    #10; 
+    wr = 0;
+    #10;
 
-     // Reading 4
+    // Reading 4
     $display("Fourth reading (file instruction.txt content): ");
     addr = 2;
     $display("Reading addr=%b", addr);
@@ -141,7 +143,7 @@ module memory_test;
     expect(data);
 
 
-     // Writing 4
+    // Writing 4
     $display("Fifth writing (file instruction.txt content): ");
 
     addr = 2;
@@ -150,10 +152,10 @@ module memory_test;
     wr = 1;
     rd = 0;
     #10;
-    wr = 0; 
-    #10; 
+    wr = 0;
+    #10;
 
-     // Reading 4
+    // Reading 4
     $display("Fifth reading (file instruction.txt content): ");
     addr = 2;
     $display("Reading addr=%b", addr);
@@ -162,7 +164,7 @@ module memory_test;
     #10;
     expect(data);
 
-    
+
     $display("TEST PASSED");
     $finish;
   end

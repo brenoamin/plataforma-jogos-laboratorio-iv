@@ -1,4 +1,5 @@
-`include "extensor.v"
+`include "src/extensor/extensor.v"
+`timescale 1ns/1ps
 
 module extensor_test;
 
@@ -13,7 +14,7 @@ module extensor_test;
            );
 
   task expect(input [31:0] exp_out);
-  begin
+    begin
       if (immediate !== exp_out)
       begin
         $display("TEST FAILED");
@@ -80,7 +81,7 @@ module extensor_test;
     instruction = 32'b0001_0100_0000_0000_0001_0000_0000_0000;
     #1;
     expect(32'b1111_1100_0000_0000_0001_0000_0000_0000);
-  
+
 
     // DEFAULT
 

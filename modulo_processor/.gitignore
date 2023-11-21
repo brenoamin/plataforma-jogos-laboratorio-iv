@@ -3,5 +3,5 @@
 *.dtmp
 
 # icarus + gtkwave
-*.out
+*.out*
 *.vcd

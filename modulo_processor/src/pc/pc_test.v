@@ -1,3 +1,6 @@
+`include "src/pc/pc.v"
+`timescale 1ns/1ps
+
 module pc_test;
 
 localparam WORD_SIZE = 32;
