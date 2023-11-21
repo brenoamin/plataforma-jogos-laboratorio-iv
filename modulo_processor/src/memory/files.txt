@@ -1,2 +1,0 @@
-memory.v
-memory_test.v
