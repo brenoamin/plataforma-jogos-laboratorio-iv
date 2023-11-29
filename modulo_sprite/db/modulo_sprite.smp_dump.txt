@@ -1,0 +1,14 @@
+
+State Machine - |sprits_finder_position|nextstate
+Name nextstate.state_controller_memory nextstate.state_layers_prioritaria nextstate.state_comparacao_perimetro nextstate.state_inicio 
+nextstate.state_inicio 0 0 0 0 
+nextstate.state_comparacao_perimetro 0 0 1 1 
+nextstate.state_layers_prioritaria 0 1 0 1 
+nextstate.state_controller_memory 1 0 0 1 
+
+State Machine - |sprits_finder_position|actstate
+Name actstate.state_controller_memory actstate.state_layers_prioritaria actstate.state_comparacao_perimetro actstate.state_inicio 
+actstate.state_inicio 0 0 0 0 
+actstate.state_comparacao_perimetro 0 0 1 1 
+actstate.state_layers_prioritaria 0 1 0 1 
+actstate.state_controller_memory 1 0 0 1 
