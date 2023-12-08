@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -13.355
+TNS   : -151.154
+
+Type  : Slow 1200mV 85C Model Setup 'h_sync'
+Slack : -11.026
+TNS   : -149.865
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.516
+TNS   : -26.373
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'h_sync'
+Slack : 0.798
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.389
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'h_sync'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.700
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.882
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -12.202
+TNS   : -137.918
+
+Type  : Slow 1200mV 0C Model Setup 'h_sync'
+Slack : -10.065
+TNS   : -136.302
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.058
+TNS   : -23.647
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'h_sync'
+Slack : 0.721
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.193
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'h_sync'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.704
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.814
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -7.138
+TNS   : -80.813
+
+Type  : Fast 1200mV 0C Model Setup 'h_sync'
+Slack : -5.374
+TNS   : -67.168
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.347
+TNS   : -13.802
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'h_sync'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.663
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'h_sync'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.416
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst3|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.881
+TNS   : 0.000
+
+------------------------------------------------------------
