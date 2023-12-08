@@ -41,9 +41,9 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
             max_R_top <= 8'b0;
             max_G_top <= 8'b0;
             max_B_top <= 8'b0;
-            min_R_top <= 8'b0;
-            min_G_top <= 8'b0;
-            min_B_top <= 8'b0;
+            min_R_top <= 8'b11111111;
+            min_G_top <= 8'b11111111;
+            min_B_top <= 8'b11111111;
             avg_R_top <= 8'b0;
             avg_G_top <= 8'b0;
             avg_B_top <= 8'b0;
@@ -51,9 +51,9 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
             max_R_bottom <= 8'b0; 
             max_G_bottom <= 8'b0; 
             max_B_bottom <= 8'b0;
-            min_R_bottom <= 8'b0;
-            min_G_bottom <= 8'b0;
-            min_B_bottom <= 8'b0;
+            min_R_bottom <= 8'b11111111;
+            min_G_bottom <= 8'b11111111;
+            min_B_bottom <= 8'b11111111;
             avg_R_bottom <= 8'b0;
             avg_G_bottom <= 8'b0;
             avg_B_bottom <= 8'b0;
@@ -61,9 +61,9 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
             max_R_right <= 8'b0; 
             max_G_right <= 8'b0;
             max_B_right <= 8'b0;
-            min_R_right <= 8'b0;
-            min_G_right <= 8'b0;
-            min_B_right <= 8'b0;
+            min_R_right <= 8'b11111111;
+            min_G_right <= 8'b11111111;
+            min_B_right <= 8'b11111111;
             avg_R_right <= 8'b0;
             avg_G_right <= 8'b0;
             avg_B_right <= 8'b0;
@@ -71,9 +71,9 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
             max_R_left <= 8'b0; 
             max_G_left <= 8'b0;
             max_B_left <= 8'b0;
-            min_R_left <= 8'b0;
-            min_G_left <= 8'b0;
-            min_B_left <= 8'b0;
+            min_R_left <= 8'b11111111;
+            min_G_left <= 8'b11111111;
+            min_B_left <= 8'b11111111;
             avg_R_left <= 8'b0;
             avg_G_left <= 8'b0;
             avg_B_left <= 8'b0;
@@ -86,29 +86,28 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
 
                 if (R_bg > max_R_top)
                     max_R_top <= R_bg;
-                else if (R_bg < min_R_top)
+                if (R_bg < min_R_top)
                     min_R_top <= R_bg;
 
                 if (G_bg > max_G_top)
                     max_G_top <= G_bg;
-                else if (G_bg < min_G_top)
+                if (G_bg < min_G_top)
                     min_G_top <= G_bg;
 
                 if (B_bg > max_B_top)
                     max_B_top <= B_bg;
-                else if (B_bg < min_B_top)
+                if (B_bg < min_B_top)
                     min_B_top <= B_bg;
 
 
                 R_sum_top <= R_sum_top + R_bg;
                 G_sum_top <= G_sum_top + G_bg;
                 B_sum_top <= B_sum_top + B_bg;
-                
+
                 avg_R_top <= R_sum_top / 16;
                 avg_G_top <= G_sum_top / 16;
                 avg_B_top <= B_sum_top / 16;
                 
-
             end
 
 
@@ -118,17 +117,17 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
 
                 if (R_bg > max_R_bottom)
                     max_R_bottom <= R_bg;
-                else if (R_bg < min_R_bottom)
+                if (R_bg < min_R_bottom)
                     min_R_bottom <= R_bg;
 
                 if (G_bg > max_G_bottom)
                     max_G_bottom <= G_bg;
-                else if (G_bg < min_G_bottom)
+                if (G_bg < min_G_bottom)
                     min_G_bottom <= G_bg;
 
                 if (B_bg > max_B_bottom)
                     max_B_bottom <= B_bg;
-                else if (B_bg < min_B_bottom)
+                if (B_bg < min_B_bottom)
                     min_B_bottom <= B_bg;
 
 
@@ -148,17 +147,17 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
 
                 if (R_bg > max_R_right)
                     max_R_right <= R_bg;
-                else if (R_bg < min_R_right)
+                if (R_bg < min_R_right)
                     min_R_right <= R_bg;
 
                 if (G_bg > max_G_right)
                     max_G_right <= G_bg;
-                else if (G_bg < min_G_right)
+                if (G_bg < min_G_right)
                     min_G_right <= G_bg;
 
                 if (B_bg > max_B_right)
                     max_B_right <= B_bg;
-                else if (B_bg < min_B_right)
+                if (B_bg < min_B_right)
                     min_B_right <= B_bg;
 
 
@@ -179,17 +178,17 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
 
                 if (R_bg > max_R_left)
                     max_R_left <= R_bg;
-                else if (R_bg < min_R_left)
+                if (R_bg < min_R_left)
                     min_R_left <= R_bg;
 
                 if (G_bg > max_G_left)
                     max_G_left <= G_bg;
-                else if (G_bg < min_G_left)
+                if (G_bg < min_G_left)
                     min_G_left <= G_bg;
 
                 if (B_bg > max_B_left)
                     max_B_left <= B_bg;
-                else if (B_bg < min_B_left)
+                if (B_bg < min_B_left)
                     min_B_left <= B_bg;
 
 
@@ -206,5 +205,6 @@ module background_collision (clk, rst, R_bg, G_bg, B_bg, ancora_bg_X, ancora_sp_
         end
 
     end
+
 
 endmodule
