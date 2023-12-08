@@ -1,0 +1,150 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/20.1
+vcount_h_sync
+Z0 !s110 1702077122
+!i10b 1
+!s100 n;?RYoj::0352G^e;XUf00
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IUO>4b0]BdS<gXLlD]H5Gg3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb
+w1702071957
+8C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_h_sync.v
+FC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_h_sync.v
+!i122 11
+L0 1 22
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1702077122.000000
+!s107 C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_h_sync.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_h_sync.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vcount_px_clk
+R0
+!i10b 1
+!s100 ?=534]:JNOGK<IAQ;o9cW3
+R1
+IX0k8Yh>4WU0nMdNWIz:EF0
+R2
+R3
+w1701649996
+8C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_px_clk.v
+FC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_px_clk.v
+!i122 12
+L0 3 80
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_px_clk.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/count_px_clk.v|
+!i113 1
+R6
+R7
+vmodulo_sprite
+R0
+!i10b 1
+!s100 43DMjAfHG@`DFL]`4Q0:]2
+R1
+IfNR^1E;m6OJ;Gn^UVG1C;0
+R2
+R3
+w1702077061
+8C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/modulo_sprite.v
+FC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/modulo_sprite.v
+!i122 13
+L0 20 110
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/modulo_sprite.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/modulo_sprite.v|
+!i113 1
+R6
+R7
+vPLL
+Z8 !s110 1702077123
+!i10b 1
+!s100 iQR?NzE]IJinFXM<[<5=F0
+R1
+II<dg4;AMnBa2ZnPnEkzPh3
+R2
+R3
+w1702062307
+8C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/PLL_bb.v
+FC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/PLL_bb.v
+!i122 15
+L0 35 8
+R4
+r1
+!s85 0
+31
+Z9 !s108 1702077123.000000
+!s107 C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/PLL_bb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/PLL_bb.v|
+!i113 1
+R6
+R7
+n@p@l@l
+vsprits_finder_position
+R8
+!i10b 1
+!s100 KE8zHmDgF0b`MmVLaJbFb3
+R1
+IH[R`ZT4<O5EKI4zf8JGSK0
+R2
+R3
+w1702076713
+8C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/sprits_finder_position.v
+FC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/sprits_finder_position.v
+!i122 16
+L0 3 386
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/sprits_finder_position.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/sprits_finder_position.v|
+!i113 1
+R6
+R7
+vtb_sprits_finder_position
+!s110 1702077124
+!i10b 1
+!s100 Cbazb@Hc;jTTjocj8PXf73
+R1
+IkkhBPn7fnofIORFF5`E9=0
+R2
+R3
+w1701906664
+8C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/tb_sprits_finder_position.v
+FC:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/tb_sprits_finder_position.v
+!i122 17
+L0 1 52
+R4
+r1
+!s85 0
+31
+!s108 1702077124.000000
+!s107 C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/tb_sprits_finder_position.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/elber/OneDrive - Universidade Federal da Bahia/LAB IV/modulo_sprite_tb/tb_sprits_finder_position.v|
+!i113 1
+R6
+R7

@@ -37,7 +37,8 @@ module sprits_finder_position (
 	parameter [3:0] state_function_sp_pos = 4'b0110;
 	parameter [3:0] state_function_sp_colision = 4'b0111;
 	parameter [3:0] state_function_sp_colision_out = 4'b1000;
-	
+	parameter [3:0] state_reset = 4'b1001;
+
 	parameter [1:0] function_sprite_level = 2'b00;
 	parameter [1:0] function_sprite_pos = 2'b00;
 	parameter [1:0] function_sprite_colision = 2'b00;
@@ -46,12 +47,16 @@ module sprits_finder_position (
 	
 	
 	integer count = 0;
+	integer j = 0;
+	integer m = 0;
+
 	reg [3:0]actstate, nextstate;
 	reg encontrado_sprite_1, encontrado_sprite_2;
 		
 	reg [5:0]sprit_found [31:0];
 	reg [5:0]layer[31:0];						//sprits_id por layers
-	reg [5:0]valor_matriz, i;
+	reg [5:0]valor_matriz;
+	reg signed [5:0]i;
 	reg [9:0]anchor_x[31:0];					//ancoras por sprit_id
 	reg [9:0]anchor_y[31:0];
 
@@ -64,8 +69,6 @@ module sprits_finder_position (
 		high_four[1] = 6'b0;
 		high_four[2] = 6'b0;
 		high_four[3] = 6'b0;
-		anchor_x = '{default: '0};
-		anchor_y = '{default: '0};
 		layer[0] = 6'b0;
 		layer[1] = 6'b0;
 		layer[2] = 6'b0;
@@ -76,12 +79,14 @@ module sprits_finder_position (
 		sprit_found[3] = 6'b0;		// Inicializa todos os bits como 0
 		function_sp_colision_out = 1'b0;
 		valor_matriz = 0;
+		count = 0;
+i = 0;
 	end
 
 
 	always @(posedge clk or negedge rst) begin	// bloco de mudanca de estados
 		if (!rst) begin
-			actstate <= state_inicio;
+			actstate <= state_reset;
 		end else begin
 			actstate <= nextstate;
 		end	
@@ -90,12 +95,36 @@ module sprits_finder_position (
 	always @(posedge clk) begin
 		case (actstate) 
 			
-			state_inicio: begin
+			state_reset: begin
+        			//for (m <= 0; m < 32; m <= m + 1) begin
+           				//anchor_x[m] <= 10'b0; // Inicializa��o de anchor_x com zero
+            			//	anchor_y[m] <= 10'b0; // Inicializa��o de anchor_y com zero
+        			//end
+					active_high_four <= 1'b0;
+					high_four[0] <= 6'b0;
+					high_four[1] <= 6'b0;
+					high_four[2] <= 6'b0;
+					high_four[3] <= 6'b0;
+					layer[0] <= 6'b0;
+					layer[1] <= 6'b0;
+					layer[2] <= 6'b0;
+					layer[3] <= 6'b0;	
+					sprit_found[0] <= 6'b0;
+					sprit_found[1] <= 6'b0;
+					sprit_found[2] <= 6'b0;
+					sprit_found[3] <= 6'b0;		// Inicializa todos os bits como 0
+					function_sp_colision_out <= 1'b0;
+					valor_matriz <= 0;
+					count <= 0;
+					i <= 0;
+			end
+			
+				state_inicio: begin
 				
 				active_high_four = 1'b0;
-				high_four = '{default: '0};
-				layer = '{default: '0};
-				sprit_found = '{default: '0};
+				//high_four = '{default: '0};
+				//layer = '{default: '0};
+				//sprit_found = '{default: '0};
 
 				if (active_finder_position == 1) begin
 					nextstate <= state_comparacao_perimetro;
@@ -274,12 +303,12 @@ module sprits_finder_position (
 
 			state_layers_prioritaria: begin
 
-				for (integer i = 31; i >= 0; i = i - 1) begin
+				for (i = 31; i >= 0; i = i - 1) begin
 					if (layer[i] != no_sprite_id) begin
 						high_four[count] <= sprit_found[i];
 						count <= count + 1;
 					end
-
+				end
 					// Se encontrou 4 valores diferentes, encerra o loop
 					if (count == 4) begin
 						high_four[0] <= high_four01;
@@ -288,10 +317,7 @@ module sprits_finder_position (
 						high_four[3] <= high_four04;
 						nextstate <= state_controller_memory;
 						active_high_four <= 1;
-						//$display("Encontrou 4 valores diferentes de no_sprite_id");
-						//$finish; // Encerra a simulação
 					end
-				end
 			end
 
 			state_controller_memory: begin
@@ -331,8 +357,8 @@ module sprits_finder_position (
 			state_function_sp_colision: begin
 				//encontrado = 0; // Inicializa a variável de controle de encontrado
 				// Acessando cada elemento da matriz individualmente
-				for (i = 0; i < 32; i = i + 1) begin
-					valor_matriz = layer[i]; // Acessa a linha i da matriz
+				for (j = 0; j < 32; j = j + 1) begin
+					valor_matriz = layer[j]; // Acessa a linha i da matriz
 					if (valor_matriz == function_input01) begin
 							 encontrado_sprite_1 = 1; // Valor encontrado
 					end

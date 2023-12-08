@@ -196,6 +196,11 @@ https://fpgasoftware.intel.com/eula.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
+		"state_reset"
+		"1001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
 		"function_sprite_level"
 		"00"
 		""
