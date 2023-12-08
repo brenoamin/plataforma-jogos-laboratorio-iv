@@ -15,14 +15,14 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Fri Dec 08 16:59:10 2023"
+// CREATED		"Fri Dec 08 20:11:01 2023"
 
 module modulo_sprite(
 	v_sync,
 	h_sync,
-	active_function_processor,
 	CLOCK_50,
-	CLOCK2_50,
+	rst,
+	active_function_processor,
 	function_col,
 	function_id_sprit,
 	function_input01,
@@ -40,9 +40,9 @@ module modulo_sprite(
 
 input wire	v_sync;
 input wire	h_sync;
-input wire	active_function_processor;
 input wire	CLOCK_50;
-input wire	CLOCK2_50;
+input wire	rst;
+input wire	active_function_processor;
 input wire	[9:0] function_col;
 input wire	[5:0] function_id_sprit;
 input wire	[5:0] function_input01;
@@ -67,7 +67,7 @@ wire	SYNTHESIZED_WIRE_3;
 
 sprits_finder_position	b2v_inst(
 	.clk(CLOCK_50),
-	.rst(CLOCK2_50),
+	.rst(rst),
 	.active_finder_position(SYNTHESIZED_WIRE_0),
 	.active_function_processor(active_function_processor),
 	.function_col(function_col),
@@ -96,12 +96,13 @@ sprits_finder_position	b2v_inst(
 	defparam	b2v_inst.state_function_sp_pos = 4'b0110;
 	defparam	b2v_inst.state_inicio = 2'b00;
 	defparam	b2v_inst.state_layers_prioritaria = 2'b10;
+	defparam	b2v_inst.state_reset = 4'b1001;
 	defparam	b2v_inst.state_selector_function = 4'b0100;
 
 
 count_px_clk	b2v_inst1(
 	.clk(CLOCK_50),
-	.rst(CLOCK2_50),
+	.rst(rst),
 	.pixel_clk(SYNTHESIZED_WIRE_3),
 	.h_sync(h_sync),
 	.active_finder_position(SYNTHESIZED_WIRE_0),
@@ -114,7 +115,7 @@ count_px_clk	b2v_inst1(
 
 count_h_sync	b2v_inst2(
 	.clk(CLOCK_50),
-	.rst(CLOCK2_50),
+	.rst(rst),
 	.h_sync(h_sync),
 	.v_sync(v_sync),
 	.V_pos_out(SYNTHESIZED_WIRE_2));

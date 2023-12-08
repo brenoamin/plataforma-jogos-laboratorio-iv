@@ -12,7 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK2_50",
+					"name" : "rst",
 					"strict" : false
 				},
 				{
