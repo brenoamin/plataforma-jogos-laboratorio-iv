@@ -3,19 +3,29 @@ import { writeFileSync } from 'fs';
 
 
 export function put_image(x, y) {
-    return `lw r2, ${x} (r0)\nlw r3, ${y} (r0)`;
+    return `
+        lw r2, ${x} (r0)
+        lw r3, ${y} (r0)
+    `;
 }
 
 export function sprite_level(level, sprite_id) {
-    return `lw r4, ${level} (r0)\nlw r5, ${sprite_id} (r0)`;
+    return `
+        lw r4, ${level} (r0)
+        lw r5, ${sprite_id} (r0)
+    `;
 }
 
 export function sprite_pos(level, x, y) {
-    return `lw r6, ${level} (r0)\nlw r7, ${x} (r0)\nlw r8, ${y} (r0)`;
+    return `
+        lw r6, ${level} (r0)
+        lw r7, ${x} (r0)
+        lw r8, ${y} (r0)
+    `;
 }
 
 export function loop(...instructions) {
-    
+
 }
 
 export function game(...instructions) {
