@@ -62,19 +62,16 @@ module extensor(
     case (instruction_type)
       DATA_TRANSFER:
       begin
-        $display("caiu na 1 ");
         immediate = {{16{immediate_dt[15]}}, immediate_dt};
       end
 
       ARITHMETIC_AND_LOGICAL:
       begin
-        $display("caiu na 2 ");
         immediate = {{20{immediate_al[11]}}, immediate_al};
       end
 
       CONTROL_TRANSFER:
       begin
-        $display("caiu na 3 ");
         immediate = {{5{immediate_ct[26]}}, immediate_ct};
       end
       default:
