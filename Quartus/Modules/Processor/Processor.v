@@ -7,11 +7,11 @@ module Processor #(
 	input wire [DATA_WIDTH-1:0] instruction,
 	
 	// Outputs to background and sprite modules
-    output reg [9:0] background_x,
-    output reg [9:0] background_y,
-    output reg [9:0] sprite_x,
-    output reg [9:0] sprite_y,
-    output reg [4:0] sprite_id
+	output reg [9:0] background_x,
+	output reg [9:0] background_y,
+	output reg [9:0] sprite_x,
+	output reg [9:0] sprite_y,
+	output reg [4:0] sprite_id
 );
 	
 	// Architecture constants
