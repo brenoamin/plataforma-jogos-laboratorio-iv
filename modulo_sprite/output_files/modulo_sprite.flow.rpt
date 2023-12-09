@@ -1,5 +1,5 @@
 Flow report for modulo_sprite
-Fri Dec 08 20:09:47 2023
+Sat Dec 09 12:20:00 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Dec 08 20:09:40 2023       ;
+; Flow Status                        ; Successful - Sat Dec 09 12:19:53 2023       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; modulo_sprite                               ;
 ; Top-level Entity Name              ; modulo_sprite                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 159 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 157 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 45 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 45                                          ;
-; Total pins                         ; 71 / 529 ( 13 % )                           ;
+; Total logic elements               ; 124 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 124 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 44 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 44                                          ;
+; Total pins                         ; 77 / 529 ( 15 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/08/2023 20:08:15 ;
+; Start date & time ; 12/09/2023 12:18:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; modulo_sprite       ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 102021902481779.170207689410688        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 102021902481779.170213512012932        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; PLL.bsf                                ; --            ; --          ; --         ;
@@ -105,11 +105,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:38     ; 1.0                     ; 4748 MB             ; 00:00:48                           ;
-; Fitter               ; 00:00:36     ; 1.0                     ; 5345 MB             ; 00:00:46                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4683 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 4803 MB             ; 00:00:05                           ;
-; Total                ; 00:01:26     ; --                      ; --                  ; 00:01:46                           ;
+; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 4751 MB             ; 00:00:55                           ;
+; Fitter               ; 00:00:35     ; 1.0                     ; 5433 MB             ; 00:00:47                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4690 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 4828 MB             ; 00:00:04                           ;
+; Total                ; 00:01:14     ; --                      ; --                  ; 00:01:53                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

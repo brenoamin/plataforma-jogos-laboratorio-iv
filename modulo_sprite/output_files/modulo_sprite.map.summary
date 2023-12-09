@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Dec 08 20:08:52 2023
+Analysis & Synthesis Status : Successful - Sat Dec 09 12:19:08 2023
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : modulo_sprite
 Top-level Entity Name : modulo_sprite
 Family : Cyclone IV E
-Total logic elements : 160
-    Total combinational functions : 156
-    Dedicated logic registers : 45
-Total registers : 45
-Total pins : 71
+Total logic elements : 128
+    Total combinational functions : 124
+    Dedicated logic registers : 44
+Total registers : 44
+Total pins : 77
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
