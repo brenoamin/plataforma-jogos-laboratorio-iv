@@ -10,6 +10,7 @@ module execute #(
   )(
     input wire clk, //! Sinal de clock
     input wire rst, //! Sinal de reset
+    input wire full_stack, empty_stack, //! flags da pilha
     input wire [DWIDTH-1:0] data,  //! Dados de entrada
     input wire [DWIDTH-1:0] instr, //! Instrução de entrada
     input wire [DWIDTH-1:0] register, //! Dados do registrador de entrada
@@ -47,13 +48,13 @@ module execute #(
     begin
       stored_data  <= data;
       stored_instr <= instr;
-      RFlags[0]    <= overflow;
+      RFlags[0]    <= overflow || full_stack;
       RFlags[1]    <= above;
       RFlags[2]    <= equal;
       RFlags[3]    <= below;
       RFlags[4]    <= between;
       RFlags[5]    <= collision;
-      RFlags[6]    <= error;
+      RFlags[6]    <= error || empty_stack;
       r_abs        <= instr[31:27] == 13 || instr[31:27] == 14 || instr[31:27] == 15 || instr[31:27] == 16 || instr[31:27] == 17 ? mux_register : 32'bz;
       reset_regs   <= instr[31:27] == 13 || instr[31:27] == 14 || instr[31:27] == 15 || instr[31:27] == 16 || instr[31:27] == 17 ? 1'b1 : 1'b0;
     end
