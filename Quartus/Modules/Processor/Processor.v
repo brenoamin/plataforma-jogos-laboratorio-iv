@@ -1,5 +1,5 @@
 module Processor #(
-	parameter PROGRAM_FILE_PATH = "",
+	parameter PROGRAM_FILE_PATH = "program.bin",
 	parameter DATA_WIDTH = 32
 )(
 	input wire clock,
@@ -63,7 +63,7 @@ module Processor #(
 		.address(fetch_address),
 		.out(fetch_instruction)
 	);
-	
+
 	// Fetch component
 	Fetch #(
 		.ADDRESS_WIDTH(MEMORY_ADDRESS_WIDTH),
