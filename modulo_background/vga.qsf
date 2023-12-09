@@ -54,7 +54,7 @@ set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Cyclone IV E"
-set_global_assignment -name TOP_LEVEL_ENTITY ImageMerge
+set_global_assignment -name TOP_LEVEL_ENTITY VGA_Interface
 
 # Fitter Assignments
 # ==================
@@ -87,16 +87,14 @@ set_global_assignment -name EDA_TEST_BENCH_NAME VGA_Interface_tb -section_id eda
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id VGA_Interface_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1000 ns" -section_id VGA_Interface_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME VGA_Interface_tb -section_id VGA_Interface_tb
-set_global_assignment -name VERILOG_FILE ImageMerge.v
-set_global_assignment -name VERILOG_FILE TopLevel_modulo_background.v
-set_global_assignment -name VERILOG_FILE ImageMerge_tb.v
 set_global_assignment -name EDA_TEST_BENCH_NAME ImageMerge_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ImageMerge_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1000 ns" -section_id ImageMerge_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ImageMerge_tb -section_id ImageMerge_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE VGA_Interface_tb.v -section_id VGA_Interface_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE ImageMerge_tb.v -section_id ImageMerge_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_FILE VGA_Interface_tb.v -section_id VGA_Interface_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE ImageMerge_tb.v -section_id ImageMerge_tb
+set_global_assignment -name VERILOG_FILE background.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
