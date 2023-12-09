@@ -40,8 +40,8 @@ module sprits_finder_position (
 	parameter [3:0] state_reset = 4'b1001;
 
 	parameter [1:0] function_sprite_level = 2'b00;
-	parameter [1:0] function_sprite_pos = 2'b00;
-	parameter [1:0] function_sprite_colision = 2'b00;
+	parameter [1:0] function_sprite_pos = 2'b01;
+	parameter [1:0] function_sprite_colision = 2'b10;
 	
 	parameter [5:0] no_sprite_id = 6'b111111; 
 	
@@ -86,7 +86,7 @@ i = 0;
 
 	always @(posedge clk or negedge rst) begin	// bloco de mudanca de estados
 		if (!rst) begin
-			actstate <= state_reset;
+			actstate <= state_inicio;
 		end else begin
 			actstate <= nextstate;
 		end	
@@ -97,8 +97,8 @@ i = 0;
 			
 			state_reset: begin
         			//for (m <= 0; m < 32; m <= m + 1) begin
-           				//anchor_x[m] <= 10'b0; // Inicializa��o de anchor_x com zero
-            			//	anchor_y[m] <= 10'b0; // Inicializa��o de anchor_y com zero
+           				//anchor_x[m] <= 10'b0; // Inicializao de anchor_x com zero
+            			//	anchor_y[m] <= 10'b0; // Inicializao de anchor_y com zero
         			//end
 					active_high_four <= 1'b0;
 					high_four[0] <= 6'b0;
@@ -119,7 +119,7 @@ i = 0;
 					i <= 0;
 			end
 			
-				state_inicio: begin
+			state_inicio: begin
 				
 				active_high_four = 1'b0;
 				//high_four = '{default: '0};
@@ -368,7 +368,7 @@ i = 0;
 				end
 				
 				if (encontrado_sprite_1 & encontrado_sprite_2) begin
-					nextstate <= state_function_sp_colision;
+					nextstate <= state_function_sp_colision_out;
 				end
 				else begin
 					nextstate <= state_inicio;
