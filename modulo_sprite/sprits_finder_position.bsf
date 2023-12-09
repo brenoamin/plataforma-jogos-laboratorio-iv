@@ -21,9 +21,9 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 320 256)
+	(rect 16 16 320 288)
 	(text "sprits_finder_position" (rect 5 0 88 12)(font "Arial" ))
-	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(text "inst" (rect 8 256 20 268)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -76,37 +76,44 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 144)
 		(input)
-		(text "function_id_sprit[5..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "function_id_sprit[5..0]" (rect 21 139 105 151)(font "Arial" ))
+		(text "function_level_sprit[5..0]" (rect 0 0 96 12)(font "Arial" ))
+		(text "function_level_sprit[5..0]" (rect 21 139 117 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "function_col[9..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "function_col[9..0]" (rect 21 155 88 167)(font "Arial" ))
+		(text "function_id_sprit[5..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "function_id_sprit[5..0]" (rect 21 155 105 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
 		(pt 0 176)
 		(input)
-		(text "function_row[9..0]" (rect 0 0 70 12)(font "Arial" ))
-		(text "function_row[9..0]" (rect 21 171 91 183)(font "Arial" ))
+		(text "function_col[9..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "function_col[9..0]" (rect 21 171 88 183)(font "Arial" ))
 		(line (pt 0 176)(pt 16 176)(line_width 3))
 	)
 	(port
 		(pt 0 192)
 		(input)
-		(text "function_input01[5..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "function_input01[5..0]" (rect 21 187 103 199)(font "Arial" ))
+		(text "function_row[9..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "function_row[9..0]" (rect 21 187 91 199)(font "Arial" ))
 		(line (pt 0 192)(pt 16 192)(line_width 3))
 	)
 	(port
 		(pt 0 208)
 		(input)
-		(text "function_input02[5..0]" (rect 0 0 83 12)(font "Arial" ))
-		(text "function_input02[5..0]" (rect 21 203 104 215)(font "Arial" ))
+		(text "function_input01[5..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "function_input01[5..0]" (rect 21 203 103 215)(font "Arial" ))
 		(line (pt 0 208)(pt 16 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "function_input02[5..0]" (rect 0 0 83 12)(font "Arial" ))
+		(text "function_input02[5..0]" (rect 21 219 104 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
 	)
 	(port
 		(pt 304 32)
@@ -207,12 +214,12 @@ https://fpgasoftware.intel.com/eula.
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"function_sprite_pos"
-		"00"
+		"01"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
 		"function_sprite_colision"
-		"00"
+		"10"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
@@ -221,7 +228,7 @@ https://fpgasoftware.intel.com/eula.
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
-		(rectangle (rect 16 16 288 224)(line_width 1))
+		(rectangle (rect 16 16 288 256)(line_width 1))
 	)
 	(annotation_block (parameter)(rect 320 -64 420 16))
 )

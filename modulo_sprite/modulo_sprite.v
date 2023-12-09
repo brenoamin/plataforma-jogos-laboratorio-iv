@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Fri Dec 08 20:11:01 2023"
+// CREATED		"Sat Dec 09 12:20:48 2023"
 
 module modulo_sprite(
 	v_sync,
@@ -27,6 +27,7 @@ module modulo_sprite(
 	function_id_sprit,
 	function_input01,
 	function_input02,
+	function_level_sprit,
 	function_row,
 	function_selector,
 	active_high_four,
@@ -47,6 +48,7 @@ input wire	[9:0] function_col;
 input wire	[5:0] function_id_sprit;
 input wire	[5:0] function_input01;
 input wire	[5:0] function_input02;
+input wire	[5:0] function_level_sprit;
 input wire	[9:0] function_row;
 input wire	[1:0] function_selector;
 output wire	active_high_four;
@@ -74,6 +76,7 @@ sprits_finder_position	b2v_inst(
 	.function_id_sprit(function_id_sprit),
 	.function_input01(function_input01),
 	.function_input02(function_input02),
+	.function_level_sprit(function_level_sprit),
 	.function_row(function_row),
 	.function_selector(function_selector),
 	.H_pos_in(SYNTHESIZED_WIRE_1),
