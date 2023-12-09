@@ -11,6 +11,7 @@ module sprits_finder_position (
 	
 	input wire active_function_processor,
 	input wire [1:0] function_selector,
+	input wire [5:0] function_level_sprit,
 	input wire [5:0] function_id_sprit,
 	input wire [9:0] function_col,
 	input wire [9:0] function_row,
@@ -96,23 +97,17 @@ i = 0;
 		case (actstate) 
 			
 			state_reset: begin
-        			//for (m <= 0; m < 32; m <= m + 1) begin
-           				//anchor_x[m] <= 10'b0; // Inicializao de anchor_x com zero
-            			//	anchor_y[m] <= 10'b0; // Inicializao de anchor_y com zero
-        			//end
+        			for (valor_matriz = 0; valor_matriz < 32; valor_matriz = valor_matriz + 1) begin
+           			anchor_x[valor_matriz] <= 10'b0; // Inicializao de anchor_x com zero
+            		anchor_y[valor_matriz] <= 10'b0; // Inicializao de anchor_y com zero
+						layer[valor_matriz] <= 6'b1;
+						sprit_found[valor_matriz] <= 6'b1;
+        			end
 					active_high_four <= 1'b0;
-					high_four[0] <= 6'b0;
-					high_four[1] <= 6'b0;
-					high_four[2] <= 6'b0;
-					high_four[3] <= 6'b0;
-					layer[0] <= 6'b0;
-					layer[1] <= 6'b0;
-					layer[2] <= 6'b0;
-					layer[3] <= 6'b0;	
-					sprit_found[0] <= 6'b0;
-					sprit_found[1] <= 6'b0;
-					sprit_found[2] <= 6'b0;
-					sprit_found[3] <= 6'b0;		// Inicializa todos os bits como 0
+					high_four[0] <= 6'b1;
+					high_four[1] <= 6'b1;
+					high_four[2] <= 6'b1;
+					high_four[3] <= 6'b1;	
 					function_sp_colision_out <= 1'b0;
 					valor_matriz <= 0;
 					count <= 0;
@@ -305,8 +300,10 @@ i = 0;
 
 				for (i = 31; i >= 0; i = i - 1) begin
 					if (layer[i] != no_sprite_id) begin
-						high_four[count] <= sprit_found[i];
-						count <= count + 1;
+						if (count <5) begin
+							high_four[count] <= sprit_found[i];
+							count <= count + 1;
+						end
 					end
 				end
 					// Se encontrou 4 valores diferentes, encerra o loop
@@ -344,30 +341,36 @@ i = 0;
 			end
 			
 			state_funcition_sp_level: begin
-				layer[function_id_sprit] = function_id_sprit;
+				layer[function_level_sprit] = function_id_sprit;
 				nextstate <= state_inicio;
 			end
 			
 			state_function_sp_pos: begin
-				anchor_x[function_id_sprit] = function_row;
-				anchor_y[function_id_sprit] = function_col;
+				anchor_x[function_level_sprit] = function_row;
+				anchor_y[function_level_sprit] = function_col;
 				nextstate <= state_inicio;
 			end
 			
-			state_function_sp_colision: begin
-				//encontrado = 0; // Inicializa a variável de controle de encontrado
-				// Acessando cada elemento da matriz individualmente
-				for (j = 0; j < 32; j = j + 1) begin
-					valor_matriz = layer[j]; // Acessa a linha i da matriz
-					if (valor_matriz == function_input01) begin
-							 encontrado_sprite_1 = 1; // Valor encontrado
-					end
-					if (valor_matriz == function_input02) begin
-							 encontrado_sprite_2 = 1; // Valor encontrado
+			state_function_sp_colision: begin			
+				if (	anchor_y[function_input01] >= anchor_y[function_input02] && 
+						anchor_y[function_input01] >= anchor_y[function_input02] + 15 && 
+						anchor_x[function_input01] >= anchor_x[function_input02] && 
+						anchor_x[function_input01] >= anchor_x[function_input02] + 15) 
+				begin
+					encontrado_sprite_1 = 1;
+				end
+				else begin
+					if (	anchor_x[function_input01] >= anchor_x[function_input02] && 
+							anchor_x[function_input01] >= anchor_x[function_input02] + 15 && 
+							anchor_y[function_input01] >= anchor_y[function_input02] && 
+							anchor_y[function_input01] >= anchor_y[function_input02] + 15) 
+					begin
+						encontrado_sprite_2 = 1;
 					end
 				end
+
 				
-				if (encontrado_sprite_1 & encontrado_sprite_2) begin
+				if (encontrado_sprite_1 | encontrado_sprite_2) begin
 					nextstate <= state_function_sp_colision_out;
 				end
 				else begin
