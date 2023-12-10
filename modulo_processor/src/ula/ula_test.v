@@ -1,99 +1,199 @@
+`timescale 1ns/1ns
+
 module ula_tb;
 
-    // Parâmetros
-    parameter CLK_PERIOD = 10; // Período do clock em unidades de tempo
+    // Inputs
+    reg [31:0] operand_a;
+    reg [31:0] operand_b;
+    reg [31:0] inst;
 
-    // Sinais
-    reg clk;
-    reg [31:0] operand_a, operand_b;
-    reg [3:0] opcode;
+    // Outputs
     wire [31:0] result;
-    wire overflow;
-    wire [1:0] compareResult;
+  	wire equal, above, below, overflow, error;
 
-    // Instância da ULA
+    // Instantiate the ULA module
     ula uut (
         .operand_a(operand_a),
         .operand_b(operand_b),
-        .opcode(opcode),
+        .inst(inst),
         .result(result),
+        .equal(equal),
+        .above(above),
+        .below(below),
         .overflow(overflow),
-        .compareResult(compareResult)
+        .error(error)
     );
 
-    // Geração de clock
-    initial begin
-        clk = 0;
-        forever #((CLK_PERIOD/2)) clk = ~clk;
-    end
+    // Clock generation
+    reg clk = 0;
+    always #5 clk = ~clk;
 
-    // Teste das operações
-    initial begin
-        // Teste de ADD
-        operand_a = 5;
-        operand_b = 10;
-        opcode = 4'b0000; // ADD
-        #100 $display("ADD: %d + %d = %d", operand_a, operand_b, result);
 
-        // Teste de SUB
-        operand_a = 20;
-        operand_b = 8;
-        opcode = 4'b0001; // SUB
-        #100 $display("SUB: %d - %d = %d", operand_a, operand_b, result );
+  initial begin
+      // Teste 01: ADD
+        operand_a = 5; 
+        operand_b = 8; 
+        inst = 32'b00011111001110001010000000000000;
 
-        // Teste de MUL
-        operand_a = 7;
-        operand_b = 3;
-        opcode = 4'b0010; // MUL
-        #100 $display("MUL: %d * %d = %d", operand_a, operand_b, result);
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
 
-        // Teste de DIV
-        operand_a = 50;
-        operand_b = 10;
-        opcode = 4'b0011; // DIV
-        #100 $display("DIV: %d / %d = %d", operand_a, operand_b, result);
+          $display("TEST 01: ADD");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10
 
-        // Teste de AND
-        operand_a = 1;
+      // Teste 02: ADD - OVERFLOW
+        operand_a = 32'b11111111111111111111111111111111;
         operand_b = 1;
-        opcode = 4'b0100; // AND
-        #100 $display("AND: %b & %b = %b", operand_a, operand_b, result);
+        inst = 32'b00011111001110001010000000000000;
 
-        // Teste de OR
-        operand_a = 1;
-        operand_b = 0;
-        opcode = 4'b0101; // OR
-        #100 $display("OR: %b | %b = %b", operand_a, operand_b, result);
-
-        // Teste de NOT
-        operand_a = 1;
-        operand_b = 0;
-        opcode = 4'b0110; // NOT
-        #100 $display("NOT: ~%b = %b", operand_a, result);
-
-        // Teste de SHL
-        operand_a = 8'b00111100;
-        operand_b = 2;
-        opcode = 4'b0111; // SHL
-        #100 $display("SHL: %b << %d = %b", operand_a, operand_b, result);
-
-        // Teste de SHR
-        operand_a = 8'b00111100;
-        operand_b = 1;
-        opcode = 4'b1000; // SHR
-        #100 $display("SHR: %b >> %d = %b", operand_a, operand_b, result);
-
-        // Teste de CMP
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+            $display("TEST 01: ADD");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10
+      
+      // Teste 03: SUB
         operand_a = 10;
-        operand_b = 20;
-        opcode = 4'b1001; // CMP
-        #100 $display("CMP: %d, %d - compareResult: %d", operand_a, operand_b, compareResult);
+        operand_b = 3;
+        inst = 32'b00100111001110001010000000000000;
 
-        // Adicione mais testes conforme necessário
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+          $display("TEST 03: SUB");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10
+      
+      // Teste 04: SUB - OVERFLOW
+        operand_a = 1;
+        operand_b = 32'b11111111111111111111111111111111;
+        inst = 32'b00100111001110001010000000000000;
 
-        // Finaliza a simulação
-        #100 $finish;
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+          $display("TEST 04: SUB OVERFLOW");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10      
+
+      // Teste 05: MULT - 
+        operand_a = 2;
+        operand_b = 8;
+        inst = 32'b00101111001110001010000000000000;
+
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+          $display("TEST 05: SUB OVERFLOW");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10  
+      
+      // Teste 06: MULT - OVERFLOW
+        operand_a = 2;
+        operand_b = 32'b11111111111111111111111111111111;
+        inst = 32'b00101111001110001010000000000000;
+
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+          $display("TEST 06: MUL OVERFLOW");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10  
+
+      // Teste 07: DIV
+        operand_a = 28;
+        operand_b = 4;
+        inst = 32'b00110111001110001010000000000000;
+
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+          $display("TEST 07: DIV OVERFLOW");
+	        $display("inst: %d", inst[31:27]);
+          	$display("Operand_A: %d", operand_a);
+          	$display("Operand_B: %d", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10 
+      
+      // Teste 08: DIV - OVERFLOW
+        operand_a = 32'b10000000000000000000000000000000;
+        operand_b = 32'b11111111111111111111111111111111;
+        inst = 32'b00110111001110001010000000000000;
+
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+            $display("TEST 08: DIV OVERFLOW");
+	        $display("inst: %d", inst[31:27]);
+          $display("Operand_A: %b", operand_a);
+          $display("Operand_B: %b", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10   
+      
+      // Teste 09: AND
+        operand_a = 1;
+        operand_b = 1;
+        inst = 32'b0111111001110001010000000000000;
+
+        repeat (1) begin
+            #10 operand_a = operand_a;
+            #10 operand_b = operand_b;
+            #10 inst = inst;
+          $display("TEST 09: AND");
+	        $display("inst: %d", inst[31:27]);
+          $display("Operand_A: %b", operand_a);
+          $display("Operand_B: %b", operand_b);
+          	$display("Result: %d", result);
+          $display("Overflow: %b\n", overflow);
+        end
+		#10        
+      
+        $finish;
     end
 
 endmodule
-
