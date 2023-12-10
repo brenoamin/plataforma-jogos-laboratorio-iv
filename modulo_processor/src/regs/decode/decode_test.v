@@ -22,7 +22,8 @@ module decode_tb;
     wire [DWIDTH-1:0] stored_inst;
     wire [DWIDTH-1:0] stored_Rd1;
     wire [DWIDTH-1:0] stored_Rd2;
-
+  wire [4:0] R;
+  
     // Instância do módulo decode
     decode #(
         .DWIDTH(DWIDTH)
@@ -38,7 +39,8 @@ module decode_tb;
         .stored_immed(stored_immed),
         .stored_inst(stored_inst),
         .stored_Rd1(stored_Rd1),
-        .stored_Rd2(stored_Rd2)
+      .stored_Rd2(stored_Rd2),
+      .R(R)
     );
 
     // Geração de clock
@@ -107,7 +109,7 @@ module decode_tb;
         rst = 0;
         addr = 20;
         immed = 50;
-        inst = 00011111001110001010000000000000;
+        inst = 32'h00000010;
         Rd1 = 28;
         Rd2 = 10;
 
@@ -125,9 +127,34 @@ module decode_tb;
         $display("stored_inst = %b", stored_inst);
         $display("stored_Rd1 = %b", stored_Rd1);
         $display("stored_Rd2 = %b", stored_Rd2);
+      $display("R = %b", R);
+        #100;
 
-        #10;
+        // Teste 3
+        rst = 0;
+        addr = 10;
+        immed = 3;
+        inst = 32'b10000111001111101111110000000000;
+        Rd1 = 5;
+        Rd2 = 4;
 
+        #100;
+
+      $display("\nTeste 4:");
+        $display("addr = %b", addr);
+        $display("immed = %b", immed);
+        $display("inst = %b", inst);
+      $display("Rd1 = %d", Rd1);
+      $display("Rd2 = %d", Rd2);
+        $display("Output values:");
+        $display("stored_addr = %b", stored_addr);
+        $display("stored_immed = %b", stored_immed);
+        $display("stored_inst = %b", stored_inst);
+      $display("stored_Rd1 = %d", stored_Rd1);
+      $display("stored_Rd2 = %d", stored_Rd2);
+      	$display("R = %b", R);
+      
+      #10;
         $finish;
     end
 
