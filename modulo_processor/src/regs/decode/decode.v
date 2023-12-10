@@ -17,10 +17,22 @@ module decode #(
     output reg [DWIDTH-1:0] stored_inst,    //! Instrução fornecida ao próximo estágio
     output reg [DWIDTH-1:0] stored_Rd1,     //! Registrador d1 fornecida ao próximo estágio
     output reg [DWIDTH-1:0] stored_Rd2,     //! Registrador d2 fornecida ao próximo estágio
+    output reg [4:0] R                      //! Registrador de jumps
+);
 
-  );
+    // Parameters Transfers control
+    localparam JR = 5'b01101;
+    localparam JPC = 5'b01110;
+    localparam CALL = 5'b10000;
 
-  //! Lógica para armazenar dados, instruções e flags de status
+    reg [4:0] instruction_type= 5'b10000;
+
+    always @(inst)  // Fix: Use 'inst' instead of 'instr'
+    begin : update_instruction_type
+        instruction_type = inst[31:27];
+    end
+
+    //! Lógica para armazenar dados, instruções e flags de status
     always @(posedge clk or posedge rst)
     begin : Decode
         if (rst) begin
@@ -29,6 +41,7 @@ module decode #(
             stored_inst   <= 0;
             stored_Rd1    <= 0;
             stored_Rd2    <= 0;
+            R              <= 0;          
         end
         else begin
             stored_addr  <= addr;
@@ -36,6 +49,16 @@ module decode #(
             stored_inst  <= inst;
             stored_Rd1   <= Rd1;
             stored_Rd2   <= Rd2;
+
+            case (instruction_type)
+                JR, CALL, JPC: begin
+                    R <= inst[14:10];
+                end
+                default: begin
+                    R <= 0;
+                end
+            endcase
         end
     end
+
 endmodule
