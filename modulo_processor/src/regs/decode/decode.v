@@ -27,7 +27,7 @@ module decode #(
 
     reg [4:0] instruction_type= 5'b10000;
 
-    always @(inst)  // Fix: Use 'inst' instead of 'instr'
+    always @(inst) 
     begin : update_instruction_type
         instruction_type = inst[31:27];
     end
