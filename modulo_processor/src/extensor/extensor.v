@@ -84,11 +84,11 @@ module extensor(
   always @(*)
   begin : get_instruction_type
     case(instruction[31:27])
-      0,2:
+      0,1,2:
         instruction_type = DATA_TRANSFER;
-      3,12:
+      3,4,5,6,7,8,9,10,11,12:
         instruction_type = ARITHMETIC_AND_LOGICAL;
-      13,18:
+      13,14,15,16,17,18:
         instruction_type = CONTROL_TRANSFER;
       default:
         instruction_type = 0;

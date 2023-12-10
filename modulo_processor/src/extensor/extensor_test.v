@@ -55,13 +55,13 @@ module extensor_test;
 
     // Test case 1: Positive immediate
     #2;
-    instruction = 32'b0000_1000_0000_0000_1010_0010_1010_1010;
+    instruction = 32'b0001_1000_0000_0000_1010_0010_1010_1010;
     #1;
     expect(32'b0000_0000_0000_0000_0000_0010_1010_1010);
 
     // Test case 2: Negative immediate
     #2;
-    instruction = 32'b0000_1000_0000_0000_1010_1010_1010_1010;
+    instruction = 32'b0001_1000_0000_0000_1010_1010_1010_1010;
     #1;
     expect(32'b1111_1111_1111_1111_1111_1010_1010_1010);
 
@@ -72,13 +72,13 @@ module extensor_test;
 
     // Test case 1: Positive immediate
     #2;
-    instruction = 32'b0001_0000_0000_0000_0001_0000_0000_0000;
+    instruction = 32'b0111_0000_0000_0000_0001_0000_0000_0000;
     #1;
     expect(32'b0000_0000_0000_0000_0001_0000_0000_0000);
 
     // Test case 2: Negative immediate
     #2;
-    instruction = 32'b0001_0100_0000_0000_0001_0000_0000_0000;
+    instruction = 32'b0111_0100_0000_0000_0001_0000_0000_0000;
     #1;
     expect(32'b1111_1100_0000_0000_0001_0000_0000_0000);
 
@@ -88,9 +88,9 @@ module extensor_test;
     $display("DEFAULT: ");
 
     #2;
-    instruction = 32'b0101_0000_0000_0000_0001_0000_0000_0000;
+    instruction = 32'b1111_1000_0000_0000_0001_0000_0000_0000;
     #1;
-    expect(32'b0101_0000_0000_0000_0001_0000_0000_0000);
+    expect(32'b0000_0000_0000_0000_0000_0000_0100_0000);
 
 
     $display("TESTS PASSED SUCCESSFULLY!");
