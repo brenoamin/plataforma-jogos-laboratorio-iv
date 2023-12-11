@@ -118,44 +118,44 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 304 32)
 		(output)
-		(text "active_high_four" (rect 0 0 67 12)(font "Arial" ))
-		(text "active_high_four" (rect 216 27 283 39)(font "Arial" ))
+		(text "function_sp_colision_out" (rect 0 0 96 12)(font "Arial" ))
+		(text "function_sp_colision_out" (rect 187 27 283 39)(font "Arial" ))
 		(line (pt 304 32)(pt 288 32)(line_width 1))
 	)
 	(port
 		(pt 304 48)
 		(output)
-		(text "high_four01[5..0]" (rect 0 0 66 12)(font "Arial" ))
-		(text "high_four01[5..0]" (rect 217 43 283 55)(font "Arial" ))
-		(line (pt 304 48)(pt 288 48)(line_width 3))
+		(text "active_high_four" (rect 0 0 67 12)(font "Arial" ))
+		(text "active_high_four" (rect 216 43 283 55)(font "Arial" ))
+		(line (pt 304 48)(pt 288 48)(line_width 1))
 	)
 	(port
 		(pt 304 64)
 		(output)
-		(text "high_four02[5..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "high_four02[5..0]" (rect 216 59 283 71)(font "Arial" ))
+		(text "high_four_out[5..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "high_four_out[5..0]" (rect 208 59 283 71)(font "Arial" ))
 		(line (pt 304 64)(pt 288 64)(line_width 3))
 	)
 	(port
 		(pt 304 80)
 		(output)
-		(text "high_four03[5..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "high_four03[5..0]" (rect 216 75 283 87)(font "Arial" ))
+		(text "anchor_x_out[9..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "anchor_x_out[9..0]" (rect 208 75 283 87)(font "Arial" ))
 		(line (pt 304 80)(pt 288 80)(line_width 3))
 	)
 	(port
 		(pt 304 96)
 		(output)
-		(text "high_four04[5..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "high_four04[5..0]" (rect 215 91 283 103)(font "Arial" ))
+		(text "anchor_y_out[9..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "anchor_y_out[9..0]" (rect 207 91 283 103)(font "Arial" ))
 		(line (pt 304 96)(pt 288 96)(line_width 3))
 	)
 	(port
 		(pt 304 112)
 		(output)
-		(text "function_sp_colision_out" (rect 0 0 96 12)(font "Arial" ))
-		(text "function_sp_colision_out" (rect 187 107 283 119)(font "Arial" ))
-		(line (pt 304 112)(pt 288 112)(line_width 1))
+		(text "layer_out[5..0]" (rect 0 0 57 12)(font "Arial" ))
+		(text "layer_out[5..0]" (rect 226 107 283 119)(font "Arial" ))
+		(line (pt 304 112)(pt 288 112)(line_width 3))
 	)
 	(parameter
 		"state_inicio"
@@ -205,6 +205,26 @@ https://fpgasoftware.intel.com/eula.
 	(parameter
 		"state_reset"
 		"1001"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"state_controller_memory00"
+		"1011"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"state_controller_memory01"
+		"1100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"state_controller_memory02"
+		"1101"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"state_controller_memory03"
+		"1110"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
