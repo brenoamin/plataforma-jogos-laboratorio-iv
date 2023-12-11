@@ -1,8 +1,8 @@
 module background (
     input wire clk,           // Sinal de clock
     input wire rst,           // Sinal de reset
-    input wire [9:0] row,     // Posição da linha da imagem
-    input wire [9:0] col,     // Posição da coluna da imagem
+    input wire [9:0] anchor_x,     // Posição da linha da imagem
+    input wire [9:0] anchor_y,     // Posição da coluna da imagem
     input wire [7:0] r_in,    // Canal R de entrada da SDRAM
     input wire [7:0] g_in,    // Canal G de entrada da SDRAM
     input wire [7:0] b_in,    // Canal B de entrada da SDRAM
@@ -20,19 +20,19 @@ parameter IMAGE_WIDTH = 640;
 parameter IMAGE_HEIGHT = 480;
 
 // Parâmetros para a posição inicial da imagem
-parameter INITIAL_ROW = 0;
-parameter INITIAL_COL = 0;
+parameter INITIAL_anchor_x = 0;
+parameter INITIAL_anchor_y = 0;
 
 // Registros de estado
-reg [9:0] current_row;
-reg [9:0] current_col;
+reg [9:0] current_anchor_x;
+reg [9:0] current_anchor_y;
 
 // Lógica de controle
 always @(posedge clk or posedge rst) begin
     if (rst) begin
         // Resetando os registros de estado
-        current_row <= INITIAL_ROW;
-        current_col <= INITIAL_COL;
+        current_anchor_x <= INITIAL_anchor_x;
+        current_anchor_y <= INITIAL_anchor_y;
         r_out <= 8'b0;
         g_out <= 8'b0;
         b_out <= 8'b0;
@@ -40,9 +40,9 @@ always @(posedge clk or posedge rst) begin
         y_out <= 10'b0;
     end else begin
         // Atualizando a posição da imagem com base na entrada PUT_IMAGE
-        if (row < SCREEN_HEIGHT && col < SCREEN_WIDTH) begin
-            current_row <= row;
-            current_col <= col;
+        if (anchor_x < SCREEN_HEIGHT && anchor_y < SCREEN_WIDTH) begin
+            current_anchor_x <= anchor_x;
+            current_anchor_y <= anchor_y;
         end
 
         // Gerando a saída RGB com base na posição atual
@@ -51,8 +51,8 @@ always @(posedge clk or posedge rst) begin
         b_out <= b_in;
 
         // Sinais de saída para a posição
-        x_out <= current_col;
-        y_out <= current_row;
+        x_out <= current_anchor_x;
+        y_out <= current_anchor_y;
     end
 end
 

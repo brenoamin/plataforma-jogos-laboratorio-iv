@@ -1,4 +1,4 @@
-`include "memory_access_mux.v"
+`include "src/memory_access_mux/memory_access_mux.v"
 
 module memory_access_mux_tb;
 
@@ -15,18 +15,18 @@ module memory_access_mux_tb;
   wire  write_enable;
 
   memory_access_mux # (
-    .AWIDTH(AWIDTH),
-    .DWIDTH(DWIDTH)
-  )
-  memory_access_mux_inst (
-    .instr(instr),
-    .data_ula(data_ula),
-    .register_data(register_data),
-    .data_out(data_out),
-    .addr(addr),
-    .read_enable(read_enable),
-    .write_enable(write_enable)
-  );
+                      .AWIDTH(AWIDTH),
+                      .DWIDTH(DWIDTH)
+                    )
+                    memory_access_mux_inst (
+                      .instr(instr),
+                      .data_ula(data_ula),
+                      .register_data(register_data),
+                      .data_out(data_out),
+                      .addr(addr),
+                      .read_enable(read_enable),
+                      .write_enable(write_enable)
+                    );
 
   task expect;
     input [AWIDTH-1:0] exp_addr;
@@ -45,16 +45,18 @@ module memory_access_mux_tb;
     begin
       $display("At time %0d addr=%b data_out=%b read_enable=%b write_enable=%b", $time, addr, data_out, read_enable, write_enable);
     end
-endtask
+  endtask
 
 
-  initial begin
+  initial
+  begin
     // Dump variables to VCD file
     $dumpfile("memory_access_mux.vcd");
     $dumpvars(0, memory_access_mux_tb);
   end
 
-  initial begin
+  initial
+  begin
     $display("LW Instruction: ");
     instr = 32'b0;
     data_ula = 32'b0;
@@ -75,7 +77,7 @@ endtask
 
     $display("Default Instruction: ");
     #2
-    instr = {4'b0011, 1'b1, 27'b0};
+     instr = {4'b0011, 1'b1, 27'b0};
     data_ula = 32'b0;
     #2;
     $display("instr = %b", instr);
