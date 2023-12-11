@@ -15,7 +15,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
-// CREATED		"Sat Dec 09 12:20:48 2023"
+// CREATED		"Sun Dec 10 22:11:46 2023"
 
 module modulo_sprite(
 	v_sync,
@@ -30,12 +30,12 @@ module modulo_sprite(
 	function_level_sprit,
 	function_row,
 	function_selector,
-	active_high_four,
 	function_sp_colision_out,
-	high_four01,
-	high_four02,
-	high_four03,
-	high_four04
+	active_high_four,
+	anchor_x_out,
+	anchor_y_out,
+	high_four_out,
+	layer_out
 );
 
 
@@ -51,12 +51,12 @@ input wire	[5:0] function_input02;
 input wire	[5:0] function_level_sprit;
 input wire	[9:0] function_row;
 input wire	[1:0] function_selector;
-output wire	active_high_four;
 output wire	function_sp_colision_out;
-output wire	[5:0] high_four01;
-output wire	[5:0] high_four02;
-output wire	[5:0] high_four03;
-output wire	[5:0] high_four04;
+output wire	active_high_four;
+output wire	[9:0] anchor_x_out;
+output wire	[9:0] anchor_y_out;
+output wire	[5:0] high_four_out;
+output wire	[5:0] layer_out;
 
 wire	SYNTHESIZED_WIRE_0;
 wire	[9:0] SYNTHESIZED_WIRE_1;
@@ -81,18 +81,22 @@ sprits_finder_position	b2v_inst(
 	.function_selector(function_selector),
 	.H_pos_in(SYNTHESIZED_WIRE_1),
 	.V_pos_in(SYNTHESIZED_WIRE_2),
-	.active_high_four(active_high_four),
 	.function_sp_colision_out(function_sp_colision_out),
-	.high_four01(high_four01),
-	.high_four02(high_four02),
-	.high_four03(high_four03),
-	.high_four04(high_four04));
+	.active_high_four(active_high_four),
+	.anchor_x_out(anchor_x_out),
+	.anchor_y_out(anchor_y_out),
+	.high_four_out(high_four_out),
+	.layer_out(layer_out));
 	defparam	b2v_inst.function_sprite_colision = 2'b00;
 	defparam	b2v_inst.function_sprite_level = 2'b00;
 	defparam	b2v_inst.function_sprite_pos = 2'b00;
 	defparam	b2v_inst.no_sprite_id = 6'b111111;
 	defparam	b2v_inst.state_comparacao_perimetro = 2'b01;
 	defparam	b2v_inst.state_controller_memory = 2'b11;
+	defparam	b2v_inst.state_controller_memory00 = 4'b1011;
+	defparam	b2v_inst.state_controller_memory01 = 4'b1100;
+	defparam	b2v_inst.state_controller_memory02 = 4'b1101;
+	defparam	b2v_inst.state_controller_memory03 = 4'b1110;
 	defparam	b2v_inst.state_funcition_sp_level = 4'b0101;
 	defparam	b2v_inst.state_function_sp_colision = 4'b0111;
 	defparam	b2v_inst.state_function_sp_colision_out = 4'b1000;
@@ -124,7 +128,7 @@ count_h_sync	b2v_inst2(
 	.V_pos_out(SYNTHESIZED_WIRE_2));
 
 
-PLL	b2v_inst3(
+PLL_pxc	b2v_inst3(
 	.inclk0(CLOCK_50),
 	.c0(SYNTHESIZED_WIRE_3));
 

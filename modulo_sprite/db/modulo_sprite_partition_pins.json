@@ -8,7 +8,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -16,11 +16,55 @@
 					"strict" : false
 				},
 				{
-					"name" : "h_sync",
+					"name" : "H_pos_in[4]",
 					"strict" : false
 				},
 				{
-					"name" : "v_sync",
+					"name" : "H_pos_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "H_pos_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "H_pos_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "H_pos_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "H_pos_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "V_pos_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "V_pos_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "V_pos_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "V_pos_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "V_pos_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "V_pos_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "active_finder_position",
 					"strict" : false
 				}
 			]

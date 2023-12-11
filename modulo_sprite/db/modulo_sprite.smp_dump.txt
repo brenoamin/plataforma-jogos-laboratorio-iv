@@ -1,32 +1,31 @@
 
-State Machine - |modulo_sprite|count_px_clk:inst1|actstate
-Name actstate.state_reset actstate.state_counting_640 actstate.state_counting_pixel actstate.state_idle 
-actstate.state_idle 0 0 0 0 
-actstate.state_counting_pixel 0 0 1 1 
-actstate.state_counting_640 0 1 0 1 
-actstate.state_reset 1 0 0 1 
+State Machine - |sprits_finder_position|nextstate
+Name nextstate.state_controller_memory03 nextstate.state_controller_memory02 nextstate.state_controller_memory01 nextstate.state_controller_memory00 nextstate.state_function_sp_colision_out nextstate.state_function_sp_colision nextstate.state_function_sp_pos nextstate.state_funcition_sp_level nextstate.state_selector_function nextstate.state_layers_prioritaria nextstate.state_comparacao_perimetro nextstate.state_inicio 
+nextstate.state_inicio 0 0 0 0 0 0 0 0 0 0 0 0 
+nextstate.state_comparacao_perimetro 0 0 0 0 0 0 0 0 0 0 1 1 
+nextstate.state_layers_prioritaria 0 0 0 0 0 0 0 0 0 1 0 1 
+nextstate.state_selector_function 0 0 0 0 0 0 0 0 1 0 0 1 
+nextstate.state_funcition_sp_level 0 0 0 0 0 0 0 1 0 0 0 1 
+nextstate.state_function_sp_pos 0 0 0 0 0 0 1 0 0 0 0 1 
+nextstate.state_function_sp_colision 0 0 0 0 0 1 0 0 0 0 0 1 
+nextstate.state_function_sp_colision_out 0 0 0 0 1 0 0 0 0 0 0 1 
+nextstate.state_controller_memory00 0 0 0 1 0 0 0 0 0 0 0 1 
+nextstate.state_controller_memory01 0 0 1 0 0 0 0 0 0 0 0 1 
+nextstate.state_controller_memory02 0 1 0 0 0 0 0 0 0 0 0 1 
+nextstate.state_controller_memory03 1 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |modulo_sprite|sprits_finder_position:inst|nextstate
-Name nextstate.state_function_sp_colision nextstate.state_function_sp_pos nextstate.state_funcition_sp_level nextstate.state_selector_function nextstate.state_controller_memory nextstate.state_layers_prioritaria nextstate.state_comparacao_perimetro nextstate.state_inicio nextstate.state_function_sp_colision_out 
-nextstate.state_inicio 0 0 0 0 0 0 0 0 0 
-nextstate.state_comparacao_perimetro 0 0 0 0 0 0 1 1 0 
-nextstate.state_layers_prioritaria 0 0 0 0 0 1 0 1 0 
-nextstate.state_controller_memory 0 0 0 0 1 0 0 1 0 
-nextstate.state_selector_function 0 0 0 1 0 0 0 1 0 
-nextstate.state_funcition_sp_level 0 0 1 0 0 0 0 1 0 
-nextstate.state_function_sp_pos 0 1 0 0 0 0 0 1 0 
-nextstate.state_function_sp_colision 1 0 0 0 0 0 0 1 0 
-nextstate.state_function_sp_colision_out 0 0 0 0 0 0 0 1 1 
-
-State Machine - |modulo_sprite|sprits_finder_position:inst|actstate
-Name actstate.state_reset actstate.state_function_sp_colision_out actstate.state_function_sp_colision actstate.state_function_sp_pos actstate.state_funcition_sp_level actstate.state_selector_function actstate.state_controller_memory actstate.state_layers_prioritaria actstate.state_comparacao_perimetro actstate.state_inicio 
-actstate.state_inicio 0 0 0 0 0 0 0 0 0 0 
-actstate.state_comparacao_perimetro 0 0 0 0 0 0 0 0 1 1 
-actstate.state_layers_prioritaria 0 0 0 0 0 0 0 1 0 1 
-actstate.state_controller_memory 0 0 0 0 0 0 1 0 0 1 
-actstate.state_selector_function 0 0 0 0 0 1 0 0 0 1 
-actstate.state_funcition_sp_level 0 0 0 0 1 0 0 0 0 1 
-actstate.state_function_sp_pos 0 0 0 1 0 0 0 0 0 1 
-actstate.state_function_sp_colision 0 0 1 0 0 0 0 0 0 1 
-actstate.state_function_sp_colision_out 0 1 0 0 0 0 0 0 0 1 
-actstate.state_reset 1 0 0 0 0 0 0 0 0 1 
+State Machine - |sprits_finder_position|actstate
+Name actstate.state_controller_memory03 actstate.state_controller_memory02 actstate.state_controller_memory01 actstate.state_controller_memory00 actstate.state_reset actstate.state_function_sp_colision_out actstate.state_function_sp_colision actstate.state_function_sp_pos actstate.state_funcition_sp_level actstate.state_selector_function actstate.state_layers_prioritaria actstate.state_comparacao_perimetro actstate.state_inicio 
+actstate.state_inicio 0 0 0 0 0 0 0 0 0 0 0 0 0 
+actstate.state_comparacao_perimetro 0 0 0 0 0 0 0 0 0 0 0 1 1 
+actstate.state_layers_prioritaria 0 0 0 0 0 0 0 0 0 0 1 0 1 
+actstate.state_selector_function 0 0 0 0 0 0 0 0 0 1 0 0 1 
+actstate.state_funcition_sp_level 0 0 0 0 0 0 0 0 1 0 0 0 1 
+actstate.state_function_sp_pos 0 0 0 0 0 0 0 1 0 0 0 0 1 
+actstate.state_function_sp_colision 0 0 0 0 0 0 1 0 0 0 0 0 1 
+actstate.state_function_sp_colision_out 0 0 0 0 0 1 0 0 0 0 0 0 1 
+actstate.state_reset 0 0 0 0 1 0 0 0 0 0 0 0 1 
+actstate.state_controller_memory00 0 0 0 1 0 0 0 0 0 0 0 0 1 
+actstate.state_controller_memory01 0 0 1 0 0 0 0 0 0 0 0 0 1 
+actstate.state_controller_memory02 0 1 0 0 0 0 0 0 0 0 0 0 1 
+actstate.state_controller_memory03 1 0 0 0 0 0 0 0 0 0 0 0 1 

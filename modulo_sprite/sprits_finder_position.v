@@ -18,13 +18,14 @@ module sprits_finder_position (
 	input wire [5:0] function_input01,
 	input wire [5:0] function_input02,
 	
+	output reg function_sp_colision_out,
+	
 	output reg active_high_four,
-	output reg [5:0] high_four01,
-	output reg [5:0] high_four02,
-	output reg [5:0] high_four03,
-	output reg [5:0] high_four04,
-
-	output reg function_sp_colision_out
+	output reg [5:0]high_four_out,
+	output reg [9:0]anchor_x_out,
+	output reg [9:0]anchor_y_out,
+	output reg [5:0]layer_out
+	
 );
 	// module sprits_finder_position
 
@@ -39,7 +40,11 @@ module sprits_finder_position (
 	parameter [3:0] state_function_sp_colision = 4'b0111;
 	parameter [3:0] state_function_sp_colision_out = 4'b1000;
 	parameter [3:0] state_reset = 4'b1001;
-
+	parameter [3:0] state_controller_memory00 = 4'b1011;
+	parameter [3:0] state_controller_memory01 = 4'b1100;
+	parameter [3:0] state_controller_memory02 = 4'b1101;
+	parameter [3:0] state_controller_memory03 = 4'b1110;
+	
 	parameter [1:0] function_sprite_level = 2'b00;
 	parameter [1:0] function_sprite_pos = 2'b01;
 	parameter [1:0] function_sprite_colision = 2'b10;
@@ -63,7 +68,11 @@ module sprits_finder_position (
 
 	reg [5:0] high_four[3:0];
 
+	reg [5:0]layer_memory[3:0];						//sprits_id por layers
+	reg [9:0]anchor_x_memory[3:0];					//ancoras por sprit_id
+	reg [9:0]anchor_y_memory[3:0];
 
+	
 	initial begin
 		active_high_four = 1'b0;
 		high_four[0] = 6'b0;
@@ -300,28 +309,55 @@ i = 0;
 
 				for (i = 31; i >= 0; i = i - 1) begin
 					if (layer[i] != no_sprite_id) begin
-						if (count <5) begin
+						if (count <4) begin
 							high_four[count] <= sprit_found[i];
+							anchor_x_memory[count] <= anchor_x[i];
+							anchor_y_memory[count] <= anchor_y[i];
+							layer_memory[count] <= layer[i];
 							count <= count + 1;
+							high_four[count] <= i;
 						end
 					end
 				end
 					// Se encontrou 4 valores diferentes, encerra o loop
-					if (count == 4) begin
-						high_four[0] <= high_four01;
-						high_four[1] <= high_four02;
-						high_four[2] <= high_four03;
-						high_four[3] <= high_four04;
-						nextstate <= state_controller_memory;
+					if (count == 3) begin
+						nextstate <= state_controller_memory00;
 						active_high_four <= 1;
 					end
 			end
 
-			state_controller_memory: begin
-				nextstate <= state_inicio;
-				active_high_four <= 0;
+			
+			state_controller_memory00: begin
+				high_four_out <= high_four[0];
+				anchor_x_out <= anchor_x_memory[0];
+				anchor_y_out <= anchor_y_memory[0];
+				layer_out <= layer_memory[0];
+				nextstate <= state_controller_memory01;
 			end
 			
+			state_controller_memory01: begin
+				high_four_out <= high_four[1];
+				anchor_x_out <= anchor_x_memory[1];
+				anchor_y_out <= anchor_y_memory[1];
+				layer_out <= layer_memory[1];
+				nextstate <= state_controller_memory02;
+			end
+			
+			state_controller_memory02: begin
+				high_four_out <= high_four[2];
+				anchor_x_out <= anchor_x_memory[2];
+				anchor_y_out <= anchor_y_memory[2];
+				layer_out <= layer_memory[2];
+				nextstate <= state_controller_memory03;
+			end
+			
+			state_controller_memory03: begin
+				high_four_out <= high_four[3];
+				anchor_x_out <= anchor_x_memory[3];
+				anchor_y_out <= anchor_y_memory[3];
+				layer_out <= layer_memory[3];
+				nextstate <= state_inicio;
+			end
 			state_selector_function: begin
 				case(function_selector)
 				
