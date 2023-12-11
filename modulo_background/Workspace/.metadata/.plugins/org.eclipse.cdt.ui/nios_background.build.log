@@ -1,0 +1,29 @@
+20:58:48 **** Incremental Build of configuration Nios II for project nios_background ****
+make all 
+Info: Building ../nios_background_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_background_bsp/
+[BSP build complete]
+Info: Compiling Programa.c to obj/default/Programa.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_background_bsp//HAL/inc -I../nios_background_bsp/ -I../nios_background_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Programa.o Programa.c
+Programa.c: In function 'main':
+Programa.c:26:40: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+     uint8_t *image_buffer = (uint8_t *)malloc(file_size * sizeof(uint8_t));
+                                        ^
+Programa.c:26:40: warning: incompatible implicit declaration of built-in function 'malloc'
+Programa.c:26:40: note: include '<stdlib.h>' or provide a declaration of 'malloc'
+Programa.c:42:5: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+     free(image_buffer);
+     ^
+Programa.c:42:5: warning: incompatible implicit declaration of built-in function 'free'
+Programa.c:42:5: note: include '<stdlib.h>' or provide a declaration of 'free'
+Info: Linking nios_background.elf
+nios2-elf-g++  -T'../nios_background_bsp//linker.x' -msys-crt0='../nios_background_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_background_bsp/   -Wl,-Map=nios_background.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_background.elf obj/default/Programa.o -lm -msys-lib=m
+nios2-elf-insert nios_background.elf --thread_model hal --cpu_name Processador --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name sistema_embarcado --quartus_project_dir "C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background" --jdi ../..//output_files/vga.jdi --sopcinfo C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/software/nios_background_bsp/../../sistema_embarcado.sopcinfo
+Info: (nios_background.elf) 73 KBytes program size (code + initialized data).
+Info:                       65455 KBytes free for stack + heap.
+Info: Creating nios_background.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_background.elf >nios_background.objdump
+[nios_background build complete]
+
+20:58:55 Build Finished (took 6s.867ms)
+

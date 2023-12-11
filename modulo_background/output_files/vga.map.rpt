@@ -1,5 +1,5 @@
-Analysis & Synthesis report for vga
-Wed Nov 22 13:17:31 2023
+Analysis & Elaboration report for vga
+Sun Dec 10 19:50:36 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,18 +7,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
 
 
 
@@ -42,27 +35,64 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
+; Analysis & Elaboration Summary                                                   ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 22 13:17:31 2023       ;
+; Analysis & Elaboration Status      ; Successful - Sun Dec 10 19:50:36 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
 ; Top-level Entity Name              ; VGA_Interface                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 89                                          ;
-;     Total combinational functions  ; 65                                          ;
-;     Dedicated logic registers      ; 67                                          ;
-; Total registers                    ; 67                                          ;
-; Total pins                         ; 95                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface ;
++------------------------+-------+----------------------------------------------+
+; Parameter Name         ; Value ; Type                                         ;
++------------------------+-------+----------------------------------------------+
+; HORIZONTAL_FRONT_PORCH ; 16    ; Signed Integer                               ;
+; HORIZONTAL_SYNC_PULSE  ; 96    ; Signed Integer                               ;
+; HORIZONTAL_BACK_PORCH  ; 48    ; Signed Integer                               ;
+; HORIZONTAL_DISPLAY     ; 640   ; Signed Integer                               ;
+; HORIZONTAL_BLANK       ; 144   ; Signed Integer                               ;
+; HORIZONTAL_TOTAL       ; 800   ; Signed Integer                               ;
+; VERTICAL_FRONT_PORCH   ; 10    ; Signed Integer                               ;
+; VERTICAL_SYNC_PULSE    ; 2     ; Signed Integer                               ;
+; VERTICAL_BACK_PORCH    ; 33    ; Signed Integer                               ;
+; VERTICAL_DISPLAY       ; 480   ; Signed Integer                               ;
+; VERTICAL_BLANK         ; 35    ; Signed Integer                               ;
+; VERTICAL_TOTAL         ; 525   ; Signed Integer                               ;
++------------------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                              ;
+; Analysis & Elaboration Settings                                                                            ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -147,185 +177,27 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
-+----------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                         ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------+---------+
-; VGA_Interface.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 89        ;
-;                                             ;           ;
-; Total combinational functions               ; 65        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 16        ;
-;     -- 3 input functions                    ; 7         ;
-;     -- <=2 input functions                  ; 42        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 28        ;
-;     -- arithmetic mode                      ; 37        ;
-;                                             ;           ;
-; Total registers                             ; 67        ;
-;     -- Dedicated logic registers            ; 67        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 95        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 68        ;
-; Total fan-out                               ; 533       ;
-; Average fan-out                             ; 1.66      ;
-+---------------------------------------------+-----------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
-; |VGA_Interface             ; 65 (65)             ; 67 (67)                   ; 0           ; 0            ; 0       ; 0         ; 95   ; 0            ; |VGA_Interface      ; VGA_Interface ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 67    ;
-; Number of registers using Synchronous Clear  ; 40    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 30    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA_Interface|h_pos[0]~reg0    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA_Interface|v_pos[0]~reg0    ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |VGA_Interface|oAddress[0]~reg0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface ;
-+------------------------+-------+----------------------------------------------+
-; Parameter Name         ; Value ; Type                                         ;
-+------------------------+-------+----------------------------------------------+
-; HORIZONTAL_FRONT_PORCH ; 16    ; Signed Integer                               ;
-; HORIZONTAL_SYNC_PULSE  ; 96    ; Signed Integer                               ;
-; HORIZONTAL_BACK_PORCH  ; 48    ; Signed Integer                               ;
-; HORIZONTAL_DISPLAY     ; 640   ; Signed Integer                               ;
-; HORIZONTAL_BLANK       ; 144   ; Signed Integer                               ;
-; HORIZONTAL_TOTAL       ; 800   ; Signed Integer                               ;
-; VERTICAL_FRONT_PORCH   ; 10    ; Signed Integer                               ;
-; VERTICAL_SYNC_PULSE    ; 2     ; Signed Integer                               ;
-; VERTICAL_BACK_PORCH    ; 33    ; Signed Integer                               ;
-; VERTICAL_DISPLAY       ; 480   ; Signed Integer                               ;
-; VERTICAL_BLANK         ; 35    ; Signed Integer                               ;
-; VERTICAL_TOTAL         ; 525   ; Signed Integer                               ;
-+------------------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 95                          ;
-; cycloneiii_ff         ; 67                          ;
-;     ENA SCLR          ; 30                          ;
-;     SCLR              ; 10                          ;
-;     plain             ; 27                          ;
-; cycloneiii_lcell_comb ; 66                          ;
-;     arith             ; 37                          ;
-;         2 data inputs ; 37                          ;
-;     normal            ; 29                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 16                          ;
-;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.93                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Nov 22 13:17:23 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga
+    Info: Processing started: Sun Dec 10 19:50:29 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file vga_interface.v
-    Info (12023): Found entity 1: VGA_Interface File: C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v Line: 1
+    Info (12023): Found entity 1: VGA_Interface File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_interface_tb.v
-    Info (12023): Found entity 1: VGA_Interface_tb File: C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v Line: 1
+    Info (12023): Found entity 1: VGA_Interface_tb File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file background.v
-    Info (12023): Found entity 1: background File: C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/background.v Line: 1
+    Info (12023): Found entity 1: background File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/background.v Line: 1
 Info (12127): Elaborating entity "VGA_Interface" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_SYNC" is stuck at GND File: C:/Users/Prodenge/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v Line: 16
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 185 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 26 input pins
-    Info (21059): Implemented 69 output pins
-    Info (21061): Implemented 90 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Wed Nov 22 13:17:31 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4708 megabytes
+    Info: Processing ended: Sun Dec 10 19:50:36 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
 
 

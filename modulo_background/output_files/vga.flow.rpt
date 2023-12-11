@@ -1,5 +1,5 @@
 Flow report for vga
-Wed Nov 22 13:17:49 2023
+Sun Dec 10 19:50:36 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Nov 22 13:17:49 2023       ;
+; Flow Status                        ; Successful - Sun Dec 10 19:50:36 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
 ; Top-level Entity Name              ; VGA_Interface                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 89 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 65 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 67 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 67                                          ;
-; Total pins                         ; 95 / 529 ( 18 % )                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2023 13:17:24 ;
+; Start date & time ; 12/10/2023 19:50:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+---------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name   ; Section Id       ;
 +--------------------------------------+----------------------------------------+---------------+---------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 14071518969070.170066984311224         ; --            ; --            ; --               ;
+; COMPILER_SIGNATURE_ID                ; 136411543900679.170224862927680        ; --            ; --            ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; ImageMerge_tb    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; VGA_Interface_tb ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ImageMerge_tb                          ; --            ; --            ; eda_simulation   ;
@@ -104,41 +104,29 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+---------------+------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4787 MB             ; 00:00:05                           ;
-; Fitter               ; 00:00:10     ; 1.0                     ; 5818 MB             ; 00:00:09                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4685 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4867 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4655 MB             ; 00:00:01                           ;
-; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:18                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:07     ; 1.0                     ; 4708 MB             ; 00:00:15                           ;
+; Total                  ; 00:00:07     ; --                      ; --                  ; 00:00:15                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-7O278AP  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-7O278AP  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-7O278AP  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-7O278AP  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-7O278AP  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; DESKTOP-MPGC08L  ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga
-quartus_fit --read_settings_files=off --write_settings_files=off modulo_VGA_interface -c vga
-quartus_asm --read_settings_files=off --write_settings_files=off modulo_VGA_interface -c vga
-quartus_sta modulo_VGA_interface -c vga
-quartus_eda --read_settings_files=off --write_settings_files=off modulo_VGA_interface -c vga
+quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga --analysis_and_elaboration
 
 
 
