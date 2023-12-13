@@ -51,7 +51,6 @@ module testbench;
     initial 
         begin
             //A cada pulso de clock preenche os registradores A
-            #1;
             R_bg = 8'h20;
             G_bg = 8'h50;
             B_bg = 8'h40;
@@ -260,7 +259,10 @@ module testbench;
             posY_sp = 10'b0000000001;
 
 
-            //Seleciona o registrador A como leitura
+      
+
+
+           /* //Seleciona o registrador A como leitura
             #5;
             readVgaSelector = 1'b0;
             #5;
@@ -475,7 +477,7 @@ module testbench;
             posX_sp = 10'b1111011110;//990
             posY_sp = 10'b0000000001;
 
-
+*/
             #1;
             reset = 1'b0;
 

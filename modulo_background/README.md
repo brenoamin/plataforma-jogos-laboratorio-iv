@@ -12,7 +12,7 @@
 </p>
 
 <h4 align="center"> 
-	🚧 ImageMerge 🚧
+	🚧 Modulo Background 🚧
 </h4>
 
 <p align="center">
@@ -28,21 +28,20 @@
 
 ## 💻 Sobre o projeto
 
-Projeto ImageMerge implementa um módulo Verilog chamado ImageMerge, que permite sobrepor imagens a partir de uma SDRAM e de um módulo de sprites com controle de opacidade (canal alfa). Essa funcionalidade é útil para criar efeitos visuais e sobreposições de imagens em sistemas de exibição.
+O módulo Background tem a função de controlar a exibição de um fundo em um sistema gráfico. Ele recebe sinais que indicam a posição da imagem de fundo (row e col) e os canais RGB correspondentes dessa imagem (r_in, g_in, e b_in). Ele também possui sinais de saída para os canais RGB que são usados para exibir a imagem de fundo (r_out, g_out, e b_out), bem como sinais de saída para a posição atual da imagem (x_out e y_out).
 
-O módulo de exibição,"VGA_Interface", é uma parte essencial do projeto ImageMerge. Este módulo é responsável por gerenciar a interface VGA para exibição dos resultados gerados pelo módulo ImageMerge.
+O módulo de exibição,"VGA_Interface", é uma parte essencial do projeto Merge. Este módulo é responsável por gerenciar a interface VGA para exibição dos resultados gerados pelo módulo Merge.
 
 ---
 
 ## ⚙️ Funcionamento
 
-O módulo ImageMerge opera de acordo com a fórmula a seguir:
+O módulo Background  funciona da seguinte maneira
 
-```verilog
-merged_R = (alpha * sprite_R + (255 - alpha) * sdram_R) / 255;
-merged_G = (alpha * sprite_G + (255 - alpha) * sdram_G) / 255;
-merged_B = (alpha * sprite_B + (255 - alpha) * sdram_B) / 255;
-Isso permite que as cores do sprite e da SDRAM sejam combinadas com base no valor de alfa, controlando assim a opacidade da imagem resultante.
+O módulo mantém um estado interno (current_row e current_col) para acompanhar a posição atual da imagem de fundo.
+Quando um sinal PUT_IMAGE é recebido, o módulo atualiza a posição da imagem de fundo.
+Os sinais RGB de saída são atualizados de acordo com os canais RGB de entrada.
+Os sinais de saída x_out e y_out indicam a posição atual da imagem de fundo.
 
 🖥️ Módulo VGA_Interface
 Além do módulo ImageMerge, o projeto inclui o módulo VGA_Interface, que é responsável por controlar a interface VGA para exibição dos resultados. Ele gerencia a sincronização horizontal e vertical, geração de cores e posicionamento na tela.

@@ -1,5 +1,5 @@
 Flow report for vga
-Wed Oct 25 14:13:43 2023
+Wed Nov 22 13:17:49 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,21 +40,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Oct 25 14:13:43 2023       ;
+; Flow Status                        ; Successful - Wed Nov 22 13:17:49 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
-; Top-level Entity Name              ; ImageMerge                                  ;
+; Top-level Entity Name              ; VGA_Interface                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 48 / 114,480 ( < 1 % )                      ;
-;     Total combinational functions  ; 48 / 114,480 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                         ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 80 / 529 ( 15 % )                           ;
+; Total logic elements               ; 89 / 114,480 ( < 1 % )                      ;
+;     Total combinational functions  ; 65 / 114,480 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 67 / 114,480 ( < 1 % )                      ;
+; Total registers                    ; 67                                          ;
+; Total pins                         ; 95 / 529 ( 18 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 6 / 532 ( 1 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
@@ -64,44 +64,44 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/25/2023 14:13:19 ;
+; Start date & time ; 11/22/2023 13:17:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga                 ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                               ;
-+--------------------------------------+----------------------------------------+---------------+-------------+------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
-+--------------------------------------+----------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 14071518969070.169825399919072         ; --            ; --          ; --               ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ImageMerge_tb    ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; VGA_Interface_tb ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ImageMerge_tb                          ; --            ; --          ; eda_simulation   ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation   ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --               ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation   ;
-; EDA_TEST_BENCH_FILE                  ; ImageMerge_tb.v                        ; --            ; --          ; ImageMerge_tb    ;
-; EDA_TEST_BENCH_FILE                  ; VGA_Interface_tb.v                     ; --            ; --          ; VGA_Interface_tb ;
-; EDA_TEST_BENCH_MODULE_NAME           ; ImageMerge_tb                          ; --            ; --          ; ImageMerge_tb    ;
-; EDA_TEST_BENCH_MODULE_NAME           ; VGA_Interface_tb                       ; --            ; --          ; VGA_Interface_tb ;
-; EDA_TEST_BENCH_NAME                  ; VGA_Interface_tb                       ; --            ; --          ; eda_simulation   ;
-; EDA_TEST_BENCH_NAME                  ; ImageMerge_tb                          ; --            ; --          ; eda_simulation   ;
-; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                                ; --            ; --          ; ImageMerge_tb    ;
-; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                                ; --            ; --          ; VGA_Interface_tb ;
-; EDA_TIME_SCALE                       ; 100 ns                                 ; --            ; --          ; eda_simulation   ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --               ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --               ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --               ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; ImageMerge  ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; ImageMerge  ; Top              ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; ImageMerge  ; Top              ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --               ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --               ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --               ;
-; TOP_LEVEL_ENTITY                     ; ImageMerge                             ; vga           ; --          ; --               ;
-+--------------------------------------+----------------------------------------+---------------+-------------+------------------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                 ;
++--------------------------------------+----------------------------------------+---------------+---------------+------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name   ; Section Id       ;
++--------------------------------------+----------------------------------------+---------------+---------------+------------------+
+; COMPILER_SIGNATURE_ID                ; 14071518969070.170066984311224         ; --            ; --            ; --               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; ImageMerge_tb    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; VGA_Interface_tb ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ImageMerge_tb                          ; --            ; --            ; eda_simulation   ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --            ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --            ; --               ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_FILE                  ; ImageMerge_tb.v                        ; --            ; --            ; ImageMerge_tb    ;
+; EDA_TEST_BENCH_FILE                  ; VGA_Interface_tb.v                     ; --            ; --            ; VGA_Interface_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; ImageMerge_tb                          ; --            ; --            ; ImageMerge_tb    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; VGA_Interface_tb                       ; --            ; --            ; VGA_Interface_tb ;
+; EDA_TEST_BENCH_NAME                  ; VGA_Interface_tb                       ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; ImageMerge_tb                          ; --            ; --            ; eda_simulation   ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                                ; --            ; --            ; ImageMerge_tb    ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                                ; --            ; --            ; VGA_Interface_tb ;
+; EDA_TIME_SCALE                       ; 100 ns                                 ; --            ; --            ; eda_simulation   ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --            ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --            ; --               ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --            ; --               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; VGA_Interface ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; VGA_Interface ; Top              ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; VGA_Interface ; Top              ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --            ; --               ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --            ; --               ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --            ; --               ;
+; TOP_LEVEL_ENTITY                     ; VGA_Interface                          ; vga           ; --            ; --               ;
++--------------------------------------+----------------------------------------+---------------+---------------+------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -109,12 +109,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4735 MB             ; 00:00:05                           ;
-; Fitter               ; 00:00:08     ; 1.0                     ; 5818 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4683 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4863 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4651 MB             ; 00:00:01                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4787 MB             ; 00:00:05                           ;
+; Fitter               ; 00:00:10     ; 1.0                     ; 5818 MB             ; 00:00:09                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4685 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4867 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4655 MB             ; 00:00:01                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:18                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
