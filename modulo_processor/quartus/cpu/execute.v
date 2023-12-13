@@ -46,6 +46,7 @@ module execute #(
     end
     else
     begin
+		stored_register <= register;
       stored_data  <= data;
       stored_instr <= instr;
       RFlags[0]    <= full_stack;

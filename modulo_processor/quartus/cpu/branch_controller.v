@@ -36,6 +36,7 @@ module branch_controller#(
 
   always @(*)
   begin: BRANCH_CONTROLLER
+		
     case (instr[DWIDTH - 1:DWIDTH - 5])
       JR, BRFL:
       begin
@@ -65,6 +66,7 @@ module branch_controller#(
       begin
         pop = 0;
         push = 0;
+		  r_abs = rd;
       end
     endcase
   end

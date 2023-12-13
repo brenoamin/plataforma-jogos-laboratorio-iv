@@ -20,56 +20,45 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 312 128)
-	(text "muxula" (rect 5 0 33 12)(font "Arial" ))
+	(rect 16 16 280 128)
+	(text "write_back" (rect 5 0 47 12)(font "Arial" ))
 	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "fetch_instr[DWIDTH-1..0]" (rect 0 0 103 12)(font "Arial" ))
-		(text "fetch_instr[DWIDTH-1..0]" (rect 21 27 124 39)(font "Arial" ))
+		(text "instruction[31..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "instruction[31..0]" (rect 21 27 83 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
-		(pt 296 32)
-		(output)
-		(text "addr_1[MWIDTH-1..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "addr_1[MWIDTH-1..0]" (rect 186 27 275 39)(font "Arial" ))
-		(line (pt 296 32)(pt 280 32)(line_width 3))
+		(pt 0 48)
+		(input)
+		(text "data_input[31..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "data_input[31..0]" (rect 21 43 84 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
-		(pt 296 48)
-		(output)
-		(text "addr_2[MWIDTH-1..0]" (rect 0 0 90 12)(font "Arial" ))
-		(text "addr_2[MWIDTH-1..0]" (rect 185 43 275 55)(font "Arial" ))
-		(line (pt 296 48)(pt 280 48)(line_width 3))
+		(pt 0 64)
+		(input)
+		(text "mem_data_input[31..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "mem_data_input[31..0]" (rect 21 59 111 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
-		(pt 296 64)
+		(pt 264 32)
 		(output)
-		(text "read_en" (rect 0 0 33 12)(font "Arial" ))
-		(text "read_en" (rect 242 59 275 71)(font "Arial" ))
-		(line (pt 296 64)(pt 280 64)(line_width 1))
+		(text "output_data[31..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "output_data[31..0]" (rect 174 27 243 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
 	)
 	(port
-		(pt 296 80)
+		(pt 264 48)
 		(output)
 		(text "write_en" (rect 0 0 33 12)(font "Arial" ))
-		(text "write_en" (rect 242 75 275 87)(font "Arial" ))
-		(line (pt 296 80)(pt 280 80)(line_width 1))
+		(text "write_en" (rect 210 43 243 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 1))
 	)
-	(parameter
-		"DWIDTH"
-		"32"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"MWIDTH"
-		"5"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 280 96)(line_width 1))
+		(rectangle (rect 16 16 248 96)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 312 -64 412 16))
 )

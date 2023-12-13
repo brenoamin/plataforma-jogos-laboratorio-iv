@@ -52,8 +52,8 @@ module registers(
     end
     else
     begin
-      data_out1 = 'hx;
-      data_out2 = 'hx;
+      data_out1 = 0;
+      data_out2 = 0;
     end
   end
 endmodule
