@@ -1,8 +1,8 @@
 module VGA_Interface(
     // Entradas
-    input [7:0] R_in,
-    input [7:0] G_in,
-    input [7:0] B_in,
+    input [127:0] R_in,
+    input [127:0] G_in,
+    input [127:0] B_in,
     input clk, 
     input rst,
 
@@ -17,7 +17,8 @@ module VGA_Interface(
     output VGA_CLK,
     output reg [9:0] h_pos, 
     output reg [9:0] v_pos,
-    output reg [19:0] oAddress
+    output reg [19:0] oAddress,
+    output readVgaSelector
 );
 
     // Parâmetros para as especificações VGA
@@ -34,6 +35,10 @@ module VGA_Interface(
     parameter VERTICAL_DISPLAY = 480;
     parameter VERTICAL_BLANK = VERTICAL_SYNC_PULSE + VERTICAL_BACK_PORCH;
     parameter VERTICAL_TOTAL = VERTICAL_FRONT_PORCH + VERTICAL_SYNC_PULSE + VERTICAL_BACK_PORCH + VERTICAL_DISPLAY;
+
+    //Contador para ler do registrador
+    reg [3:0] contador;
+    reg selector = 1'b0;
 
     // Lógica de Controle Principal
     always @(posedge clk)
@@ -110,13 +115,39 @@ module VGA_Interface(
     assign VGA_CLK = clk;
     assign VGA_SYNC = 1'b0;
 
+    assign base_indexA = contador * 8;
+
     always @(posedge clk)
     begin
         // Atualiza as cores R, G, e B a partir das entradas R_in, G_in, e B_in
-        R <= R_in;
-        G <= G_in;
-        B <= B_in;
+        R <= R_in[base_indexA +: 8];
+        G <= G_in[base_indexA +: 8];
+        B <= B_in[base_indexA +: 8];
     end
+
+
+    always @(posedge clk)
+    begin
+        if(rst) begin
+            contador <= 0;
+        end else begin
+        contador <= contador + 1;
+        end
+    end
+
+    always @(posedge clk) begin
+        if(rst) begin
+            selector <= 1'b0;
+        end
+        if (contador == 15)begin
+            selector <= ~selector;
+        end else begin
+             selector <= selector;
+        end
+    end
+
+    assign readVgaSelector = selector;
+
 
     // Geração de endereços na memória
     always @(posedge clk)
