@@ -1,0 +1,241 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do cpu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/write_back.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:04 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/write_back.v 
+# -- Compiling module write_back
+# 
+# Top level modules:
+# 	write_back
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/ula.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/ula.v 
+# -- Compiling module ula
+# 
+# Top level modules:
+# 	ula
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/store.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/store.v 
+# -- Compiling module store
+# 
+# Top level modules:
+# 	store
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/stack.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/stack.v 
+# -- Compiling module stack
+# 
+# Top level modules:
+# 	stack
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/registers.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/registers.v 
+# -- Compiling module registers
+# 
+# Top level modules:
+# 	registers
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/pc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/pc.v 
+# -- Compiling module pc
+# 
+# Top level modules:
+# 	pc
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/muxula.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/muxula.v 
+# -- Compiling module muxula
+# 
+# Top level modules:
+# 	muxula
+# End time: 17:03:05 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/muxbank.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:05 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/muxbank.v 
+# -- Compiling module muxbank
+# 
+# Top level modules:
+# 	muxbank
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/memory_access_mux.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:06 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/memory_access_mux.v 
+# -- Compiling module memory_access_mux
+# 
+# Top level modules:
+# 	memory_access_mux
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/fetch.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:06 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/fetch.v 
+# -- Compiling module fetch
+# 
+# Top level modules:
+# 	fetch
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/extensor.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:06 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/extensor.v 
+# -- Compiling module extensor
+# 
+# Top level modules:
+# 	extensor
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/execute.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:06 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/execute.v 
+# -- Compiling module execute
+# 
+# Top level modules:
+# 	execute
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/branch_controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:06 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/branch_controller.v 
+# -- Compiling module branch_controller
+# 
+# Top level modules:
+# 	branch_controller
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/decode.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:06 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/decode.v 
+# -- Compiling module decode
+# 
+# Top level modules:
+# 	decode
+# End time: 17:03:06 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu {C:/intelFPGA_lite/18.1/cpu/cpu_test.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:07 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/cpu_test.v 
+# -- Compiling module cpu_tb
+# 
+# Top level modules:
+# 	cpu_tb
+# End time: 17:03:07 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  cpu_test
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" cpu_test 
+# Start time: 17:03:07 on Dec 13,2023
+# ** Error: (vsim-3170) Could not find 'cpu_test'.
+#         Searched libraries:
+#             C:/intelFPGA/18.1/modelsim_ase/altera/verilog/altera
+#             C:/intelFPGA/18.1/modelsim_ase/altera/verilog/220model
+#             C:/intelFPGA/18.1/modelsim_ase/altera/verilog/sgate
+#             C:/intelFPGA/18.1/modelsim_ase/altera/verilog/altera_mf
+#             C:/intelFPGA/18.1/modelsim_ase/altera/verilog/altera_lnsim
+#             C:/intelFPGA/18.1/modelsim_ase/altera/verilog/cycloneive
+#             C:/intelFPGA_lite/18.1/cpu/simulation/modelsim/rtl_work
+#             C:/intelFPGA_lite/18.1/cpu/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./cpu_run_msim_rtl_verilog.do PAUSED at line 25
+vsim work.cpu_tb
+# vsim work.cpu_tb 
+# Start time: 17:03:07 on Dec 13,2023
+# Loading work.cpu_tb
+# ** Error: (vsim-3033) C:/intelFPGA_lite/18.1/cpu/cpu_test.v(17): Instantiation of 'cpu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu_tb File: C:/intelFPGA_lite/18.1/cpu/cpu_test.v
+#         Searched libraries:
+#             C:/intelFPGA_lite/18.1/cpu/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./cpu_run_msim_rtl_verilog.do PAUSED at line 25
+vsim work.cpu_tb
+# vsim work.cpu_tb 
+# Start time: 17:03:07 on Dec 13,2023
+# Loading work.cpu_tb
+# ** Error: (vsim-3033) C:/intelFPGA_lite/18.1/cpu/cpu_test.v(17): Instantiation of 'cpu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu_tb File: C:/intelFPGA_lite/18.1/cpu/cpu_test.v
+#         Searched libraries:
+#             C:/intelFPGA_lite/18.1/cpu/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./cpu_run_msim_rtl_verilog.do PAUSED at line 25
+vsim work.cpu_tb
+# vsim work.cpu_tb 
+# Start time: 17:03:07 on Dec 13,2023
+# Loading work.cpu_tb
+# ** Error: (vsim-3033) C:/intelFPGA_lite/18.1/cpu/cpu_test.v(17): Instantiation of 'cpu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu_tb File: C:/intelFPGA_lite/18.1/cpu/cpu_test.v
+#         Searched libraries:
+#             C:/intelFPGA_lite/18.1/cpu/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./cpu_run_msim_rtl_verilog.do PAUSED at line 25
+vsim work.cpu_tb
+# vsim work.cpu_tb 
+# Start time: 17:03:07 on Dec 13,2023
+# Loading work.cpu_tb
+# ** Error: (vsim-3033) C:/intelFPGA_lite/18.1/cpu/cpu_test.v(17): Instantiation of 'cpu' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu_tb File: C:/intelFPGA_lite/18.1/cpu/cpu_test.v
+#         Searched libraries:
+#             C:/intelFPGA_lite/18.1/cpu/simulation/modelsim/rtl_work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./cpu_run_msim_rtl_verilog.do PAUSED at line 25
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/cpu C:/intelFPGA_lite/18.1/cpu/cpu_test.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:03:43 on Dec 13,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/cpu" C:/intelFPGA_lite/18.1/cpu/cpu_test.v 
+# -- Compiling module cpu_tb
+# 
+# Top level modules:
+# 	cpu_tb
+# End time: 17:03:43 on Dec 13,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 17:21:01 on Dec 13,2023, Elapsed time: 0:17:54
+# Errors: 5, Warnings: 0

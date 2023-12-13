@@ -14,7 +14,7 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Wed Dec 13 03:35:34 2023"
+// CREATED		"Wed Dec 13 12:44:49 2023"
 
 module processor(
 	rst,
@@ -55,7 +55,7 @@ cpu	b2v_inst(
 mem_data	b2v_inst1(
 	.wren(SYNTHESIZED_WIRE_10),
 	.rden(SYNTHESIZED_WIRE_11),
-	
+	.clock(CLOCK_50),
 	.address(SYNTHESIZED_WIRE_4),
 	.data(SYNTHESIZED_WIRE_12),
 	.q(SYNTHESIZED_WIRE_1));
@@ -64,7 +64,7 @@ mem_data	b2v_inst1(
 mem_program	b2v_inst2(
 	.wren(SYNTHESIZED_WIRE_10),
 	.rden(SYNTHESIZED_WIRE_11),
-	
+	.clock(CLOCK_50),
 	.address(SYNTHESIZED_WIRE_8),
 	.data(SYNTHESIZED_WIRE_12),
 	.q(SYNTHESIZED_WIRE_0));

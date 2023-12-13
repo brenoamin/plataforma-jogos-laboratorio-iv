@@ -39,7 +39,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect 56 232 224 248)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "CLOCK_50" (rect 5 0 61 12)(font "Arial" ))
+	(text "CLOCK_50" (rect 5 0 60 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -494,13 +494,42 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(pt 352 256)
+	(pt 224 256)
+)
+(connector
+	(pt 752 224)
+	(pt 632 224)
+)
+(connector
+	(pt 632 224)
+	(pt 632 168)
+)
+(connector
+	(pt 632 168)
+	(pt 280 168)
+)
+(connector
 	(pt 352 240)
+	(pt 280 240)
+)
+(connector
+	(pt 280 240)
 	(pt 224 240)
 )
 (connector
-	(pt 352 256)
-	(pt 224 256)
+	(pt 752 472)
+	(pt 280 472)
+)
+(connector
+	(pt 280 168)
+	(pt 280 240)
+)
+(connector
+	(pt 280 240)
+	(pt 280 472)
 )
 (junction (pt 680 288))
 (junction (pt 704 304))
 (junction (pt 664 256))
+(junction (pt 280 240))
