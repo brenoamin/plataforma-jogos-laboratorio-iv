@@ -26,6 +26,12 @@ module ula #(
     localparam NOT = 4'b1100;
 
     always @* begin
+        equal = 0;
+        above = 0;
+        below = 0;
+        result = 0;
+        errorFlag = 0;
+
         case (ula_instr[31:27])
             ADD: begin
                 result = operand_a + operand_b;
