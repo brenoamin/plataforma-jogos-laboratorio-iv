@@ -1,0 +1,124 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 328 192)
+	(text "decode" (rect 5 0 33 12)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rst" (rect 0 0 10 12)(font "Arial" ))
+		(text "rst" (rect 21 43 31 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "addr[AWIDTH-1..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "addr[AWIDTH-1..0]" (rect 21 59 101 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "immed[DWIDTH-1..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "immed[DWIDTH-1..0]" (rect 21 75 109 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "inst[DWIDTH-1..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "inst[DWIDTH-1..0]" (rect 21 91 95 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Rd1[DWIDTH-1..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "Rd1[DWIDTH-1..0]" (rect 21 107 98 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "Rd2[DWIDTH-1..0]" (rect 0 0 79 12)(font "Arial" ))
+		(text "Rd2[DWIDTH-1..0]" (rect 21 123 100 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 312 32)
+		(output)
+		(text "stored_addr[AWIDTH-1..0]" (rect 0 0 110 12)(font "Arial" ))
+		(text "stored_addr[AWIDTH-1..0]" (rect 181 27 291 39)(font "Arial" ))
+		(line (pt 312 32)(pt 296 32)(line_width 3))
+	)
+	(port
+		(pt 312 48)
+		(output)
+		(text "stored_immed[DWIDTH-1..0]" (rect 0 0 119 12)(font "Arial" ))
+		(text "stored_immed[DWIDTH-1..0]" (rect 172 43 291 55)(font "Arial" ))
+		(line (pt 312 48)(pt 296 48)(line_width 3))
+	)
+	(port
+		(pt 312 64)
+		(output)
+		(text "stored_inst[DWIDTH-1..0]" (rect 0 0 105 12)(font "Arial" ))
+		(text "stored_inst[DWIDTH-1..0]" (rect 186 59 291 71)(font "Arial" ))
+		(line (pt 312 64)(pt 296 64)(line_width 3))
+	)
+	(port
+		(pt 312 80)
+		(output)
+		(text "stored_Rd1[DWIDTH-1..0]" (rect 0 0 108 12)(font "Arial" ))
+		(text "stored_Rd1[DWIDTH-1..0]" (rect 183 75 291 87)(font "Arial" ))
+		(line (pt 312 80)(pt 296 80)(line_width 3))
+	)
+	(port
+		(pt 312 96)
+		(output)
+		(text "stored_Rd2[DWIDTH-1..0]" (rect 0 0 109 12)(font "Arial" ))
+		(text "stored_Rd2[DWIDTH-1..0]" (rect 182 91 291 103)(font "Arial" ))
+		(line (pt 312 96)(pt 296 96)(line_width 3))
+	)
+	(parameter
+		"DWIDTH"
+		"32"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"AWIDTH"
+		"15"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 296 160)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 328 -64 428 16))
+)
