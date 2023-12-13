@@ -260,22 +260,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "oAddress[16]",
-					"strict" : false
-				},
-				{
-					"name" : "oAddress[17]",
-					"strict" : false
-				},
-				{
-					"name" : "oAddress[18]",
-					"strict" : false
-				},
-				{
-					"name" : "oAddress[19]",
-					"strict" : false
-				},
-				{
 					"name" : "clk",
 					"strict" : false
 				},

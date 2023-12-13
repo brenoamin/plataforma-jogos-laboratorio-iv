@@ -1,5 +1,5 @@
-Analysis & Elaboration report for vga
-Sun Dec 10 19:50:36 2023
+Analysis & Synthesis report for vga
+Tue Dec 12 22:07:46 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,11 +7,19 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface
-  5. Analysis & Elaboration Settings
-  6. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -35,64 +43,27 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sun Dec 10 19:50:36 2023       ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 12 22:07:46 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
 ; Top-level Entity Name              ; VGA_Interface                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 80                                          ;
+;     Total combinational functions  ; 56                                          ;
+;     Dedicated logic registers      ; 63                                          ;
+; Total registers                    ; 63                                          ;
+; Total pins                         ; 91                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface ;
-+------------------------+-------+----------------------------------------------+
-; Parameter Name         ; Value ; Type                                         ;
-+------------------------+-------+----------------------------------------------+
-; HORIZONTAL_FRONT_PORCH ; 16    ; Signed Integer                               ;
-; HORIZONTAL_SYNC_PULSE  ; 96    ; Signed Integer                               ;
-; HORIZONTAL_BACK_PORCH  ; 48    ; Signed Integer                               ;
-; HORIZONTAL_DISPLAY     ; 640   ; Signed Integer                               ;
-; HORIZONTAL_BLANK       ; 144   ; Signed Integer                               ;
-; HORIZONTAL_TOTAL       ; 800   ; Signed Integer                               ;
-; VERTICAL_FRONT_PORCH   ; 10    ; Signed Integer                               ;
-; VERTICAL_SYNC_PULSE    ; 2     ; Signed Integer                               ;
-; VERTICAL_BACK_PORCH    ; 33    ; Signed Integer                               ;
-; VERTICAL_DISPLAY       ; 480   ; Signed Integer                               ;
-; VERTICAL_BLANK         ; 35    ; Signed Integer                               ;
-; VERTICAL_TOTAL         ; 525   ; Signed Integer                               ;
-+------------------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -177,27 +148,332 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------+---------+
+; VGA_Interface.v                  ; yes             ; User Verilog HDL File  ; C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 80        ;
+;                                             ;           ;
+; Total combinational functions               ; 56        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 15        ;
+;     -- 3 input functions                    ; 4         ;
+;     -- <=2 input functions                  ; 37        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 23        ;
+;     -- arithmetic mode                      ; 33        ;
+;                                             ;           ;
+; Total registers                             ; 63        ;
+;     -- Dedicated logic registers            ; 63        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 91        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 64        ;
+; Total fan-out                               ; 489       ;
+; Average fan-out                             ; 1.62      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
+; |VGA_Interface             ; 56 (56)             ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 91   ; 0            ; |VGA_Interface      ; VGA_Interface ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 63    ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |VGA_Interface|oAddress[15]~reg0 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA_Interface|h_pos[0]~reg0     ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA_Interface|v_pos[0]~reg0     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Interface ;
++------------------------+-------+----------------------------------------------+
+; Parameter Name         ; Value ; Type                                         ;
++------------------------+-------+----------------------------------------------+
+; HORIZONTAL_FRONT_PORCH ; 16    ; Signed Integer                               ;
+; HORIZONTAL_SYNC_PULSE  ; 96    ; Signed Integer                               ;
+; HORIZONTAL_BACK_PORCH  ; 48    ; Signed Integer                               ;
+; HORIZONTAL_DISPLAY     ; 640   ; Signed Integer                               ;
+; HORIZONTAL_BLANK       ; 144   ; Signed Integer                               ;
+; HORIZONTAL_TOTAL       ; 800   ; Signed Integer                               ;
+; VERTICAL_FRONT_PORCH   ; 10    ; Signed Integer                               ;
+; VERTICAL_SYNC_PULSE    ; 2     ; Signed Integer                               ;
+; VERTICAL_BACK_PORCH    ; 33    ; Signed Integer                               ;
+; VERTICAL_DISPLAY       ; 480   ; Signed Integer                               ;
+; VERTICAL_BLANK         ; 35    ; Signed Integer                               ;
+; VERTICAL_TOTAL         ; 525   ; Signed Integer                               ;
++------------------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 91                          ;
+; cycloneiii_ff         ; 63                          ;
+;     ENA SCLR          ; 26                          ;
+;     SCLR              ; 10                          ;
+;     SLD               ; 3                           ;
+;     plain             ; 24                          ;
+; cycloneiii_lcell_comb ; 57                          ;
+;     arith             ; 33                          ;
+;         2 data inputs ; 33                          ;
+;     normal            ; 24                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 15                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.46                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Dec 10 19:50:29 2023
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga --analysis_and_elaboration
+    Info: Processing started: Tue Dec 12 22:07:36 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modulo_VGA_interface -c vga
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file modulos validados/vga/pll_vga.v
+    Info (12023): Found entity 1: pll_vga File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/modulos validados/vga/pll_vga.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/sistema_embarcado.v
+    Info (12023): Found entity 1: sistema_embarcado File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/sistema_embarcado.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_irq_mapper.sv
+    Info (12023): Found entity 1: sistema_embarcado_irq_mapper File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_irq_mapper.sv Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0.v
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_avalon_st_adapter.v
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_avalon_st_adapter File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_avalon_st_adapter.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_avalon_st_adapter_error_adapter_0 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_mux_001.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_rsp_mux_001 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_mux_001.sv Line: 51
+Info (12021): Found 2 design units, including 2 entities, in source file sistema_embarcado/synthesis/submodules/altera_merlin_arbitrator.sv
+    Info (12023): Found entity 1: altera_merlin_arbitrator File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_arbitrator.sv Line: 103
+    Info (12023): Found entity 2: altera_merlin_arb_adder File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_arbitrator.sv Line: 228
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_mux.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_rsp_mux File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_demux_001.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_rsp_demux_001 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_demux_001.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_demux.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_rsp_demux File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_rsp_demux.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_mux_001.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_cmd_mux_001 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_mux_001.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_mux.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_cmd_mux File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_demux_001.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_cmd_demux_001 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_demux_001.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_demux.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_cmd_demux File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_cmd_demux.sv Line: 43
+Info (12021): Found 2 design units, including 2 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_003.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_router_003_default_decode File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_003.sv Line: 45
+    Info (12023): Found entity 2: sistema_embarcado_mm_interconnect_0_router_003 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_003.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_002.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_router_002_default_decode File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_002.sv Line: 45
+    Info (12023): Found entity 2: sistema_embarcado_mm_interconnect_0_router_002 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_002.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_001.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_router_001_default_decode File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_001.sv Line: 45
+    Info (12023): Found entity 2: sistema_embarcado_mm_interconnect_0_router_001 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router_001.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router.sv
+    Info (12023): Found entity 1: sistema_embarcado_mm_interconnect_0_router_default_decode File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router.sv Line: 45
+    Info (12023): Found entity 2: sistema_embarcado_mm_interconnect_0_router File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_mm_interconnect_0_router.sv Line: 84
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_avalon_sc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_sc_fifo File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_sc_fifo.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_merlin_slave_agent.sv
+    Info (12023): Found entity 1: altera_merlin_slave_agent File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_slave_agent.sv Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+    Info (12023): Found entity 1: altera_merlin_burst_uncompressor File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_burst_uncompressor.sv Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_merlin_master_agent.sv
+    Info (12023): Found entity 1: altera_merlin_master_agent File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_master_agent.sv Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_merlin_slave_translator.sv
+    Info (12023): Found entity 1: altera_merlin_slave_translator File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_slave_translator.sv Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/altera_merlin_master_translator.sv
+    Info (12023): Found entity 1: altera_merlin_master_translator File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_merlin_master_translator.sv Line: 32
+Info (12021): Found 5 design units, including 5 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_jtag_uart.v
+    Info (12023): Found entity 1: sistema_embarcado_jtag_uart_sim_scfifo_w File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_jtag_uart.v Line: 21
+    Info (12023): Found entity 2: sistema_embarcado_jtag_uart_scfifo_w File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_jtag_uart.v Line: 78
+    Info (12023): Found entity 3: sistema_embarcado_jtag_uart_sim_scfifo_r File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_jtag_uart.v Line: 164
+    Info (12023): Found entity 4: sistema_embarcado_jtag_uart_scfifo_r File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_jtag_uart.v Line: 243
+    Info (12023): Found entity 5: sistema_embarcado_jtag_uart File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_jtag_uart.v Line: 331
+Info (12021): Found 2 design units, including 2 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_sdram.v
+    Info (12023): Found entity 1: sistema_embarcado_SDRAM_input_efifo_module File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_SDRAM.v Line: 21
+    Info (12023): Found entity 2: sistema_embarcado_SDRAM File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_SDRAM.v Line: 159
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_processador.v
+    Info (12023): Found entity 1: sistema_embarcado_Processador File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador.v Line: 9
+Info (12021): Found 21 design units, including 21 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_processador_cpu.v
+    Info (12023): Found entity 1: sistema_embarcado_Processador_cpu_register_bank_a_module File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 21
+    Info (12023): Found entity 2: sistema_embarcado_Processador_cpu_register_bank_b_module File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 87
+    Info (12023): Found entity 3: sistema_embarcado_Processador_cpu_nios2_oci_debug File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 153
+    Info (12023): Found entity 4: sistema_embarcado_Processador_cpu_nios2_oci_break File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 295
+    Info (12023): Found entity 5: sistema_embarcado_Processador_cpu_nios2_oci_xbrk File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 588
+    Info (12023): Found entity 6: sistema_embarcado_Processador_cpu_nios2_oci_dbrk File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 795
+    Info (12023): Found entity 7: sistema_embarcado_Processador_cpu_nios2_oci_itrace File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 982
+    Info (12023): Found entity 8: sistema_embarcado_Processador_cpu_nios2_oci_td_mode File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1115
+    Info (12023): Found entity 9: sistema_embarcado_Processador_cpu_nios2_oci_dtrace File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1183
+    Info (12023): Found entity 10: sistema_embarcado_Processador_cpu_nios2_oci_compute_input_tm_cnt File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1265
+    Info (12023): Found entity 11: sistema_embarcado_Processador_cpu_nios2_oci_fifo_wrptr_inc File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1337
+    Info (12023): Found entity 12: sistema_embarcado_Processador_cpu_nios2_oci_fifo_cnt_inc File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1380
+    Info (12023): Found entity 13: sistema_embarcado_Processador_cpu_nios2_oci_fifo File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1427
+    Info (12023): Found entity 14: sistema_embarcado_Processador_cpu_nios2_oci_pib File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1913
+    Info (12023): Found entity 15: sistema_embarcado_Processador_cpu_nios2_oci_im File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 1936
+    Info (12023): Found entity 16: sistema_embarcado_Processador_cpu_nios2_performance_monitors File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 2006
+    Info (12023): Found entity 17: sistema_embarcado_Processador_cpu_nios2_avalon_reg File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 2023
+    Info (12023): Found entity 18: sistema_embarcado_Processador_cpu_ociram_sp_ram_module File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 2116
+    Info (12023): Found entity 19: sistema_embarcado_Processador_cpu_nios2_ocimem File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 2181
+    Info (12023): Found entity 20: sistema_embarcado_Processador_cpu_nios2_oci File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 2362
+    Info (12023): Found entity 21: sistema_embarcado_Processador_cpu File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.v Line: 2834
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_processador_cpu_debug_slave_sysclk.v
+    Info (12023): Found entity 1: sistema_embarcado_Processador_cpu_debug_slave_sysclk File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu_debug_slave_sysclk.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_processador_cpu_debug_slave_tck.v
+    Info (12023): Found entity 1: sistema_embarcado_Processador_cpu_debug_slave_tck File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu_debug_slave_tck.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_processador_cpu_debug_slave_wrapper.v
+    Info (12023): Found entity 1: sistema_embarcado_Processador_cpu_debug_slave_wrapper File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu_debug_slave_wrapper.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_processador_cpu_test_bench.v
+    Info (12023): Found entity 1: sistema_embarcado_Processador_cpu_test_bench File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu_test_bench.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file sistema_embarcado/synthesis/submodules/sistema_embarcado_memoria.v
+    Info (12023): Found entity 1: sistema_embarcado_Memoria File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Memoria.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file vga_interface.v
     Info (12023): Found entity 1: VGA_Interface File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_interface_tb.v
     Info (12023): Found entity 1: VGA_Interface_tb File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file background.v
     Info (12023): Found entity 1: background File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/background.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file vga.bdf
+    Info (12023): Found entity 1: vga
+Info (12021): Found 2 design units, including 1 entities, in source file background_rom.vhd
+    Info (12022): Found design unit 1: background_rom-SYN File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/background_rom.vhd Line: 52
+    Info (12023): Found entity 1: background_rom File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/background_rom.vhd Line: 42
+Warning (10037): Verilog HDL or VHDL warning at sistema_embarcado_SDRAM.v(318): conditional expression evaluates to a constant File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_SDRAM.v Line: 318
+Warning (10037): Verilog HDL or VHDL warning at sistema_embarcado_SDRAM.v(328): conditional expression evaluates to a constant File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_SDRAM.v Line: 328
+Warning (10037): Verilog HDL or VHDL warning at sistema_embarcado_SDRAM.v(338): conditional expression evaluates to a constant File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_SDRAM.v Line: 338
+Warning (10037): Verilog HDL or VHDL warning at sistema_embarcado_SDRAM.v(682): conditional expression evaluates to a constant File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_SDRAM.v Line: 682
 Info (12127): Elaborating entity "VGA_Interface" for the top level hierarchy
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4708 megabytes
-    Info: Processing ended: Sun Dec 10 19:50:36 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:15
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "VGA_SYNC" is stuck at GND File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/VGA_Interface.v Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+Warning (20013): Ignored 64 assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+Warning (20013): Ignored 53 assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sistema_embarcado" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "sistema_embarcado_Memoria" -- entity does not exist in design
+Warning (20013): Ignored 149 assignments for entity "sistema_embarcado_Processador" -- entity does not exist in design
+Warning (20013): Ignored 179 assignments for entity "sistema_embarcado_Processador_cpu" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "sistema_embarcado_SDRAM" -- entity does not exist in design
+Warning (20013): Ignored 14 assignments for entity "sistema_embarcado_irq_mapper" -- entity does not exist in design
+Warning (20013): Ignored 24 assignments for entity "sistema_embarcado_jtag_uart" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "sistema_embarcado_mm_interconnect_0" -- entity does not exist in design
+Warning (20013): Ignored 32 assignments for entity "sistema_embarcado_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sistema_embarcado_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "sistema_embarcado_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "sistema_embarcado_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sistema_embarcado_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sistema_embarcado_mm_interconnect_0_cmd_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "sistema_embarcado_mm_interconnect_0_router" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "sistema_embarcado_mm_interconnect_0_router_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "sistema_embarcado_mm_interconnect_0_router_002" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "sistema_embarcado_mm_interconnect_0_router_003" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "sistema_embarcado_mm_interconnect_0_rsp_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "sistema_embarcado_mm_interconnect_0_rsp_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sistema_embarcado_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "sistema_embarcado_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
+Info (144001): Generated suppressed messages file C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/output_files/vga.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 171 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 26 input pins
+    Info (21059): Implemented 65 output pins
+    Info (21061): Implemented 80 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Tue Dec 12 22:07:46 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/output_files/vga.map.smsg.
 
 

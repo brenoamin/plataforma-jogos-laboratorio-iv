@@ -17,7 +17,7 @@ module VGA_Interface(
     output VGA_CLK,
     output reg [9:0] h_pos, 
     output reg [9:0] v_pos,
-    output reg [19:0] oAddress
+    output reg [15:0] oAddress
 );
 
     // Parâmetros para as especificações VGA
@@ -123,7 +123,7 @@ module VGA_Interface(
     begin
         // Reset no circuito, endereço vai para zero
         if (rst == 1'b1)
-            oAddress <= 20'h00000;
+            oAddress <= 16'h00000;
         else
         begin
             // Operação na parte visível do vídeo

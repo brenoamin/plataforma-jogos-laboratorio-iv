@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define IMAGE_WIDTH  320  // Largura da imagem em pixels
+#define IMAGE_HEIGHT 240  // Altura da imagem em pixels
+#define IMAGE_SIZE   (IMAGE_WIDTH * IMAGE_HEIGHT * 3)  // Tamanho da imagem em bytes (assumindo formato RGB)
+
+#define OCM_BASE_ADDRESS 0x201000  // Endereço base da OCM
+
+int main() {
+    // Abrir o arquivo de imagem bitmap
+    FILE *imageFile = fopen("/VGANIOS_SOFTWARE/imagem.BMP", "rb");
+    if (imageFile == NULL) {
+        printf("Erro ao abrir o arquivo de imagem.\n");
+        return -1;
+    }
+
+    // Alocar espaço de memória para armazenar a imagem
+    unsigned char *imageData = (unsigned char *)malloc(IMAGE_SIZE);
+    if (imageData == NULL) {
+        printf("Erro ao alocar memória para a imagem.\n");
+        fclose(imageFile);
+        return -1;
+    }
+
+    // Ler os dados da imagem para a memória
+    fread(imageData, sizeof(unsigned char), IMAGE_SIZE, imageFile);
+    fclose(imageFile);
+
+    // Copiar os dados para a OCM
+    memcpy((void *)OCM_BASE_ADDRESS, imageData, IMAGE_SIZE);
+
+    // Liberação de memória alocada
+    free(imageData);
+
+    // Inserir aqui código adicional conforme necessário
+
+    return 0;
+}

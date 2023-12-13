@@ -3,11 +3,10 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="143" />
+   <connections preferredWidth="47" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project,Library/University Program,Library/Memory Interfaces and Controllers/Memory Interfaces with ALTMEMPHY,Library/Memory Interfaces and Controllers,Library/University Program/Clock,Library/Memory Interfaces and Controllers/Memory Interfaces with UniPHY,Library,Library/Memory Interfaces and Controllers/SDRAM" />
- <window width="1936" height="1056" x="-1928" y="-8" />
+ <library expandedCategories="Project,Library" />
+ <window width="1920" height="1040" x="0" y="0" />
 </preferences>

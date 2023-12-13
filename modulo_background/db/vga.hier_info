@@ -39,10 +39,6 @@ clk => oAddress[12]~reg0.CLK
 clk => oAddress[13]~reg0.CLK
 clk => oAddress[14]~reg0.CLK
 clk => oAddress[15]~reg0.CLK
-clk => oAddress[16]~reg0.CLK
-clk => oAddress[17]~reg0.CLK
-clk => oAddress[18]~reg0.CLK
-clk => oAddress[19]~reg0.CLK
 clk => B[0]~reg0.CLK
 clk => B[1]~reg0.CLK
 clk => B[2]~reg0.CLK
@@ -130,10 +126,6 @@ rst => oAddress.OUTPUTSELECT
 rst => oAddress.OUTPUTSELECT
 rst => oAddress.OUTPUTSELECT
 rst => oAddress.OUTPUTSELECT
-rst => oAddress.OUTPUTSELECT
-rst => oAddress.OUTPUTSELECT
-rst => oAddress.OUTPUTSELECT
-rst => oAddress.OUTPUTSELECT
 R[0] << R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 R[1] << R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 R[2] << R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -199,9 +191,5 @@ oAddress[12] << oAddress[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 oAddress[13] << oAddress[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 oAddress[14] << oAddress[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 oAddress[15] << oAddress[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oAddress[16] << oAddress[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oAddress[17] << oAddress[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oAddress[18] << oAddress[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-oAddress[19] << oAddress[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

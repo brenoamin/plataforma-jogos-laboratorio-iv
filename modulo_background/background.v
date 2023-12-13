@@ -1,16 +1,14 @@
 module background (
     input wire clk,           // Sinal de clock
     input wire rst,           // Sinal de reset
-    input wire [9:0] anchor_x,     // Posição da linha da imagem
-    input wire [9:0] anchor_y,     // Posição da coluna da imagem
-    input wire [7:0] r_in,    // Canal R de entrada da SDRAM
-    input wire [7:0] g_in,    // Canal G de entrada da SDRAM
-    input wire [7:0] b_in,    // Canal B de entrada da SDRAM
-    output reg [7:0] r_out,   // Canal R de saída
-    output reg [7:0] g_out,   // Canal G de saída
-    output reg [7:0] b_out,   // Canal B de saída
-    output reg [9:0] x_out,   // Posição X de saída
-    output reg [9:0] y_out    // Posição Y de saída
+    //input wire [9:0] anchor_x, // Posição da linha da imagem
+   // input wire [9:0] anchor_y, // Posição da coluna da imagem
+    input wire [15:0] rom_data, // Dados da ROM de 16 bits
+    output reg [7:0] r_out,    // Canal R de saída
+    output reg [7:0] g_out,    // Canal G de saída
+    output reg [7:0] b_out,    // Canal B de saída
+    output reg [9:0] x_out,    // Posição X de saída
+    output reg [9:0] y_out     // Posição Y de saída
 );
 
 // Parâmetros para o tamanho da tela e da imagem
@@ -43,12 +41,14 @@ always @(posedge clk or posedge rst) begin
         if (anchor_x < SCREEN_HEIGHT && anchor_y < SCREEN_WIDTH) begin
             current_anchor_x <= anchor_x;
             current_anchor_y <= anchor_y;
-        end
 
-        // Gerando a saída RGB com base na posição atual
-        r_out <= r_in;
-        g_out <= g_in;
-        b_out <= b_in;
+            // Acessando a ROM com base nas posições (current_anchor_x, current_anchor_y)
+            // Suponha que a ROM tenha sido previamente carregada com dados do arquivo hex
+            // Aqui, estamos assumindo que a ROM está organizada em palavras de 16 bits
+            r_out <= rom_data[7:0];
+            g_out <= rom_data[11:8];
+            b_out <= rom_data[15:12];
+        end
 
         // Sinais de saída para a posição
         x_out <= current_anchor_x;
@@ -57,3 +57,4 @@ always @(posedge clk or posedge rst) begin
 end
 
 endmodule
+

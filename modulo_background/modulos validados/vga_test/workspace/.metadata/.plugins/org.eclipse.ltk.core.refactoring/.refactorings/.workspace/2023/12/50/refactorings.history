@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;VGANIOS_SOFTWARE/imagem.BMP&apos;" deleteContents="false" description="Delete resource &apos;VGANIOS_SOFTWARE/imagem.BMP&apos;" element1="/VGANIOS_SOFTWARE/imagem.BMP" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1702350944324"/>
+</session>

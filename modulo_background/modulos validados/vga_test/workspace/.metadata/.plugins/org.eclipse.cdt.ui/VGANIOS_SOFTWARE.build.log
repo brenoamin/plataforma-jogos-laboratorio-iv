@@ -1,0 +1,13 @@
+00:15:09 **** Incremental Build of configuration Nios II for project VGANIOS_SOFTWARE ****
+make all 
+Info: Building ../VGANIOS_SOFTWARE_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../VGANIOS_SOFTWARE_bsp/
+[BSP build complete]
+Info: Compiling programa.c to obj/default/programa.o
+nios2-elf-gcc -xc -MP -MMD -c -I../VGANIOS_SOFTWARE_bsp//HAL/inc -I../VGANIOS_SOFTWARE_bsp/ -I../VGANIOS_SOFTWARE_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/programa.o programa.c
+programa.c:1:30: fatal error: sys/ alt_stdio .h: No such file or directory
+compilation terminated.
+make: *** [obj/default/programa.o] Error 1
+
+00:15:10 Build Finished (took 709ms)
+

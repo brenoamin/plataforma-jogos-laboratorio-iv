@@ -1,0 +1,25 @@
+23:53:12 **** Incremental Build of configuration Nios II for project VGANIOS_SOFTWARE ****
+make all 
+Info: Building ../VGANIOS_SOFTWARE_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../VGANIOS_SOFTWARE_bsp/
+[BSP build complete]
+Info: Linking VGANIOS_SOFTWARE.elf
+nios2-elf-g++  -T'../VGANIOS_SOFTWARE_bsp//linker.x' -msys-crt0='../VGANIOS_SOFTWARE_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../VGANIOS_SOFTWARE_bsp/   -Wl,-Map=VGANIOS_SOFTWARE.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o VGANIOS_SOFTWARE.elf obj/default/programa.o -lm -msys-lib=m
+../VGANIOS_SOFTWARE_bsp/\libhal_bsp.a(alt_sys_init.o): In function `alt_sys_init':
+C:\Users\mauri\Documents\vga_test\software\VGANIOS_SOFTWARE_bsp/alt_sys_init.c:92: warning: Error: Interrupt not connected for JTAG_UART_0. You have selected the interrupt driven version of the ALTERA Avalon JTAG UART driver, but the interrupt is not connected for this device. You can select a polled mode driver by checking the 'small driver' option in the HAL configuration window, or by using the -DALTERA_AVALON_JTAG_UART_SMALL preprocessor flag.
+C:\Users\mauri\Documents\vga_test\software\VGANIOS_SOFTWARE_bsp/alt_sys_init.c:92: undefined reference to `__alt_invalid'
+collect2.exe: error: ld returned 1 exit status
+make: *** [VGANIOS_SOFTWARE.elf] Error 1
+00:15:09 **** Incremental Build of configuration Nios II for project VGANIOS_SOFTWARE ****
+make all 
+Info: Building ../VGANIOS_SOFTWARE_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../VGANIOS_SOFTWARE_bsp/
+[BSP build complete]
+Info: Compiling programa.c to obj/default/programa.o
+nios2-elf-gcc -xc -MP -MMD -c -I../VGANIOS_SOFTWARE_bsp//HAL/inc -I../VGANIOS_SOFTWARE_bsp/ -I../VGANIOS_SOFTWARE_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/programa.o programa.c
+programa.c:1:30: fatal error: sys/ alt_stdio .h: No such file or directory
+compilation terminated.
+make: *** [obj/default/programa.o] Error 1
+00:15:10 **** Incremental Build of configuration Nios II for project VGANIOS_SOFTWARE_bsp ****
+make all 
+[BSP build complete]
