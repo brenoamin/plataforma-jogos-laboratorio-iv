@@ -12,11 +12,11 @@ module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_outRegA, G_outRegA, B_outReg
 
 	reg [3:0] contadorA = 4'b0;
     reg [3:0] contadorB = 4'b0;
+    reg [127:0] base_indexA = 128'b0;
 
     reg full_A = 1'b0;
     reg full_B = 1'b0;
 
-    assign base_indexA = contadorA * 8;
     assign base_indexB = contadorB * 8;
 
     always@(posedge clk) 
@@ -40,7 +40,7 @@ module merge (R_bg, G_bg, B_bg, R_sp, G_sp, B_sp, R_outRegA, G_outRegA, B_outReg
             if (readVgaSelector == 1'b1 && !full_A) //Se o VGA estÃ¡ lendo o registrador tipo B prepara os pixels do registrador A,
             begin
                 full_B <= 1'b0; //ComeÃ§a a ler o registrador A, volta o estado de full_A para 0.
-
+                base_indexA <= contadorA * 8;
                 if (R_sp == R_trans && G_sp == G_trans && B_sp == B_trans) //Verifica se a entrada do sprit Ã© a cor transparente naquele pixel, se for preenche com o background
                 begin 
                     R_outRegA[base_indexA +: 8] <= R_bg;
