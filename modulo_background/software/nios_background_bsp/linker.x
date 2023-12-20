@@ -4,7 +4,7 @@
  * Machine generated for CPU 'Processador' in SOPC Builder design 'sistema_embarcado'
  * SOPC Builder design path: ../../sistema_embarcado.sopcinfo
  *
- * Generated: Sun Dec 10 20:42:56 BRT 2023
+ * Generated: Tue Dec 19 21:31:54 BRT 2023
  */
 
 /*
@@ -52,12 +52,12 @@ MEMORY
 {
     reset : ORIGIN = 0x0, LENGTH = 32
     Memoria : ORIGIN = 0x20, LENGTH = 4064
-    SDRAM : ORIGIN = 0x8000000, LENGTH = 67108864
+    SDRAM : ORIGIN = 0x4000000, LENGTH = 33554432
 }
 
 /* Define symbols for each memory base-address */
 __alt_mem_Memoria = 0x0;
-__alt_mem_SDRAM = 0x8000000;
+__alt_mem_SDRAM = 0x4000000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -93,7 +93,7 @@ SECTIONS
      *
      */
 
-    .exceptions : AT ( 0x8000000 )
+    .exceptions : AT ( 0x4000000 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -407,7 +407,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0xc000000;
+__alt_data_end = 0x6000000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -423,4 +423,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0xc000000 );
+PROVIDE( __alt_heap_limit    = 0x6000000 );

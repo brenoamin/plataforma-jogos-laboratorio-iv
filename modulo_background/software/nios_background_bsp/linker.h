@@ -4,7 +4,7 @@
  * Machine generated for CPU 'Processador' in SOPC Builder design 'sistema_embarcado'
  * SOPC Builder design path: ../../sistema_embarcado.sopcinfo
  *
- * Generated: Sun Dec 10 20:42:56 BRT 2023
+ * Generated: Tue Dec 19 21:31:54 BRT 2023
  */
 
 /*
@@ -69,8 +69,8 @@
 #define MEMORIA_REGION_SPAN 4064
 #define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
-#define SDRAM_REGION_BASE 0x8000000
-#define SDRAM_REGION_SPAN 67108864
+#define SDRAM_REGION_BASE 0x4000000
+#define SDRAM_REGION_SPAN 33554432
 
 
 /*

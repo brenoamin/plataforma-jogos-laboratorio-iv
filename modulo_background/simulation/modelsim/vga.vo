@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
-// DATE "12/12/2023 22:08:09"
+// DATE "12/19/2023 21:29:20"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -26,7 +26,7 @@
 // This Verilog file should be used for ModelSim-Altera (Verilog) only
 // 
 
-`timescale 100 ns/ 1 ps
+`timescale 1 ps/ 1 ps
 
 module VGA_Interface (
 	R_in,

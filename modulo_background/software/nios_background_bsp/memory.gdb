@@ -3,7 +3,7 @@
 # Machine generated for CPU 'Processador' in SOPC Builder design 'sistema_embarcado'
 # SOPC Builder design path: ../../sistema_embarcado.sopcinfo
 #
-# Generated: Sun Dec 10 20:42:56 BRT 2023
+# Generated: Tue Dec 19 21:31:54 BRT 2023
 
 # DO NOT MODIFY THIS FILE
 #
@@ -50,4 +50,4 @@
 memory 0x0 0x1000 cache
 
 # SDRAM
-memory 0x8000000 0xc000000 cache
+memory 0x4000000 0x6000000 cache

@@ -1,5 +1,5 @@
 Flow report for vga
-Tue Dec 12 22:08:09 2023
+Tue Dec 19 21:29:20 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 12 22:08:09 2023       ;
+; Flow Status                        ; Successful - Tue Dec 19 21:29:20 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
 ; Top-level Entity Name              ; VGA_Interface                               ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/12/2023 22:07:37 ;
+; Start date & time ; 12/19/2023 21:28:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga                 ;
 +-------------------+---------------------+
@@ -75,31 +75,21 @@ refer to the applicable agreement for further details.
 +--------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------------+
 ; Assignment Name                      ; Value                                                               ; Default Value ; Entity Name       ; Section Id       ;
 +--------------------------------------+---------------------------------------------------------------------+---------------+-------------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 136411543900679.170242965605900                                     ; --            ; --                ; --               ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                  ; --            ; --                ; ImageMerge_tb    ;
+; COMPILER_SIGNATURE_ID                ; 136411543900679.170303212934228                                     ; --            ; --                ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                                  ; --            ; --                ; VGA_Interface_tb ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; ImageMerge_tb                                                       ; --            ; --                ; eda_simulation   ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; VGA_Interface_tb                                                    ; --            ; --                ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                                                         ; --            ; --                ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)                                           ; <None>        ; --                ; --               ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                                                     ; --            ; --                ; eda_simulation   ;
-; EDA_TEST_BENCH_FILE                  ; ImageMerge_tb.v                                                     ; --            ; --                ; ImageMerge_tb    ;
 ; EDA_TEST_BENCH_FILE                  ; VGA_Interface_tb.v                                                  ; --            ; --                ; VGA_Interface_tb ;
-; EDA_TEST_BENCH_MODULE_NAME           ; ImageMerge_tb                                                       ; --            ; --                ; ImageMerge_tb    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; VGA_Interface_tb                                                    ; --            ; --                ; VGA_Interface_tb ;
 ; EDA_TEST_BENCH_NAME                  ; VGA_Interface_tb                                                    ; --            ; --                ; eda_simulation   ;
-; EDA_TEST_BENCH_NAME                  ; ImageMerge_tb                                                       ; --            ; --                ; eda_simulation   ;
-; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                                                             ; --            ; --                ; ImageMerge_tb    ;
 ; EDA_TEST_BENCH_RUN_SIM_FOR           ; 1000 ns                                                             ; --            ; --                ; VGA_Interface_tb ;
-; EDA_TIME_SCALE                       ; 100 ns                                                              ; --            ; --                ; eda_simulation   ;
+; EDA_TIME_SCALE                       ; 1 ps                                                                ; --            ; --                ; eda_simulation   ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                                                  ; --            ; --                ; --               ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                                                   ; --            ; --                ; --               ;
-; MISC_FILE                            ; modulos validados/vga/pll_vga.bsf                                   ; --            ; --                ; --               ;
-; MISC_FILE                            ; modulos validados/vga/pll_vga_bb.v                                  ; --            ; --                ; --               ;
-; MISC_FILE                            ; modulos validados/vga/pll_vga.ppf                                   ; --            ; --                ; --               ;
 ; MISC_FILE                            ; sistema_embarcado/synthesis/../sistema_embarcado.cmp                ; --            ; --                ; --               ;
 ; MISC_FILE                            ; sistema_embarcado/synthesis/../../sistema_embarcado.qsys            ; --            ; --                ; --               ;
-; MISC_FILE                            ; background_rom.bsf                                                  ; --            ; --                ; --               ;
-; MISC_FILE                            ; background_rom.cmp                                                  ; --            ; --                ; --               ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                                                ; --            ; --                ; --               ;
 ; PARTITION_COLOR                      ; -- (Not supported for targeted family)                              ; --            ; VGA_Interface     ; Top              ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)                              ; --            ; VGA_Interface     ; Top              ;
@@ -109,7 +99,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                                                        ; --            ; --                ; --               ;
 ; SLD_FILE                             ; sistema_embarcado/synthesis/sistema_embarcado.regmap                ; --            ; --                ; --               ;
 ; SLD_FILE                             ; sistema_embarcado/synthesis/sistema_embarcado.debuginfo             ; --            ; --                ; --               ;
-; SLD_INFO                             ; QSYS_NAME sistema_embarcado HAS_SOPCINFO 1 GENERATION_ID 1702251212 ; --            ; sistema_embarcado ; --               ;
+; SLD_INFO                             ; QSYS_NAME sistema_embarcado HAS_SOPCINFO 1 GENERATION_ID 1703031141 ; --            ; sistema_embarcado ; --               ;
 ; SOPCINFO_FILE                        ; sistema_embarcado/synthesis/../../sistema_embarcado.sopcinfo        ; --            ; --                ; --               ;
 ; SYNTHESIS_ONLY_QIP                   ; On                                                                  ; --            ; --                ; --               ;
 ; TOP_LEVEL_ENTITY                     ; VGA_Interface                                                       ; vga           ; --                ; --               ;
@@ -121,12 +111,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4850 MB             ; 00:00:18                           ;
-; Fitter               ; 00:00:14     ; 1.0                     ; 6303 MB             ; 00:00:22                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4687 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4935 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4650 MB             ; 00:00:01                           ;
-; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:45                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4839 MB             ; 00:00:16                           ;
+; Fitter               ; 00:00:13     ; 1.0                     ; 6299 MB             ; 00:00:21                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4684 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4937 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4654 MB             ; 00:00:01                           ;
+; Total                ; 00:00:27     ; --                      ; --                  ; 00:00:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,8 +1,18 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst unsaved.clk_0 -pg 1 -lvl 1 -y 30
-preplace inst unsaved -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)unsaved.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)clk_0.clk_in,(SLAVE)unsaved.clk) 1 0 1 NJ
-levelinfo -pg 1 0 50 270
-levelinfo -hier unsaved 60 90 260
+preplace inst sistema_embarcado.Processador -pg 1 -lvl 1 -y 100
+preplace inst sistema_embarcado.Memoria -pg 1 -lvl 2 -y 30
+preplace inst sistema_embarcado.Clock -pg 1 -lvl 2 -y 330
+preplace inst sistema_embarcado.Processador.clock_bridge -pg 1
+preplace inst sistema_embarcado.jtag_uart -pg 1 -lvl 2 -y 110
+preplace inst sistema_embarcado.SDRAM -pg 1 -lvl 2 -y 230
+preplace inst sistema_embarcado -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst sistema_embarcado.Processador.reset_bridge -pg 1
+preplace inst sistema_embarcado.Processador.cpu -pg 1
+preplace netloc INTERCONNECT<net_container>sistema_embarcado</net_container>(MASTER)Processador.debug_reset_request,(SLAVE)jtag_uart.reset,(SLAVE)Memoria.reset1,(SLAVE)SDRAM.reset,(SLAVE)Processador.reset,(SLAVE)Clock.clk_in_reset,(MASTER)Clock.clk_reset) 1 0 3 80 240 460 400 700
+preplace netloc POINT_TO_POINT<net_container>sistema_embarcado</net_container>(SLAVE)jtag_uart.irq,(MASTER)Processador.irq) 1 1 1 480
+preplace netloc EXPORT<net_container>sistema_embarcado</net_container>(SLAVE)Clock.clk_in,(SLAVE)sistema_embarcado.clk) 1 0 2 NJ 340 NJ
+preplace netloc FAN_OUT<net_container>sistema_embarcado</net_container>(SLAVE)jtag_uart.clk,(SLAVE)SDRAM.clk,(SLAVE)Processador.clk,(MASTER)Clock.clk,(SLAVE)Memoria.clk1) 1 0 3 60 40 500 220 700
+preplace netloc INTERCONNECT<net_container>sistema_embarcado</net_container>(SLAVE)Processador.debug_mem_slave,(SLAVE)SDRAM.s1,(MASTER)Processador.instruction_master,(SLAVE)Memoria.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(MASTER)Processador.data_master) 1 0 2 80 60 440
+levelinfo -pg 1 0 30 740
+levelinfo -hier sistema_embarcado 40 200 530 720

@@ -7,18 +7,19 @@ module sistema_embarcado (
 		input  wire  clk_clk  // clk.clk
 	);
 
-	wire         processador_debug_reset_request_reset;                     // Processador:debug_reset_request -> [rst_controller:reset_in0, rst_controller:reset_in1]
+	wire         altpll_c0_clk;                                             // altplL:c0 -> [SDRAM:clk, mm_interconnect_0:altplL_c0_clk, rst_controller_001:clk]
+	wire         processador_debug_reset_request_reset;                     // Processador:debug_reset_request -> [altplL:reset, rst_controller:reset_in0, rst_controller:reset_in1, rst_controller_001:reset_in0, rst_controller_001:reset_in1]
 	wire  [31:0] processador_data_master_readdata;                          // mm_interconnect_0:Processador_data_master_readdata -> Processador:d_readdata
 	wire         processador_data_master_waitrequest;                       // mm_interconnect_0:Processador_data_master_waitrequest -> Processador:d_waitrequest
 	wire         processador_data_master_debugaccess;                       // Processador:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:Processador_data_master_debugaccess
-	wire  [27:0] processador_data_master_address;                           // Processador:d_address -> mm_interconnect_0:Processador_data_master_address
+	wire  [26:0] processador_data_master_address;                           // Processador:d_address -> mm_interconnect_0:Processador_data_master_address
 	wire   [3:0] processador_data_master_byteenable;                        // Processador:d_byteenable -> mm_interconnect_0:Processador_data_master_byteenable
 	wire         processador_data_master_read;                              // Processador:d_read -> mm_interconnect_0:Processador_data_master_read
 	wire         processador_data_master_write;                             // Processador:d_write -> mm_interconnect_0:Processador_data_master_write
 	wire  [31:0] processador_data_master_writedata;                         // Processador:d_writedata -> mm_interconnect_0:Processador_data_master_writedata
 	wire  [31:0] processador_instruction_master_readdata;                   // mm_interconnect_0:Processador_instruction_master_readdata -> Processador:i_readdata
 	wire         processador_instruction_master_waitrequest;                // mm_interconnect_0:Processador_instruction_master_waitrequest -> Processador:i_waitrequest
-	wire  [27:0] processador_instruction_master_address;                    // Processador:i_address -> mm_interconnect_0:Processador_instruction_master_address
+	wire  [26:0] processador_instruction_master_address;                    // Processador:i_address -> mm_interconnect_0:Processador_instruction_master_address
 	wire         processador_instruction_master_read;                       // Processador:i_read -> mm_interconnect_0:Processador_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_uart_avalon_jtag_slave_chipselect -> jtag_uart:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_readdata;    // jtag_uart:av_readdata -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_readdata
@@ -43,18 +44,19 @@ module sistema_embarcado (
 	wire  [31:0] mm_interconnect_0_memoria_s1_writedata;                    // mm_interconnect_0:Memoria_s1_writedata -> Memoria:writedata
 	wire         mm_interconnect_0_memoria_s1_clken;                        // mm_interconnect_0:Memoria_s1_clken -> Memoria:clken
 	wire         mm_interconnect_0_sdram_s1_chipselect;                     // mm_interconnect_0:SDRAM_s1_chipselect -> SDRAM:az_cs
-	wire  [31:0] mm_interconnect_0_sdram_s1_readdata;                       // SDRAM:za_data -> mm_interconnect_0:SDRAM_s1_readdata
+	wire  [15:0] mm_interconnect_0_sdram_s1_readdata;                       // SDRAM:za_data -> mm_interconnect_0:SDRAM_s1_readdata
 	wire         mm_interconnect_0_sdram_s1_waitrequest;                    // SDRAM:za_waitrequest -> mm_interconnect_0:SDRAM_s1_waitrequest
 	wire  [23:0] mm_interconnect_0_sdram_s1_address;                        // mm_interconnect_0:SDRAM_s1_address -> SDRAM:az_addr
 	wire         mm_interconnect_0_sdram_s1_read;                           // mm_interconnect_0:SDRAM_s1_read -> SDRAM:az_rd_n
-	wire   [3:0] mm_interconnect_0_sdram_s1_byteenable;                     // mm_interconnect_0:SDRAM_s1_byteenable -> SDRAM:az_be_n
+	wire   [1:0] mm_interconnect_0_sdram_s1_byteenable;                     // mm_interconnect_0:SDRAM_s1_byteenable -> SDRAM:az_be_n
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                  // SDRAM:za_valid -> mm_interconnect_0:SDRAM_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                          // mm_interconnect_0:SDRAM_s1_write -> SDRAM:az_wr_n
-	wire  [31:0] mm_interconnect_0_sdram_s1_writedata;                      // mm_interconnect_0:SDRAM_s1_writedata -> SDRAM:az_data
+	wire  [15:0] mm_interconnect_0_sdram_s1_writedata;                      // mm_interconnect_0:SDRAM_s1_writedata -> SDRAM:az_data
 	wire         irq_mapper_receiver0_irq;                                  // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] processador_irq_irq;                                       // irq_mapper:sender_irq -> Processador:irq
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [Memoria:reset, Processador:reset_n, SDRAM:reset_n, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:Processador_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [Memoria:reset, Processador:reset_n, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:Processador_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                        // rst_controller:reset_req -> [Memoria:reset_req, Processador:reset_req, rst_translator:reset_req_in]
+	wire         rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [SDRAM:reset_n, mm_interconnect_0:SDRAM_reset_reset_bridge_in_reset_reset]
 
 	sistema_embarcado_Memoria memoria (
 		.clk        (clk_clk),                                 //   clk1.clk
@@ -100,8 +102,8 @@ module sistema_embarcado (
 	);
 
 	sistema_embarcado_SDRAM sdram (
-		.clk            (clk_clk),                                  //   clk.clk
-		.reset_n        (~rst_controller_reset_out_reset),          // reset.reset_n
+		.clk            (altpll_c0_clk),                            //   clk.clk
+		.reset_n        (~rst_controller_001_reset_out_reset),      // reset.reset_n
 		.az_addr        (mm_interconnect_0_sdram_s1_address),       //    s1.address
 		.az_be_n        (~mm_interconnect_0_sdram_s1_byteenable),   //      .byteenable_n
 		.az_cs          (mm_interconnect_0_sdram_s1_chipselect),    //      .chipselect
@@ -122,6 +124,29 @@ module sistema_embarcado (
 		.zs_we_n        ()                                          //      .export
 	);
 
+	sistema_embarcado_altplL altpll (
+		.clk                (clk_clk),                               //       inclk_interface.clk
+		.reset              (processador_debug_reset_request_reset), // inclk_interface_reset.reset
+		.read               (),                                      //             pll_slave.read
+		.write              (),                                      //                      .write
+		.address            (),                                      //                      .address
+		.readdata           (),                                      //                      .readdata
+		.writedata          (),                                      //                      .writedata
+		.c0                 (altpll_c0_clk),                         //                    c0.clk
+		.areset             (),                                      //        areset_conduit.export
+		.locked             (),                                      //        locked_conduit.export
+		.scandone           (),                                      //           (terminated)
+		.scandataout        (),                                      //           (terminated)
+		.phasedone          (),                                      //           (terminated)
+		.phasecounterselect (4'b0000),                               //           (terminated)
+		.phaseupdown        (1'b0),                                  //           (terminated)
+		.phasestep          (1'b0),                                  //           (terminated)
+		.scanclk            (1'b0),                                  //           (terminated)
+		.scanclkena         (1'b0),                                  //           (terminated)
+		.scandata           (1'b0),                                  //           (terminated)
+		.configupdate       (1'b0)                                   //           (terminated)
+	);
+
 	sistema_embarcado_jtag_uart jtag_uart (
 		.clk            (clk_clk),                                                   //               clk.clk
 		.rst_n          (~rst_controller_reset_out_reset),                           //             reset.reset_n
@@ -136,8 +161,10 @@ module sistema_embarcado (
 	);
 
 	sistema_embarcado_mm_interconnect_0 mm_interconnect_0 (
+		.altplL_c0_clk                                 (altpll_c0_clk),                                             //                               altplL_c0.clk
 		.Clock_clk_clk                                 (clk_clk),                                                   //                               Clock_clk.clk
 		.Processador_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                            // Processador_reset_reset_bridge_in_reset.reset
+		.SDRAM_reset_reset_bridge_in_reset_reset       (rst_controller_001_reset_out_reset),                        //       SDRAM_reset_reset_bridge_in_reset.reset
 		.Processador_data_master_address               (processador_data_master_address),                           //                 Processador_data_master.address
 		.Processador_data_master_waitrequest           (processador_data_master_waitrequest),                       //                                        .waitrequest
 		.Processador_data_master_byteenable            (processador_data_master_byteenable),                        //                                        .byteenable
@@ -221,6 +248,69 @@ module sistema_embarcado (
 		.clk            (clk_clk),                               //       clk.clk
 		.reset_out      (rst_controller_reset_out_reset),        // reset_out.reset
 		.reset_req      (rst_controller_reset_out_reset_req),    //          .reset_req
+		.reset_req_in0  (1'b0),                                  // (terminated)
+		.reset_req_in1  (1'b0),                                  // (terminated)
+		.reset_in2      (1'b0),                                  // (terminated)
+		.reset_req_in2  (1'b0),                                  // (terminated)
+		.reset_in3      (1'b0),                                  // (terminated)
+		.reset_req_in3  (1'b0),                                  // (terminated)
+		.reset_in4      (1'b0),                                  // (terminated)
+		.reset_req_in4  (1'b0),                                  // (terminated)
+		.reset_in5      (1'b0),                                  // (terminated)
+		.reset_req_in5  (1'b0),                                  // (terminated)
+		.reset_in6      (1'b0),                                  // (terminated)
+		.reset_req_in6  (1'b0),                                  // (terminated)
+		.reset_in7      (1'b0),                                  // (terminated)
+		.reset_req_in7  (1'b0),                                  // (terminated)
+		.reset_in8      (1'b0),                                  // (terminated)
+		.reset_req_in8  (1'b0),                                  // (terminated)
+		.reset_in9      (1'b0),                                  // (terminated)
+		.reset_req_in9  (1'b0),                                  // (terminated)
+		.reset_in10     (1'b0),                                  // (terminated)
+		.reset_req_in10 (1'b0),                                  // (terminated)
+		.reset_in11     (1'b0),                                  // (terminated)
+		.reset_req_in11 (1'b0),                                  // (terminated)
+		.reset_in12     (1'b0),                                  // (terminated)
+		.reset_req_in12 (1'b0),                                  // (terminated)
+		.reset_in13     (1'b0),                                  // (terminated)
+		.reset_req_in13 (1'b0),                                  // (terminated)
+		.reset_in14     (1'b0),                                  // (terminated)
+		.reset_req_in14 (1'b0),                                  // (terminated)
+		.reset_in15     (1'b0),                                  // (terminated)
+		.reset_req_in15 (1'b0)                                   // (terminated)
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (2),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller_001 (
+		.reset_in0      (processador_debug_reset_request_reset), // reset_in0.reset
+		.reset_in1      (processador_debug_reset_request_reset), // reset_in1.reset
+		.clk            (altpll_c0_clk),                         //       clk.clk
+		.reset_out      (rst_controller_001_reset_out_reset),    // reset_out.reset
+		.reset_req      (),                                      // (terminated)
 		.reset_req_in0  (1'b0),                                  // (terminated)
 		.reset_req_in1  (1'b0),                                  // (terminated)
 		.reset_in2      (1'b0),                                  // (terminated)

@@ -28,7 +28,7 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         sistema_embarcado_mm_interconnect_0_rsp_demux
-//   ST_DATA_W:           102
+//   ST_DATA_W:           101
 //   ST_CHANNEL_W:        4
 //   NUM_OUTPUTS:         1
 //   VALID_WIDTH:         1
@@ -46,7 +46,7 @@ module sistema_embarcado_mm_interconnect_0_rsp_demux
     // Sink
     // -------------------
     input  [1-1      : 0]   sink_valid,
-    input  [102-1    : 0]   sink_data, // ST_DATA_W=102
+    input  [101-1    : 0]   sink_data, // ST_DATA_W=101
     input  [4-1 : 0]   sink_channel, // ST_CHANNEL_W=4
     input                         sink_startofpacket,
     input                         sink_endofpacket,
@@ -56,7 +56,7 @@ module sistema_embarcado_mm_interconnect_0_rsp_demux
     // Sources 
     // -------------------
     output reg                      src0_valid,
-    output reg [102-1    : 0] src0_data, // ST_DATA_W=102
+    output reg [101-1    : 0] src0_data, // ST_DATA_W=101
     output reg [4-1 : 0] src0_channel, // ST_CHANNEL_W=4
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,

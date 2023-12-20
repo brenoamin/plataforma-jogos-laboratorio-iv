@@ -4,7 +4,7 @@
  * Machine generated for CPU 'Processador' in SOPC Builder design 'sistema_embarcado'
  * SOPC Builder design path: ../../sistema_embarcado.sopcinfo
  *
- * Generated: Sun Dec 10 20:42:56 BRT 2023
+ * Generated: Tue Dec 19 21:31:54 BRT 2023
  */
 
 /*
@@ -62,13 +62,13 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_gen2"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x00010820
+#define ALT_CPU_BREAK_ADDR 0x00001820
 #define ALT_CPU_CPU_ARCH_NIOS2_R1
 #define ALT_CPU_CPU_FREQ 50000000u
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0x1c
+#define ALT_CPU_DATA_ADDR_WIDTH 0x1b
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
@@ -87,7 +87,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0x1c
+#define ALT_CPU_INST_ADDR_WIDTH 0x1b
 #define ALT_CPU_NAME "Processador"
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00000000
@@ -99,13 +99,13 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x00010820
+#define NIOS2_BREAK_ADDR 0x00001820
 #define NIOS2_CPU_ARCH_NIOS2_R1
 #define NIOS2_CPU_FREQ 50000000u
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0x1c
+#define NIOS2_DATA_ADDR_WIDTH 0x1b
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
@@ -123,7 +123,7 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0x1c
+#define NIOS2_INST_ADDR_WIDTH 0x1b
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00000000
 
@@ -174,7 +174,7 @@
  */
 
 #define ALT_MODULE_CLASS_SDRAM altera_avalon_new_sdram_controller
-#define SDRAM_BASE 0x8000000
+#define SDRAM_BASE 0x4000000
 #define SDRAM_CAS_LATENCY 3
 #define SDRAM_CONTENTS_INFO
 #define SDRAM_INIT_NOP_DELAY 0.0
@@ -189,13 +189,13 @@
 #define SDRAM_SDRAM_ADDR_WIDTH 0x18
 #define SDRAM_SDRAM_BANK_WIDTH 2
 #define SDRAM_SDRAM_COL_WIDTH 9
-#define SDRAM_SDRAM_DATA_WIDTH 32
+#define SDRAM_SDRAM_DATA_WIDTH 16
 #define SDRAM_SDRAM_NUM_BANKS 4
 #define SDRAM_SDRAM_NUM_CHIPSELECTS 1
 #define SDRAM_SDRAM_ROW_WIDTH 13
 #define SDRAM_SHARED_DATA 0
 #define SDRAM_SIM_MODEL_BASE 0
-#define SDRAM_SPAN 67108864
+#define SDRAM_SPAN 33554432
 #define SDRAM_STARVATION_INDICATOR 0
 #define SDRAM_TRISTATE_BRIDGE_SLAVE ""
 #define SDRAM_TYPE "altera_avalon_new_sdram_controller"
@@ -223,19 +223,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart"
-#define ALT_STDERR_BASE 0x11000
+#define ALT_STDERR_BASE 0x2000
 #define ALT_STDERR_DEV jtag_uart
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart"
-#define ALT_STDIN_BASE 0x11000
+#define ALT_STDIN_BASE 0x2000
 #define ALT_STDIN_DEV jtag_uart
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart"
-#define ALT_STDOUT_BASE 0x11000
+#define ALT_STDOUT_BASE 0x2000
 #define ALT_STDOUT_DEV jtag_uart
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -260,7 +260,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart altera_avalon_jtag_uart
-#define JTAG_UART_BASE 0x11000
+#define JTAG_UART_BASE 0x2000
 #define JTAG_UART_IRQ 0
 #define JTAG_UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_NAME "/dev/jtag_uart"

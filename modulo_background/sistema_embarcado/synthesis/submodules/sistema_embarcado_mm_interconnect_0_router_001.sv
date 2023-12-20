@@ -49,14 +49,14 @@ module sistema_embarcado_mm_interconnect_0_router_001_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 2 
    )
-  (output [88 - 87 : 0] default_destination_id,
+  (output [87 - 86 : 0] default_destination_id,
    output [4-1 : 0] default_wr_channel,
    output [4-1 : 0] default_rd_channel,
    output [4-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[88 - 87 : 0];
+    DEFAULT_DESTID[87 - 86 : 0];
 
   generate
     if (DEFAULT_CHANNEL == -1) begin : no_default_channel_assignment
@@ -93,7 +93,7 @@ module sistema_embarcado_mm_interconnect_0_router_001
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [102-1 : 0]    sink_data,
+    input  [101-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -102,7 +102,7 @@ module sistema_embarcado_mm_interconnect_0_router_001
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [102-1    : 0] src_data,
+    output reg [101-1    : 0] src_data,
     output reg [4-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
@@ -112,18 +112,18 @@ module sistema_embarcado_mm_interconnect_0_router_001
     // -------------------------------------------------------
     // Local parameters and variables
     // -------------------------------------------------------
-    localparam PKT_ADDR_H = 63;
+    localparam PKT_ADDR_H = 62;
     localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 88;
-    localparam PKT_DEST_ID_L = 87;
-    localparam PKT_PROTECTION_H = 92;
-    localparam PKT_PROTECTION_L = 90;
-    localparam ST_DATA_W = 102;
+    localparam PKT_DEST_ID_H = 87;
+    localparam PKT_DEST_ID_L = 86;
+    localparam PKT_PROTECTION_H = 91;
+    localparam PKT_PROTECTION_L = 89;
+    localparam ST_DATA_W = 101;
     localparam ST_CHANNEL_W = 4;
     localparam DECODER_TYPE = 0;
 
-    localparam PKT_TRANS_WRITE = 66;
-    localparam PKT_TRANS_READ  = 67;
+    localparam PKT_TRANS_WRITE = 65;
+    localparam PKT_TRANS_READ  = 66;
 
     localparam PKT_ADDR_W = PKT_ADDR_H-PKT_ADDR_L + 1;
     localparam PKT_DEST_ID_W = PKT_DEST_ID_H-PKT_DEST_ID_L + 1;
@@ -135,14 +135,14 @@ module sistema_embarcado_mm_interconnect_0_router_001
     // during address decoding
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h1000 - 64'h0); 
-    localparam PAD1 = log2ceil(64'h11000 - 64'h10800); 
-    localparam PAD2 = log2ceil(64'hc000000 - 64'h8000000); 
+    localparam PAD1 = log2ceil(64'h2000 - 64'h1800); 
+    localparam PAD2 = log2ceil(64'h6000000 - 64'h4000000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'hc000000;
+    localparam ADDR_RANGE = 64'h6000000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -191,19 +191,19 @@ module sistema_embarcado_mm_interconnect_0_router_001
         // --------------------------------------------------
 
     // ( 0x0 .. 0x1000 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 28'h0   ) begin
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 27'h0   ) begin
             src_channel = 4'b010;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
     end
 
-    // ( 0x10800 .. 0x11000 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h10800   ) begin
+    // ( 0x1800 .. 0x2000 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 27'h1800   ) begin
             src_channel = 4'b001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 
-    // ( 0x8000000 .. 0xc000000 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 28'h8000000   ) begin
+    // ( 0x4000000 .. 0x6000000 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 27'h4000000   ) begin
             src_channel = 4'b100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end

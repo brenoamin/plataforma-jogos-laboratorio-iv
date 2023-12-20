@@ -1,5 +1,5 @@
 Fitter report for vga
-Tue Dec 12 22:08:01 2023
+Tue Dec 19 21:29:12 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Dec 12 22:08:01 2023       ;
+; Fitter Status                      ; Successful - Tue Dec 19 21:29:12 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; vga                                         ;
 ; Top-level Entity Name              ; VGA_Interface                               ;
@@ -153,7 +153,7 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -2559,6 +2559,24 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Critical Warning (169085): No exact pin location assignment(s) for 90 pins of 91 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
 Info (332104): Reading SDC File: 'sistema_embarcado/synthesis/submodules/altera_reset_controller.sdc'
+Info (332104): Reading SDC File: 'sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc'
+Warning (332174): Ignored filter at altera_avalon_st_handshake_clock_crosser.sdc(32): *altera_avalon_st_clock_crosser:*|in_data_buffer* could not be matched with a register File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 32
+Warning (332174): Ignored filter at altera_avalon_st_handshake_clock_crosser.sdc(32): *altera_avalon_st_clock_crosser:*|out_data_buffer* could not be matched with a register File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 32
+Warning (332049): Ignored set_max_delay at altera_avalon_st_handshake_clock_crosser.sdc(32): Argument <from> is an empty collection File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 32
+    Info (332050): set_max_delay -from [get_registers *${crosser_entity}*|in_data_buffer* ] -to [get_registers *${crosser_entity}*|out_data_buffer* ] 100 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 32
+Warning (332049): Ignored set_max_delay at altera_avalon_st_handshake_clock_crosser.sdc(32): Argument <to> is an empty collection File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 32
+Warning (332049): Ignored set_min_delay at altera_avalon_st_handshake_clock_crosser.sdc(33): Argument <from> is an empty collection File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 33
+    Info (332050): set_min_delay -from [get_registers *${crosser_entity}*|in_data_buffer* ] -to [get_registers *${crosser_entity}*|out_data_buffer* ] -100 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 33
+Warning (332049): Ignored set_min_delay at altera_avalon_st_handshake_clock_crosser.sdc(33): Argument <to> is an empty collection File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 33
+Warning (332174): Ignored filter at altera_avalon_st_handshake_clock_crosser.sdc(36): *altera_avalon_st_clock_crosser:*|altera_std_synchronizer_nocut:*|din_s1 could not be matched with a register File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 36
+Warning (332049): Ignored set_max_delay at altera_avalon_st_handshake_clock_crosser.sdc(36): Argument <to> is an empty collection File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 36
+    Info (332050): set_max_delay -from [get_registers * ] -to [get_registers *${sync_entity}*|din_s1 ] 100 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 36
+Warning (332049): Ignored set_min_delay at altera_avalon_st_handshake_clock_crosser.sdc(37): Argument <to> is an empty collection File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 37
+    Info (332050): set_min_delay -from [get_registers * ] -to [get_registers *${sync_entity}*|din_s1 ] -100 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 37
+Warning (332049): Ignored set_net_delay at altera_avalon_st_handshake_clock_crosser.sdc(43): argument -from with value [get_registers {*altera_avalon_st_clock_crosser:*|in_data_buffer*}] contains zero elements File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 43
+    Info (332050): set_net_delay -from [get_registers *${crosser_entity}*|in_data_buffer* ] -to [get_registers *${crosser_entity}*|out_data_buffer* ] -max 2 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 43
+Warning (332049): Ignored set_net_delay at altera_avalon_st_handshake_clock_crosser.sdc(44): argument -to with value [get_registers {*altera_avalon_st_clock_crosser:*|altera_std_synchronizer_nocut:*|din_s1}] contains zero elements File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 44
+    Info (332050): set_net_delay -from [get_registers * ] -to [get_registers *${sync_entity}*|din_s1 ] -max 2 File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc Line: 44
 Info (332104): Reading SDC File: 'sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.sdc'
 Warning (332174): Ignored filter at sistema_embarcado_Processador_cpu.sdc(46): *sistema_embarcado_Processador_cpu:*|sistema_embarcado_Processador_cpu_nios2_oci:the_sistema_embarcado_Processador_cpu_nios2_oci|sistema_embarcado_Processador_cpu_nios2_oci_break:the_sistema_embarcado_Processador_cpu_nios2_oci_break|break_readreg* could not be matched with a keeper File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.sdc Line: 46
 Warning (332174): Ignored filter at sistema_embarcado_Processador_cpu.sdc(46): *sistema_embarcado_Processador_cpu:*|sistema_embarcado_Processador_cpu_nios2_oci:the_sistema_embarcado_Processador_cpu_nios2_oci|sistema_embarcado_Processador_cpu_debug_slave_wrapper:the_sistema_embarcado_Processador_cpu_debug_slave_wrapper|sistema_embarcado_Processador_cpu_debug_slave_tck:the_sistema_embarcado_Processador_cpu_debug_slave_tck|*sr* could not be matched with a keeper File: C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/sistema_embarcado/synthesis/submodules/sistema_embarcado_Processador_cpu.sdc Line: 46
@@ -3160,7 +3178,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X58_Y0 to location X68_Y11
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (11888): Total time spent on timing analysis during the Fitter is 0.10 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -3169,11 +3187,11 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/mauri/Documents/GitHub/plataforma-jogos-laboratorio-iv/modulo_background/output_files/vga.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 561 warnings
-    Info: Peak virtual memory: 6303 megabytes
-    Info: Processing ended: Tue Dec 12 22:08:02 2023
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Fitter was successful. 0 errors, 572 warnings
+    Info: Peak virtual memory: 6299 megabytes
+    Info: Processing ended: Tue Dec 19 21:29:12 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +----------------------------+
