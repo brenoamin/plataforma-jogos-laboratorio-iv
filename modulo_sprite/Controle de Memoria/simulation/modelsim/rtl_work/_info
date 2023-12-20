@@ -1,0 +1,227 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/18.1/Processa_Sprite/simulation/modelsim
+vcomando
+Z1 !s110 1702962376
+!i10b 1
+!s100 iLPg3_IRFhb4YdmSYm3_L2
+I0nk55d8A6SMFPUNe=aih53
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1702489931
+8C:/intelFPGA_lite/18.1/Processa_Sprite/comando.v
+FC:/intelFPGA_lite/18.1/Processa_Sprite/comando.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1702962376.000000
+!s107 C:/intelFPGA_lite/18.1/Processa_Sprite/comando.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite|C:/intelFPGA_lite/18.1/Processa_Sprite/comando.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite
+Z7 tCvgOpt 0
+vmerge_sprites
+R1
+!i10b 1
+!s100 024JK3`E_ZlRPkQH>[LO@3
+I1I@J1W8E_jW^1@[H@nX9^3
+R2
+R0
+w1702496729
+8C:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v
+FC:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1702962375.000000
+!s107 C:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite|C:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v|
+!i113 1
+R5
+R6
+R7
+vprepara_dados
+R1
+!i10b 1
+!s100 I?UebP@=R<>Xi34IW2:^Z1
+I?Dd`XblSbNAAD=iS1J=]N3
+R2
+R0
+w1702493218
+8C:/intelFPGA_lite/18.1/Processa_Sprite/prepara_dados.v
+FC:/intelFPGA_lite/18.1/Processa_Sprite/prepara_dados.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/intelFPGA_lite/18.1/Processa_Sprite/prepara_dados.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite|C:/intelFPGA_lite/18.1/Processa_Sprite/prepara_dados.v|
+!i113 1
+R5
+R6
+R7
+vProcessa_Sprite
+Z9 !s110 1702962375
+!i10b 1
+!s100 GzfShz1<nRBX@<WUd1Bih2
+I^J67mVGknY3iLY7jWfg@d0
+R2
+R0
+w1702453761
+8C:/intelFPGA_lite/18.1/Processa_Sprite/Processa_Sprite.v
+FC:/intelFPGA_lite/18.1/Processa_Sprite/Processa_Sprite.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/intelFPGA_lite/18.1/Processa_Sprite/Processa_Sprite.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite|C:/intelFPGA_lite/18.1/Processa_Sprite/Processa_Sprite.v|
+!i113 1
+R5
+R6
+R7
+n@processa_@sprite
+Eram2
+Z10 w1702179422
+Z11 DPx9 altera_mf 20 altera_mf_components 0 22 gV:l9C^?PSb6]b5V?_jR@3
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z14 8C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd
+Z15 FC:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd
+l0
+L42
+VKDdT?bOLaUUM?VjAL=ZL[2
+!s100 ?Znc`:`N?66NFRMk=KKnn3
+Z16 OV;C;10.5b;63
+31
+R1
+!i10b 1
+R4
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd|
+Z18 !s107 C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd|
+!i113 1
+Z19 o-93 -work work
+Z20 tExplicit 1 CvgOpt 0
+Asyn
+R11
+R12
+R13
+DEx4 work 4 ram2 0 22 KDdT?bOLaUUM?VjAL=ZL[2
+l59
+L55
+VS@egf;kH`M<PleJaO:1zA0
+!s100 Kz@ZifgdQUd8Q?nnGP0J03
+R16
+31
+R1
+!i10b 1
+R4
+R17
+R18
+!i113 1
+R19
+R20
+Eram3
+Z21 w1702436051
+R11
+R12
+R13
+R0
+Z22 8C:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd
+Z23 FC:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd
+l0
+L42
+V2=3HQL7kczn<I9n70_gnh2
+!s100 mY0iGgXnkAQm<cb9Mzf@73
+R16
+31
+R1
+!i10b 1
+R4
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd|
+Z25 !s107 C:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd|
+!i113 1
+R19
+R20
+Asyn
+R11
+R12
+R13
+DEx4 work 4 ram3 0 22 2=3HQL7kczn<I9n70_gnh2
+l58
+L54
+VboTP8H7>lf8WNVdN:EYhk1
+!s100 Al7jeU9iiYaYKG2DaT9aM3
+R16
+31
+R1
+!i10b 1
+R4
+R24
+R25
+!i113 1
+R19
+R20
+vTB_Sprites
+R1
+!i10b 1
+!s100 iSE5Fz7WeHHBnM_R_ca@K1
+I_R>3]f`fmbd6XX2=]?X9i1
+R2
+R0
+w1702498938
+8C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v
+FC:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite|C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v|
+!i113 1
+R5
+R6
+R7
+n@t@b_@sprites
+vTesteMemoria4
+R9
+!i10b 1
+!s100 I@ajQ^f=@jjXzFbgXdjCY3
+I3`?Q9]SCJT5^<RdAHmA4m0
+R2
+R0
+w1702960340
+8C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v
+FC:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v
+L0 19
+R3
+r1
+!s85 0
+31
+R8
+!s107 C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite|C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v|
+!i113 1
+R5
+R6
+R7
+n@teste@memoria4

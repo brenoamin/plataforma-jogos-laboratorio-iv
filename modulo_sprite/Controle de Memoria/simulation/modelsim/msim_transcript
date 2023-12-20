@@ -1,0 +1,140 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Processa_Sprite_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite {C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:15 on Dec 19,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite" C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v 
+# -- Compiling module TesteMemoria4
+# 
+# Top level modules:
+# 	TesteMemoria4
+# End time: 02:06:15 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite {C:/intelFPGA_lite/18.1/Processa_Sprite/Processa_Sprite.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:15 on Dec 19,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite" C:/intelFPGA_lite/18.1/Processa_Sprite/Processa_Sprite.v 
+# -- Compiling module Processa_Sprite
+# 
+# Top level modules:
+# 	Processa_Sprite
+# End time: 02:06:15 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite {C:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:15 on Dec 19,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite" C:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v 
+# -- Compiling module merge_sprites
+# 
+# Top level modules:
+# 	merge_sprites
+# End time: 02:06:16 on Dec 19,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite {C:/intelFPGA_lite/18.1/Processa_Sprite/comando.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:16 on Dec 19,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite" C:/intelFPGA_lite/18.1/Processa_Sprite/comando.v 
+# -- Compiling module comando
+# 
+# Top level modules:
+# 	comando
+# End time: 02:06:16 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite {C:/intelFPGA_lite/18.1/Processa_Sprite/prepara_dados.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:16 on Dec 19,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite" C:/intelFPGA_lite/18.1/Processa_Sprite/prepara_dados.v 
+# -- Compiling module prepara_dados
+# 
+# Top level modules:
+# 	prepara_dados
+# End time: 02:06:16 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:16 on Dec 19,2023
+# vcom -reportprogress 300 -93 -work work C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity RAM2
+# -- Compiling architecture SYN of ram2
+# End time: 02:06:16 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:16 on Dec 19,2023
+# vcom -reportprogress 300 -93 -work work C:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity RAM3
+# -- Compiling architecture SYN of ram3
+# End time: 02:06:16 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/18.1/Processa_Sprite {C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 02:06:16 on Dec 19,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/18.1/Processa_Sprite" C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v 
+# -- Compiling module TB_Sprites
+# 
+# Top level modules:
+# 	TB_Sprites
+# End time: 02:06:16 on Dec 19,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  TB_Sprites
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" TB_Sprites 
+# Start time: 02:06:17 on Dec 19,2023
+# Loading work.TB_Sprites
+# Loading work.TesteMemoria4
+# Loading work.comando
+# Loading work.Processa_Sprite
+# Loading work.prepara_dados
+# Loading work.merge_sprites
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.ram3(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.ram2(syn)
+# ** Warning: (vsim-3017) C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v(50): [TFMPC] - Too few port connections. Expected 5, found 3.
+#    Time: 0 ps  Iteration: 0  Instance: /TB_Sprites/sprtb File: C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v
+# ** Error: (vsim-3063) C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v(50): Port 'pixel' not found in the connected module (2nd connection).
+#    Time: 0 ps  Iteration: 0  Instance: /TB_Sprites/sprtb File: C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v
+# ** Warning: (vsim-3722) C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v(50): [TFMPC] - Missing connection for port 'Saida_B'.
+# ** Warning: (vsim-3722) C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v(50): [TFMPC] - Missing connection for port 'Saida_G'.
+# ** Warning: (vsim-3722) C:/intelFPGA_lite/18.1/Processa_Sprite/TB_Sprites.v(50): [TFMPC] - Missing connection for port 'Saida_R'.
+# ** Warning: (vsim-8822) C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v(56): [TFMPC] - Missing Verilog connection for formal VHDL port 'data'.
+#    Time: 0 ps  Iteration: 0  Instance: /TB_Sprites/sprtb/b2v_inst1 File: C:/intelFPGA_lite/18.1/Processa_Sprite/RAM3.vhd
+# ** Warning: (vsim-8822) C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v(74): [TFMPC] - Missing Verilog connection for formal VHDL port 'data'.
+#    Time: 0 ps  Iteration: 0  Instance: /TB_Sprites/sprtb/b2v_inst3 File: C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd
+# ** Warning: (vsim-8822) C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v(74): [TFMPC] - Missing Verilog connection for formal VHDL port 'wraddress'.
+#    Time: 0 ps  Iteration: 0  Instance: /TB_Sprites/sprtb/b2v_inst3 File: C:/intelFPGA_lite/18.1/Processa_Sprite/RAM2.vhd
+# ** Warning: (vsim-3017) C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v(93): [TFMPC] - Too few port connections. Expected 9, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /TB_Sprites/sprtb/b2v_inst6 File: C:/intelFPGA_lite/18.1/Processa_Sprite/merge_sprites.v
+# ** Warning: (vsim-3722) C:/intelFPGA_lite/18.1/Processa_Sprite/TesteMemoria4.v(93): [TFMPC] - Missing connection for port 'pixel'.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./Processa_Sprite_run_msim_rtl_verilog.do PAUSED at line 18
+# End time: 02:06:52 on Dec 19,2023, Elapsed time: 0:00:35
+# Errors: 1, Warnings: 9
